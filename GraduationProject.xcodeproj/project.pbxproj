@@ -98,6 +98,9 @@
 		A8F5BF3921651C350077B597 /* GraduationProject */ = {
 			isa = PBXGroup;
 			children = (
+				A8F5BF7121653CA10077B597 /* View */,
+				A8F5BF7021653C960077B597 /* Control */,
+				A8F5BF6F21653C8A0077B597 /* Model */,
 				A8F5BF4F21651C7B0077B597 /* MMDrawer */,
 				A8F5BF3A21651C350077B597 /* AppDelegate.swift */,
 				A8F5BF5021651D1B0077B597 /* MainPageViewController.swift */,
@@ -127,6 +130,27 @@
 				A8F5BF5F21651DDE0077B597 /* GraduationProject-Bridging-Header.h */,
 			);
 			path = MMDrawer;
+			sourceTree = "<group>";
+		};
+		A8F5BF6F21653C8A0077B597 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8F5BF7021653C960077B597 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A8F5BF7121653CA10077B597 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97K3K7BYBU;
 				INFOPLIST_FILE = GraduationProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -428,7 +453,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "GraduationProject/MMDrawer/GraduationProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -441,6 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97K3K7BYBU;
 				INFOPLIST_FILE = GraduationProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,7 +475,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GraduationProject/MMDrawer/GraduationProject-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
