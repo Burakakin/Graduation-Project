@@ -13,7 +13,7 @@ class LeftSideMenuViewController: UIViewController {
     
     @IBOutlet weak var myAccountButton: UIButton!
     
-    var menuItem = ["Main Page","About"]
+    var menuItem = ["All Products","Last Viewed","My Favourite","My Products","My Card"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,19 @@ class LeftSideMenuViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    
+    @IBAction func socialMedia(_ sender: Any) {
+        let fbUrlWeb = URL(string: "https://www.facebook.com/birduramamahali")
+        let fbUrlId = URL(string: "fb://profile/195680347140498")
+        
+        if (UIApplication.shared.canOpenURL(fbUrlId!)) {
+            //FB installed
+            UIApplication.shared.open(fbUrlId!)
+        }
+        else{
+            UIApplication.shared.open(fbUrlWeb!)
+        }
+    }
     
     
     
@@ -50,5 +63,22 @@ extension LeftSideMenuViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       // print(indexPath.row)
+        
+        
+        switch indexPath.row {
+        case 0:
+            let centerViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
+            let centerNavController = UINavigationController(rootViewController: centerViewController)
+            let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.centerContainer!.centerViewController = centerNavController
+            appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
+       
+        default:
+            print("Hello")
+        }
+    }
     
 }

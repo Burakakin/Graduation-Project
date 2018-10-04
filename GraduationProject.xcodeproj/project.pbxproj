@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		13A93EF7D6FD3E6034EEDA96 /* Pods_GraduationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */; };
 		A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */; };
+		A86EF2A721668CE800701DEB /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A86EF2A621668CE800701DEB /* facebook.png */; };
+		A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */; };
 		A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF3A21651C350077B597 /* AppDelegate.swift */; };
 		A8F5BF4021651C350077B597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F5BF3E21651C350077B597 /* Main.storyboard */; };
 		A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */; };
@@ -27,6 +29,8 @@
 		1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraduationProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4544BD1EBA2689C75334460E /* Pods-GraduationProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GraduationProject/Pods-GraduationProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideCustomMenuTableViewCell.swift; sourceTree = "<group>"; };
+		A86EF2A621668CE800701DEB /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		A8F5BF3721651C350077B597 /* GraduationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F5BF3A21651C350077B597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F5BF3F21651C350077B597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +83,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A86EF2A521668CB100701DEB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A86EF2A621668CE800701DEB /* facebook.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		A8F5BF2E21651C350077B597 = {
 			isa = PBXGroup;
 			children = (
@@ -100,20 +112,19 @@
 		A8F5BF3921651C350077B597 /* GraduationProject */ = {
 			isa = PBXGroup;
 			children = (
+				A86EF2A521668CB100701DEB /* Images */,
 				A8F5BF7121653CA10077B597 /* View */,
 				A8F5BF7021653C960077B597 /* Control */,
 				A8F5BF6F21653C8A0077B597 /* Model */,
 				A8F5BF4F21651C7B0077B597 /* MMDrawer */,
 				A8F5BF3A21651C350077B597 /* AppDelegate.swift */,
-				A8F5BF5021651D1B0077B597 /* MainPageViewController.swift */,
-				A8F5BF5421651D4A0077B597 /* LeftSideMenuViewController.swift */,
 				A8F5BF3E21651C350077B597 /* Main.storyboard */,
 				A8F5BF4421651C360077B597 /* Assets.xcassets */,
 				A8F5BF4621651C360077B597 /* LaunchScreen.storyboard */,
 				A8F5BF4921651C360077B597 /* Info.plist */,
 				A8F5BF6D216523080077B597 /* GoogleService-Info.plist */,
 				A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */,
-				A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */,
+				A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */,
 			);
 			path = GraduationProject;
 			sourceTree = "<group>";
@@ -145,6 +156,8 @@
 		A8F5BF7021653C960077B597 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				A8F5BF5421651D4A0077B597 /* LeftSideMenuViewController.swift */,
+				A8F5BF5021651D1B0077B597 /* MainPageViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -152,6 +165,7 @@
 		A8F5BF7121653CA10077B597 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,7 +209,7 @@
 				};
 			};
 			buildConfigurationList = A8F5BF3221651C350077B597 /* Build configuration list for PBXProject "GraduationProject" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -219,6 +233,7 @@
 			files = (
 				A8F5BF4821651C360077B597 /* LaunchScreen.storyboard in Resources */,
 				A8F5BF6E216523080077B597 /* GoogleService-Info.plist in Resources */,
+				A86EF2A721668CE800701DEB /* facebook.png in Resources */,
 				A8F5BF4521651C360077B597 /* Assets.xcassets in Resources */,
 				A8F5BF4021651C350077B597 /* Main.storyboard in Resources */,
 			);
@@ -297,6 +312,7 @@
 				A8F5BF6A21651DDF0077B597 /* MMDrawerController.m in Sources */,
 				A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */,
 				A8F5BF6B21651DDF0077B597 /* MMDrawerVisualState.m in Sources */,
+				A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97K3K7BYBU;
 				INFOPLIST_FILE = GraduationProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97K3K7BYBU;
 				INFOPLIST_FILE = GraduationProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
