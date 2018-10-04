@@ -13,6 +13,7 @@ class LeftSideMenuViewController: UIViewController {
     
     @IBOutlet weak var myAccountButton: UIButton!
     
+    var menuItem = ["Main Page","About"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +30,25 @@ class LeftSideMenuViewController: UIViewController {
     }
     
     
+    
+    
 
+
+}
+
+
+
+extension LeftSideMenuViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menuItem.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! LeftSideCustomMenuTableViewCell
+        cell.menuItemLabel.text = menuItem[indexPath.row]
+        
+        return cell
+    }
+    
+    
 }

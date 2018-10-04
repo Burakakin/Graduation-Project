@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13A93EF7D6FD3E6034EEDA96 /* Pods_GraduationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */; };
+		A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */; };
 		A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF3A21651C350077B597 /* AppDelegate.swift */; };
 		A8F5BF4021651C350077B597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F5BF3E21651C350077B597 /* Main.storyboard */; };
 		A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraduationProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4544BD1EBA2689C75334460E /* Pods-GraduationProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GraduationProject/Pods-GraduationProject.debug.xcconfig"; sourceTree = "<group>"; };
+		A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideCustomMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A8F5BF3721651C350077B597 /* GraduationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F5BF3A21651C350077B597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F5BF3F21651C350077B597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				A8F5BF4921651C360077B597 /* Info.plist */,
 				A8F5BF6D216523080077B597 /* GoogleService-Info.plist */,
 				A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */,
+				A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */,
 			);
 			path = GraduationProject;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				A8F5BF5521651D4A0077B597 /* LeftSideMenuViewController.swift in Sources */,
 				A8F5BF5121651D1B0077B597 /* MainPageViewController.swift in Sources */,
+				A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */,
 				A8F5BF6921651DDF0077B597 /* MMDrawerBarButtonItem.m in Sources */,
 				A8F5BF6C21651DDF0077B597 /* UIViewController+MMDrawerController.m in Sources */,
 				A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */,
