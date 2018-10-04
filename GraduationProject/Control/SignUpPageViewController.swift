@@ -7,16 +7,26 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SignUpPageViewController: UIViewController {
 
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)) )
+        profileImageView.isUserInteractionEnabled = true
+        profileImageView.addGestureRecognizer(tapGestureRecognizer)
         // Do any additional setup after loading the view.
     }
     
-
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        print("Hello")
+    }
     /*
     // MARK: - Navigation
 

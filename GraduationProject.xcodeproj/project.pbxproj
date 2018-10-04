@@ -124,7 +124,6 @@
 				A8F5BF4921651C360077B597 /* Info.plist */,
 				A8F5BF6D216523080077B597 /* GoogleService-Info.plist */,
 				A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */,
-				A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */,
 			);
 			path = GraduationProject;
 			sourceTree = "<group>";
@@ -158,6 +157,7 @@
 			children = (
 				A8F5BF5421651D4A0077B597 /* LeftSideMenuViewController.swift */,
 				A8F5BF5021651D1B0077B597 /* MainPageViewController.swift */,
+				A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -463,7 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97K3K7BYBU;
 				INFOPLIST_FILE = GraduationProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97K3K7BYBU;
 				INFOPLIST_FILE = GraduationProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
