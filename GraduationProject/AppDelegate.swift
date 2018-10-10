@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignUpPageViewController") as! SignUpPageViewController
+        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
         
 //        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
         let leftViewController = mainStoryboard.instantiateViewController(withIdentifier: "LeftSideMenuViewController") as! LeftSideMenuViewController

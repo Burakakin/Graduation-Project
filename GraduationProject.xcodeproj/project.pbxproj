@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13A93EF7D6FD3E6034EEDA96 /* Pods_GraduationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */; };
+		A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */; };
 		A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */; };
 		A86EF2A721668CE800701DEB /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A86EF2A621668CE800701DEB /* facebook.png */; };
 		A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraduationProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4544BD1EBA2689C75334460E /* Pods-GraduationProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GraduationProject/Pods-GraduationProject.debug.xcconfig"; sourceTree = "<group>"; };
+		A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
 		A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideCustomMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A86EF2A621668CE800701DEB /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				A8F5BF5421651D4A0077B597 /* LeftSideMenuViewController.swift */,
 				A8F5BF5021651D1B0077B597 /* MainPageViewController.swift */,
 				A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */,
+				A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				A8F5BF6921651DDF0077B597 /* MMDrawerBarButtonItem.m in Sources */,
 				A8F5BF6C21651DDF0077B597 /* UIViewController+MMDrawerController.m in Sources */,
 				A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */,
+				A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */,
 				A8F5BF6A21651DDF0077B597 /* MMDrawerController.m in Sources */,
 				A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */,
 				A8F5BF6B21651DDF0077B597 /* MMDrawerVisualState.m in Sources */,
