@@ -36,6 +36,8 @@ class SignInPageViewController: UIViewController {
             if user != nil {
                 if Auth.auth().currentUser != nil {
                     // User is signed in.
+                    UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                    UserDefaults.standard.synchronize()
                     print("Succesfull")
                     print(user?.user.email! ?? "brk")
                     self.performSegue(withIdentifier: "MainPageSegue", sender: self)

@@ -300,10 +300,12 @@
                                 <state key="normal" title="Go to Sign Up">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="VD3-YX-BeG" kind="show" id="M0b-N0-eLO"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AER-rH-rMD">
-                                <rect key="frame" x="70" y="437" width="181" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AER-rH-rMD">
+                                <rect key="frame" x="70" y="437" width="181" height="41"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -312,9 +314,8 @@
                                     <action selector="SignInButton:" destination="SID-BT-hAF" eventType="touchUpInside" id="3D3-J1-7bb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbs-sS-ULk">
-                                <rect key="frame" x="170" y="366" width="134" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbs-sS-ULk">
+                                <rect key="frame" x="185" y="366" width="119" height="32"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <state key="normal" title="Forgot Password ? ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -323,18 +324,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="AER-rH-rMD" firstAttribute="leading" secondItem="vQC-Yd-QAe" secondAttribute="leading" constant="70" id="4CB-mE-RSv"/>
                             <constraint firstItem="JmV-OE-dJM" firstAttribute="top" secondItem="vQC-Yd-QAe" secondAttribute="top" constant="23" id="52R-Rq-uIx"/>
+                            <constraint firstItem="Sbs-sS-ULk" firstAttribute="top" secondItem="ESo-4z-1Jk" secondAttribute="bottom" constant="8" id="5De-HT-SdS"/>
                             <constraint firstItem="vQC-Yd-QAe" firstAttribute="trailing" secondItem="Wft-Eb-QEE" secondAttribute="trailing" constant="16" id="7t3-Ct-vc4"/>
                             <constraint firstItem="vQC-Yd-QAe" firstAttribute="trailing" secondItem="JmV-OE-dJM" secondAttribute="trailing" constant="16" id="AQJ-3g-ywZ"/>
                             <constraint firstItem="Wft-Eb-QEE" firstAttribute="top" secondItem="2Ue-oQ-m9x" secondAttribute="bottom" constant="61" id="Fla-8L-n3R"/>
                             <constraint firstItem="zhP-fM-piy" firstAttribute="leading" secondItem="vQC-Yd-QAe" secondAttribute="leading" constant="16" id="G1M-Qi-mZL"/>
                             <constraint firstItem="ESo-4z-1Jk" firstAttribute="leading" secondItem="vQC-Yd-QAe" secondAttribute="leading" constant="16" id="NAP-us-H37"/>
                             <constraint firstItem="vQC-Yd-QAe" firstAttribute="trailing" secondItem="2Ue-oQ-m9x" secondAttribute="trailing" constant="16" id="Rk6-VE-Lxl"/>
+                            <constraint firstItem="vQC-Yd-QAe" firstAttribute="trailing" secondItem="AER-rH-rMD" secondAttribute="trailing" constant="69" id="Swo-EH-Vt6"/>
                             <constraint firstItem="JmV-OE-dJM" firstAttribute="centerY" secondItem="mvX-o4-V3U" secondAttribute="centerY" id="T2p-MG-p7h"/>
+                            <constraint firstItem="vQC-Yd-QAe" firstAttribute="trailing" secondItem="Sbs-sS-ULk" secondAttribute="trailing" constant="16" id="XLy-x5-HeW"/>
+                            <constraint firstItem="Sbs-sS-ULk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vQC-Yd-QAe" secondAttribute="leading" constant="170" id="Z0b-sx-4Yv"/>
                             <constraint firstItem="2Ue-oQ-m9x" firstAttribute="top" secondItem="JmV-OE-dJM" secondAttribute="bottom" constant="25" id="bQw-4n-5DT"/>
                             <constraint firstItem="2Ue-oQ-m9x" firstAttribute="leading" secondItem="zhP-fM-piy" secondAttribute="trailing" constant="4" id="eOr-Yw-wFL"/>
                             <constraint firstItem="JmV-OE-dJM" firstAttribute="trailing" secondItem="Wft-Eb-QEE" secondAttribute="trailing" id="foa-2M-VYc"/>
                             <constraint firstItem="ESo-4z-1Jk" firstAttribute="top" secondItem="Wft-Eb-QEE" secondAttribute="bottom" constant="20" id="jEb-9C-mdR"/>
+                            <constraint firstItem="AER-rH-rMD" firstAttribute="top" secondItem="Sbs-sS-ULk" secondAttribute="bottom" constant="39" id="mvV-df-oaC"/>
                             <constraint firstItem="vQC-Yd-QAe" firstAttribute="trailing" secondItem="ESo-4z-1Jk" secondAttribute="trailing" constant="16" id="oJy-yl-Y9D"/>
                             <constraint firstItem="mvX-o4-V3U" firstAttribute="leading" secondItem="vQC-Yd-QAe" secondAttribute="leading" constant="16" id="p7M-zs-fhf"/>
                             <constraint firstItem="zhP-fM-piy" firstAttribute="top" secondItem="mvX-o4-V3U" secondAttribute="bottom" constant="32" id="qa7-GZ-N1y"/>
@@ -349,7 +356,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Wft-Eb-QEE" id="kFW-b3-TyT"/>
                         <outlet property="passwordTextField" destination="ESo-4z-1Jk" id="kh2-El-LM9"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="MainPageSegue" id="dv9-WL-b7o"/>
+                        <segue destination="H00-wa-wHy" kind="show" identifier="MainPageSegue" id="eCd-qG-jTD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwm-qf-rgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,7 +385,4 @@
     <resources>
         <image name="facebook.png" width="24" height="40"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="dv9-WL-b7o"/>
-    </inferredMetricsTieBreakers>
 </document>

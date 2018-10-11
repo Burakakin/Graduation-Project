@@ -23,21 +23,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
-        
-//        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
-        let leftViewController = mainStoryboard.instantiateViewController(withIdentifier: "LeftSideMenuViewController") as! LeftSideMenuViewController
         
         
-        let leftSideNav = UINavigationController(rootViewController: leftViewController)
-        let centerNav = UINavigationController(rootViewController: centerViewController)
         
-        centerContainer = MMDrawerController(center: centerNav, leftDrawerViewController: leftSideNav)
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         
-        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView
-        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView
-        window!.rootViewController = centerContainer
-        window!.makeKeyAndVisible()
+        if isUserLoggedIn{
+            let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
+            let leftViewController = mainStoryboard.instantiateViewController(withIdentifier: "LeftSideMenuViewController") as! LeftSideMenuViewController
+            
+            
+            let leftSideNav = UINavigationController(rootViewController: leftViewController)
+            let centerNav = UINavigationController(rootViewController: centerViewController)
+            
+            centerContainer = MMDrawerController(center: centerNav, leftDrawerViewController: leftSideNav)
+            
+            centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView
+            centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView
+            window!.rootViewController = centerContainer
+            window!.makeKeyAndVisible()
+        }
+        else {
+            let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
+            window!.rootViewController = centerViewController
+            window!.makeKeyAndVisible()
+        }
+        
+//        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
+//
+////        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
+//        let leftViewController = mainStoryboard.instantiateViewController(withIdentifier: "LeftSideMenuViewController") as! LeftSideMenuViewController
+//
+//
+//        let leftSideNav = UINavigationController(rootViewController: leftViewController)
+//        let centerNav = UINavigationController(rootViewController: centerViewController)
+//
+//        centerContainer = MMDrawerController(center: centerNav, leftDrawerViewController: leftSideNav)
+//
+//        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView
+//        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView
+//        window!.rootViewController = centerContainer
+//        window!.makeKeyAndVisible()
         
         FirebaseApp.configure()
         return true
