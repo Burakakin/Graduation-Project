@@ -27,8 +27,16 @@ class LeftSideMenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.view.layoutSubviews()
     }
     
+    @IBAction func myAccountPage(_ sender: Any) {
+        let centerViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
+        let centerNavController = UINavigationController(rootViewController: centerViewController)
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.centerContainer!.centerViewController = centerNavController
+        appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
+    }
     
     @IBAction func socialMedia(_ sender: Any) {
         let fbUrlWeb = URL(string: "https://www.facebook.com/birduramamahali")
