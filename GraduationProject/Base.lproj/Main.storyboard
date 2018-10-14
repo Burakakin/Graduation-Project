@@ -291,9 +291,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="SID-BT-hAF" kind="show" identifier="logOut" id="pbu-q0-Qax"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5H9-LQ-RzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -524,7 +521,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="Wft-Eb-QEE" id="kFW-b3-TyT"/>
                         <outlet property="passwordTextField" destination="ESo-4z-1Jk" id="kh2-El-LM9"/>
-                        <segue destination="H00-wa-wHy" kind="show" identifier="MainPageSegue" id="eCd-qG-jTD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwm-qf-rgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -553,7 +549,4 @@
     <resources>
         <image name="facebook.png" width="24" height="40"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="pbu-q0-Qax"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -37,7 +37,13 @@ class MyAccountViewController: UIViewController {
             print("LogOut")
             UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
             UserDefaults.standard.synchronize()
-            performSegue(withIdentifier: "logOut", sender: self)
+            
+            let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let signInViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
+            appDelegate.window?.rootViewController = signInViewController
+            
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }

@@ -22,10 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        
-        
-        
+    
         let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         
         if isUserLoggedIn{
@@ -43,11 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window!.rootViewController = centerContainer
             window!.makeKeyAndVisible()
         }
-        else {
-            let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
-            window!.rootViewController = centerViewController
-            window!.makeKeyAndVisible()
-        }
+        
         
 //        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
 //

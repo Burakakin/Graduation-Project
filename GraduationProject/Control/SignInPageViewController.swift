@@ -42,11 +42,31 @@ class SignInPageViewController: UIViewController,UITextFieldDelegate{
             if user != nil {
                 if Auth.auth().currentUser != nil {
                     // User is signed in.
+                    
+                    let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                    //var rootViewController = appDelegate.window?.rootViewController
+                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
+                    let leftViewController = mainStoryboard.instantiateViewController(withIdentifier: "LeftSideMenuViewController") as! LeftSideMenuViewController
+                    
+                    
+                    let leftSideNav = UINavigationController(rootViewController: leftViewController)
+                    let centerNav = UINavigationController(rootViewController: centerViewController)
+                    
+                    let centerContainer: MMDrawerController = MMDrawerController(center: centerNav, leftDrawerViewController: leftSideNav)
+                    
+                    centerContainer.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView
+                    centerContainer.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView
+                    appDelegate.centerContainer = centerContainer
+                    appDelegate.window!.rootViewController = appDelegate.centerContainer
+                    appDelegate.window!.makeKeyAndVisible()
+                    
                     UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                     UserDefaults.standard.synchronize()
                     print("Succesfull")
                     print(user?.user.email! ?? "brk")
-                    self.performSegue(withIdentifier: "MainPageSegue", sender: self)
+//                    self.performSegue(withIdentifier: "MainPageSegue", sender: self)
                 } else {
                     // No user is signed in.
                     // ...
