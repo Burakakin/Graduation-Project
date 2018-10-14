@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
 
-class SignUpPageViewController: UIViewController {
+class SignUpPageViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var usernameTextField: UITextField!
@@ -25,6 +25,11 @@ class SignUpPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usernameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         profilePictureImageView.isUserInteractionEnabled = true
         profilePictureImageView.addGestureRecognizer(tapGestureRecognizer)
@@ -36,7 +41,10 @@ class SignUpPageViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
    
     @IBAction func SignUpButton(_ sender: Any) {
         guard let username = usernameTextField.text, !username.isEmpty else { return }
