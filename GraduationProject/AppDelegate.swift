@@ -42,22 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
-//        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
-//
-////        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
-//        let leftViewController = mainStoryboard.instantiateViewController(withIdentifier: "LeftSideMenuViewController") as! LeftSideMenuViewController
-//
-//
-//        let leftSideNav = UINavigationController(rootViewController: leftViewController)
-//        let centerNav = UINavigationController(rootViewController: centerViewController)
-//
-//        centerContainer = MMDrawerController(center: centerNav, leftDrawerViewController: leftSideNav)
-//
-//        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.panningCenterView
-//        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.panningCenterView
-//        window!.rootViewController = centerContainer
-//        window!.makeKeyAndVisible()
-        
         FirebaseApp.configure()
         return true
     }

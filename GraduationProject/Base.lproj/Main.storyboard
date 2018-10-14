@@ -221,30 +221,43 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="497"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="1I8-d2-btc" userLabel="footer">
-                                    <rect key="frame" x="0.0" y="103" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="123" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myAccountCell" rowHeight="75" id="q1Z-wS-IYO" customClass="MyAccountCustomTableViewCell" customModule="GraduationProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="75"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myAccountCell" rowHeight="95" id="q1Z-wS-IYO" customClass="MyAccountCustomTableViewCell" customModule="GraduationProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q1Z-wS-IYO" id="3fb-40-fIM">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-kF-E0j">
-                                                    <rect key="frame" x="258" y="16" width="47" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-kF-E0j">
+                                                    <rect key="frame" x="267" y="27" width="38" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="oz9-kF-E0j" secondAttribute="height" multiplier="43:45" id="DrW-HM-Btx"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSG-EJ-fXb">
-                                                    <rect key="frame" x="15" y="13" width="182" height="49"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSG-EJ-fXb">
+                                                    <rect key="frame" x="21" y="11" width="201" height="73"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="201" id="mwE-Vk-aOg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SSG-EJ-fXb" firstAttribute="leading" secondItem="3fb-40-fIM" secondAttribute="leading" constant="21" id="NDZ-h7-XKx"/>
+                                                <constraint firstAttribute="bottom" secondItem="oz9-kF-E0j" secondAttribute="bottom" constant="27.5" id="OOP-d5-GN6"/>
+                                                <constraint firstAttribute="trailing" secondItem="oz9-kF-E0j" secondAttribute="trailing" constant="15" id="ncB-jS-p1N"/>
+                                                <constraint firstItem="oz9-kF-E0j" firstAttribute="leading" secondItem="SSG-EJ-fXb" secondAttribute="trailing" constant="45" id="p25-IW-Kot"/>
+                                                <constraint firstItem="SSG-EJ-fXb" firstAttribute="top" secondItem="3fb-40-fIM" secondAttribute="top" constant="11" id="pCD-9Q-CJ1"/>
+                                                <constraint firstAttribute="bottom" secondItem="SSG-EJ-fXb" secondAttribute="bottom" constant="10.5" id="rY8-PN-IRl"/>
+                                                <constraint firstItem="oz9-kF-E0j" firstAttribute="top" secondItem="3fb-40-fIM" secondAttribute="top" constant="27" id="xll-6r-QBG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="myAccountImageView" destination="oz9-kF-E0j" id="Oj3-PF-Z8v"/>
@@ -294,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5H9-LQ-RzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="218" y="931"/>
+            <point key="canvasLocation" x="-157.5" y="887.32394366197184"/>
         </scene>
         <!--Sign Up Page View Controller-->
         <scene sceneID="9sw-qb-eW4">

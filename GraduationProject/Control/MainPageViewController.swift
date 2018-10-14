@@ -19,6 +19,12 @@ class MainPageViewController: UIViewController {
         let layout = mainPageCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: height)
         // Do any additional setup after loading the view.
+        
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.tintColor = UIColor.orange
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        
     }
     
     var imageArray: [UIImage] = [UIImage(named: "Desk")!,UIImage(named: "Desk")!,UIImage(named: "Desk")!]

@@ -59,6 +59,7 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myAccountCell", for: indexPath) as! MyAccountCustomTableViewCell
         cell.myAccountLabel.text = arr[indexPath.row]
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }
