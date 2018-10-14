@@ -98,7 +98,14 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 
-                
+                user.sendEmailVerification(completion: { (err) in
+                    if err != nil {
+                        print("Error in email verification")
+                    }
+                    else{
+                        print("Email was send")
+                    }
+                })
                 
             }
             
