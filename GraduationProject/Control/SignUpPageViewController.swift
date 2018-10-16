@@ -22,6 +22,7 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
     
      var ref: CollectionReference? = nil
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,6 +46,18 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
+    
+    func alert(with title: String,for message: String ){
+        // create the alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+   
    
     @IBAction func SignUpButton(_ sender: Any) {
         guard let username = usernameTextField.text, !username.isEmpty else { return }
@@ -70,7 +83,8 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
             }
             else {
                 guard let user = authResult?.user else { return }
-                print("User was created")
+                //print("User was created")
+                self.alert(with: "Info", for: "User was created")
                 
                 
                 let uploadMetadata = StorageMetadata()
@@ -103,7 +117,8 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
                         print("Error in email verification")
                     }
                     else{
-                        print("Email was send")
+                       // print("Email was send")
+                        self.alert(with: "Info", for: "Email was send")
                     }
                 })
                 
@@ -119,7 +134,8 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
             if let err = err {
                 print("Error adding document: \(err.localizedDescription)")
             } else {
-                print("Document added")
+                //print("Document added")
+                self.alert(with: "Info", for: "User's info saved to db")
             }
         }
     }
@@ -148,3 +164,5 @@ extension SignUpPageViewController: UIImagePickerControllerDelegate, UINavigatio
     
     
 }
+
+

@@ -16,11 +16,24 @@ class SignInPageViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
         // Do any additional setup after loading the view.
+        
+    }
+    
+    func alert(with title: String,for message: String, fromController controller: UIViewController ){
+        // create the alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,10 +78,12 @@ class SignInPageViewController: UIViewController, UITextFieldDelegate{
                         UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                         UserDefaults.standard.synchronize()
                         print("Succesfull")
+                        //self.alert(with: "Login", for: "Succesfull", fromController: self)
                         print(user?.user.email! ?? "brk")
                     }
                     else {
-                        print("Email isnot verified")
+                        //print("Email isnot verified")
+                        self.alert(with: "E-Mail", for: "Email isnot verified", fromController: self)
                     }
                     
                    
@@ -83,11 +98,14 @@ class SignInPageViewController: UIViewController, UITextFieldDelegate{
                 if let errCode = AuthErrorCode(rawValue: error!._code){
                     switch errCode {
                     case .wrongPassword:
-                        print("Wrong Password")
+                       // print("Wrong Password")
+                        self.alert(with: "Error", for: "Wrong Password", fromController: self)
                     case .invalidEmail:
-                        print("Invalid Email")
+                       // print("Invalid Email")
+                        self.alert(with: "E-Mail", for: "Invalid Email", fromController: self)
                     default:
-                        print("Hello")
+//                        print("Hello")
+                        self.alert(with: "E-Mail", for: "Hello", fromController:self)
                     }
                 }
                 
