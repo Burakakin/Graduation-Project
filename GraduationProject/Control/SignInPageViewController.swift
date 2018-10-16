@@ -98,13 +98,13 @@ class SignInPageViewController: UIViewController, UITextFieldDelegate{
                 if let errCode = AuthErrorCode(rawValue: error!._code){
                     switch errCode {
                     case .wrongPassword:
-                       // print("Wrong Password")
+                        print("Wrong Password")
                         self.alert(with: "Error", for: "Wrong Password", fromController: self)
                     case .invalidEmail:
-                       // print("Invalid Email")
+                        print("Invalid Email")
                         self.alert(with: "E-Mail", for: "Invalid Email", fromController: self)
                     default:
-//                        print("Hello")
+                       print("Hello")
                         self.alert(with: "E-Mail", for: "Hello", fromController:self)
                     }
                 }
