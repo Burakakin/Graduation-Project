@@ -15,6 +15,7 @@
 		A86EF2A721668CE800701DEB /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A86EF2A621668CE800701DEB /* facebook.png */; };
 		A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */; };
 		A883956421727DB400B591B5 /* Desk.png in Resources */ = {isa = PBXBuildFile; fileRef = A883956321727DB400B591B5 /* Desk.png */; };
+		A888B7F221767DB800814EBC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888B7F121767DB800814EBC /* LocalAuthentication.framework */; };
 		A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF3A21651C350077B597 /* AppDelegate.swift */; };
 		A8F5BF4021651C350077B597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F5BF3E21651C350077B597 /* Main.storyboard */; };
 		A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */; };
@@ -40,6 +41,7 @@
 		A86EF2A621668CE800701DEB /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		A883956321727DB400B591B5 /* Desk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Desk.png; sourceTree = "<group>"; };
+		A888B7F121767DB800814EBC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		A8F5BF3721651C350077B597 /* GraduationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F5BF3A21651C350077B597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F5BF3F21651C350077B597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A888B7F221767DB800814EBC /* LocalAuthentication.framework in Frameworks */,
 				13A93EF7D6FD3E6034EEDA96 /* Pods_GraduationProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +82,7 @@
 		1B91080B77F67DEFF5B9ABD0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A888B7F121767DB800814EBC /* LocalAuthentication.framework */,
 				1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */,
 			);
 			name = Frameworks;
