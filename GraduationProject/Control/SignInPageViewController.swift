@@ -57,14 +57,14 @@ class SignInPageViewController: UIViewController, UITextFieldDelegate{
                 if Auth.auth().currentUser != nil {
                     // User is signed in.
                     if Auth.auth().currentUser?.isEmailVerified ?? false {
-                        let authContext = LAContext()
-                        var authError: NSError?
-                        
-                        if authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError){
-                            authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "To access the secure data") { (wasSuccesful, err) in
-                                if wasSuccesful {
-                                    
-                                    DispatchQueue.main.async {
+//                        let authContext = LAContext()
+//                        var authError: NSError?
+//                        
+//                        if authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError){
+//                            authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "To access the secure data") { (wasSuccesful, err) in
+//                                if wasSuccesful {
+//                                    
+//                                    DispatchQueue.main.async {
                                         
                                         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
                                         //var rootViewController = appDelegate.window?.rootViewController
@@ -92,15 +92,15 @@ class SignInPageViewController: UIViewController, UITextFieldDelegate{
                                         print(user?.user.email! ?? "brk")
                                         print("Succesful")
                                         
-                                        
-                                    }
-                                   
-                                }
-                                else{
-                                    print("Try Again")
-                                }
-                            }
-                        }
+//
+//                                    }
+//
+//                                }
+//                                else{
+//                                    print("Try Again")
+//                                }
+//                            }
+//                        }
                         
                     }
                     else {
