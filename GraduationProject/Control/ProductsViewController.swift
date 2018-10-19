@@ -14,9 +14,7 @@ import FirebaseStorage
 class ProductsViewController: UIViewController {
 
     var documentId: String?
-    var ref: DocumentReference!
     
-    var subCollections = [[String: Any]]()
     var imageArray = [String]()
     
     override func viewDidLoad() {
@@ -27,7 +25,8 @@ class ProductsViewController: UIViewController {
         self.navigationItem.leftItemsSupplementBackButton = true
         self.navigationItem.leftBarButtonItem = newBtn
         // Do any additional setup after loading the view.
-        getAllFurniture()
+        getsubCollectionFurniture()
+        getAllProduct()
     }
     
 
@@ -37,8 +36,9 @@ class ProductsViewController: UIViewController {
     }
     
     
-    func getAllFurniture() {
+    func getsubCollectionFurniture() {
         
+        var ref: DocumentReference!
         ref = Firestore.firestore().document("Furniture/\(documentId ?? "")")
         ref.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -50,9 +50,17 @@ class ProductsViewController: UIViewController {
                 print("Document does not exist")
             }
         }
-       
+    }
+    
+    func getAllProduct() {
+        
+        var ref: CollectionReference!
+        let newId = "all" + (documentId ?? "")
+        ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
         
         
     }
+    
+    
 
 }
