@@ -10,6 +10,7 @@
 		13A93EF7D6FD3E6034EEDA96 /* Pods_GraduationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */; };
 		A8182581217249500091A50D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8182580217249500091A50D /* MyAccountViewController.swift */; };
 		A818258321724BBD0091A50D /* MyAccountCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818258221724BBD0091A50D /* MyAccountCustomTableViewCell.swift */; };
+		A82A3753217A2B700026E60C /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82A3752217A2B700026E60C /* extension.swift */; };
 		A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */; };
 		A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */; };
 		A86EF2A721668CE800701DEB /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A86EF2A621668CE800701DEB /* facebook.png */; };
@@ -36,6 +37,7 @@
 		4544BD1EBA2689C75334460E /* Pods-GraduationProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GraduationProject/Pods-GraduationProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A8182580217249500091A50D /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		A818258221724BBD0091A50D /* MyAccountCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountCustomTableViewCell.swift; sourceTree = "<group>"; };
+		A82A3752217A2B700026E60C /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
 		A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideCustomMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A86EF2A621668CE800701DEB /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		A8F5BF6F21653C8A0077B597 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A82A3752217A2B700026E60C /* extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				A8F5BF5521651D4A0077B597 /* LeftSideMenuViewController.swift in Sources */,
 				A8F5BF5121651D1B0077B597 /* MainPageViewController.swift in Sources */,
 				A8182581217249500091A50D /* MyAccountViewController.swift in Sources */,
+				A82A3753217A2B700026E60C /* extension.swift in Sources */,
 				A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */,
 				A8F5BF6921651DDF0077B597 /* MMDrawerBarButtonItem.m in Sources */,
 				A8F5BF6C21651DDF0077B597 /* UIViewController+MMDrawerController.m in Sources */,

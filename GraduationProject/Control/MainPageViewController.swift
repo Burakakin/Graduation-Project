@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseStorage
 
 class MainPageViewController: UIViewController {
 
     @IBOutlet weak var mainPageCollectionView: UICollectionView!
+    
+    var ref: CollectionReference!
+    var imageUrl = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,10 +31,11 @@ class MainPageViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.orange
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
+        getAllFurniture()
         
     }
     
-    var imageArray: [UIImage] = [UIImage(named: "Desk")!,UIImage(named: "Desk")!,UIImage(named: "Desk")!]
+   
 
     @IBAction func leftSideButtonTapped(_ sender: Any) {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -36,16 +44,31 @@ class MainPageViewController: UIViewController {
     }
     
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getAllFurniture() {
+        
+        ref = Firestore.firestore().collection("Furniture")
+        
+        ref.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    let imageUrlString = document.data()["imageUrl"] as! String
+                    DispatchQueue.main.async {
+                        self.imageUrl.append(imageUrlString)
+                        self.mainPageCollectionView.reloadData()
+                    }
+                    
+                }
+            }
+        }
+        
+        
     }
-    */
+    
+    
+    
 
 }
 
@@ -54,12 +77,12 @@ class MainPageViewController: UIViewController {
 extension MainPageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return imageUrl.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainPageCollectionView.dequeueReusableCell(withReuseIdentifier: "mainPageCollection", for: indexPath) as! MainPageCollectionViewCell
-        cell.mainPageImageView.image = imageArray[indexPath.row]
+        cell.mainPageImageView.download(url: imageUrl[indexPath.row])
         return cell
     }
     
@@ -67,3 +90,5 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
     
     
 }
+
+
