@@ -68,6 +68,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="All Categories" id="b8H-3j-XJ0">
+                        <barButtonItem key="backBarButtonItem" title=" " id="b9b-dI-S6X"/>
                         <barButtonItem key="leftBarButtonItem" title="&lt;" id="0xD-xQ-f5r">
                             <connections>
                                 <action selector="leftSideButtonTapped:" destination="BYZ-38-t0r" id="eLz-4o-5vR"/>
@@ -76,11 +77,27 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mainPageCollectionView" destination="e56-5Z-ACJ" id="y90-iq-foC"/>
+                        <segue destination="PQG-BQ-PRT" kind="show" identifier="mainPage" id="ykN-F7-Dec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687.5" y="130.98591549295776"/>
+            <point key="canvasLocation" x="1819" y="131"/>
+        </scene>
+        <!--Products View Controller-->
+        <scene sceneID="xld-Pb-FS6">
+            <objects>
+                <viewController id="PQG-BQ-PRT" customClass="ProductsViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O2B-ud-PyF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tw1-pJ-jul"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRj-tk-5d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="141"/>
         </scene>
         <!--Left Side Menu View Controller-->
         <scene sceneID="wdg-j4-N5b">

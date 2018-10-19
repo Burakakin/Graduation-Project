@@ -16,7 +16,7 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var mainPageCollectionView: UICollectionView!
     
     var ref: CollectionReference!
-    var imageUrl = [String]()
+    var imageUrl = [[String: String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +55,11 @@ class MainPageViewController: UIViewController {
                 for document in querySnapshot!.documents {
                     //print("\(document.documentID) => \(document.data())")
                     let imageUrlString = document.data()["imageUrl"] as! String
+                    let categoryId = document.data()["id"] as! String
+                
+                    let data: [String: String] = ["id": categoryId, "imageUrl": imageUrlString]
                     DispatchQueue.main.async {
-                        self.imageUrl.append(imageUrlString)
+                        self.imageUrl.append(data)
                         self.mainPageCollectionView.reloadData()
                     }
                     
@@ -82,12 +85,22 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainPageCollectionView.dequeueReusableCell(withReuseIdentifier: "mainPageCollection", for: indexPath) as! MainPageCollectionViewCell
-        cell.mainPageImageView.download(url: imageUrl[indexPath.row])
+        cell.mainPageImageView.download(url: imageUrl[indexPath.row]["imageUrl"]!)
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "mainPage", sender: indexPath)
+    }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let rowSelected = (sender as! IndexPath).row
+        if segue.identifier == "mainPage" {
+            if let allProductsVC =  segue.destination as? ProductsViewController {
+                allProductsVC.documentId = imageUrl[rowSelected]["id"]
+            }
+        }
+    }
     
 }
 
