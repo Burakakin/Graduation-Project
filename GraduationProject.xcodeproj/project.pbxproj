@@ -11,6 +11,8 @@
 		A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8096BE9217A3661006C8F25 /* ProductsViewController.swift */; };
 		A8182581217249500091A50D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8182580217249500091A50D /* MyAccountViewController.swift */; };
 		A818258321724BBD0091A50D /* MyAccountCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818258221724BBD0091A50D /* MyAccountCustomTableViewCell.swift */; };
+		A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */; };
+		A81D1C22217BC5E700EB5386 /* ProductPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D1C21217BC5E700EB5386 /* ProductPageCollectionViewCell.swift */; };
 		A82A3753217A2B700026E60C /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82A3752217A2B700026E60C /* extension.swift */; };
 		A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */; };
 		A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */; };
@@ -39,6 +41,8 @@
 		A8096BE9217A3661006C8F25 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		A8182580217249500091A50D /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		A818258221724BBD0091A50D /* MyAccountCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountCustomTableViewCell.swift; sourceTree = "<group>"; };
+		A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageTableViewCell.swift; sourceTree = "<group>"; };
+		A81D1C21217BC5E700EB5386 /* ProductPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A82A3752217A2B700026E60C /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
 		A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideCustomMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 				A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */,
 				A818258221724BBD0091A50D /* MyAccountCustomTableViewCell.swift */,
 				A8F6F84721727506001B36F6 /* MainPageCollectionViewCell.swift */,
+				A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */,
+				A81D1C21217BC5E700EB5386 /* ProductPageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				A8182581217249500091A50D /* MyAccountViewController.swift in Sources */,
 				A82A3753217A2B700026E60C /* extension.swift in Sources */,
 				A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */,
+				A81D1C22217BC5E700EB5386 /* ProductPageCollectionViewCell.swift in Sources */,
 				A8F5BF6921651DDF0077B597 /* MMDrawerBarButtonItem.m in Sources */,
 				A8F5BF6C21651DDF0077B597 /* UIViewController+MMDrawerController.m in Sources */,
 				A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */,
@@ -343,6 +350,7 @@
 				A8F5BF6A21651DDF0077B597 /* MMDrawerController.m in Sources */,
 				A8F6F84821727506001B36F6 /* MainPageCollectionViewCell.swift in Sources */,
 				A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */,
+				A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */,
 				A8F5BF6B21651DDF0077B597 /* MMDrawerVisualState.m in Sources */,
 				A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */,
 			);
