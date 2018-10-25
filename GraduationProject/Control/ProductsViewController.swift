@@ -78,7 +78,9 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCollectionCell", for: indexPath) as! ProductPageCollectionViewCell
-        cell.productPageImageView.download(url: imageArray[indexPath.row])
+        imageDownload.getImage(withUrl: imageArray[indexPath.row]) { (image) in
+            cell.productPageImageView.image = image
+        }
         
         return cell
     }

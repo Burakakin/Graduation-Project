@@ -85,7 +85,10 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainPageCollectionView.dequeueReusableCell(withReuseIdentifier: "mainPageCollection", for: indexPath) as! MainPageCollectionViewCell
-        cell.mainPageImageView.download(url: imageUrl[indexPath.row]["imageUrl"]!)
+        //cell.mainPageImageView.download(url: imageUrl[indexPath.row]["imageUrl"]!)
+        imageDownload.getImage(withUrl: imageUrl[indexPath.row]["imageUrl"]!) { (image) in
+            cell.mainPageImageView.image = image
+        }
         return cell
     }
     
