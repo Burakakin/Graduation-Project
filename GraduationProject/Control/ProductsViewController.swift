@@ -30,6 +30,7 @@ class ProductsViewController: UIViewController {
         let newBtn = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(leftSideButtonTapped))
         self.navigationItem.leftItemsSupplementBackButton = true
         self.navigationItem.leftBarButtonItem = newBtn
+        self.navigationItem.title = "All " + (documentId ?? "")
         // Do any additional setup after loading the view.
         getsubCollectionFurniture()
         getAllProduct()
@@ -151,6 +152,9 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
                 productDetailVC.productDetailId = (productArray[rowSelected]["id"] as! String)
             }
         }
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
     
 }

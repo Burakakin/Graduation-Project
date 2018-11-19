@@ -17,21 +17,16 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.view.backgroundColor = .clear
+        
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.isTranslucent = true
-//        self.navigationController?.view.backgroundColor = .clear
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.navigationController?.view.backgroundColor = .black
-//    }
-    
+
+
     override var prefersStatusBarHidden: Bool {
         return true
     }
