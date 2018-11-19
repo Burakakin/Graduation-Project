@@ -16,6 +16,7 @@ class ProductsViewController: UIViewController {
     var documentId: String?
     
     var imageArray = [String]()
+    var productArray = [[String: Any]]()
     
     
     @IBOutlet weak var productPageCollectionView: UICollectionView!
@@ -59,10 +60,31 @@ class ProductsViewController: UIViewController {
     
     func getAllProduct() {
         
-        var ref: CollectionReference!
+        let ref: CollectionReference!
         let newId = "all" + (documentId ?? "")
         ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
         
+        ref.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    let name = document.data()["name"] as! String
+                    let description = document.data()["description"] as! String
+                    let imageUrl = document.data()["imageUrl"] as! String
+                    let price = document.data()["price"] as! Int
+                    let dimension = document.data()["dimension"] as! String
+                    
+                    let productData: [String: Any] = ["id": document.documentID, "name": name, "description": description, "imageUrl": imageUrl, "price": price, "dimension": dimension]
+                    DispatchQueue.main.async {
+                        self.productArray.append(productData)
+                        self.productPageTableView.reloadData()
+                    }
+                    
+                }
+            }
+        }
         
     }
     
@@ -93,12 +115,23 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
 
 extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return productArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productTableCell", for: indexPath) as! ProductPageTableViewCell
-        cell.productPageLabel.text = "burak"
+        
+        var product = productArray[indexPath.row]
+        
+        cell.productNameLabel.text = (product["name"] as! String)
+        cell.productDescriptionLabel.text = (product["description"] as! String)
+        cell.productPriceLabel.text = String(product["price"] as! Int)
+        cell.productDimensionLabel.text = (product["dimension"] as! String)
+        
+        imageDownload.getImage(withUrl: imageArray[indexPath.row]) { (image) in
+            cell.producImageView.image = image
+        }
+        
         
         return cell
     }
