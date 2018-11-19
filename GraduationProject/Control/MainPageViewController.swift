@@ -27,9 +27,9 @@ class MainPageViewController: UIViewController {
         layout.itemSize = CGSize(width: width, height: height)
         // Do any additional setup after loading the view.
         
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.tintColor = UIColor.orange
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        navigationController?.navigationBar.barTintColor = UIColor.black
+//        navigationController?.navigationBar.tintColor = UIColor.orange
+//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         getAllFurniture()
         

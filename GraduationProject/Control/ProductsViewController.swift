@@ -15,6 +15,7 @@ class ProductsViewController: UIViewController {
 
     var documentId: String?
     
+    
     var imageArray = [String]()
     var productArray = [[String: Any]]()
     
@@ -125,7 +126,7 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.productNameLabel.text = (product["name"] as! String)
         cell.productDescriptionLabel.text = (product["description"] as! String)
-        cell.productPriceLabel.text = String(product["price"] as! Int)
+        cell.productPriceLabel.text = "TL" + String(product["price"] as! Int)
         cell.productDimensionLabel.text = (product["dimension"] as! String)
         
         imageDownload.getImage(withUrl: imageArray[indexPath.row]) { (image) in
@@ -136,9 +137,20 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "productDetail", sender: indexPath)
+    }
     
-    
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let rowSelected = (sender as! IndexPath).row
+        if segue.identifier == "productDetail" {
+            if let productDetailVC =  segue.destination as? ProductDetailViewController {
+                let newId = "all" + (documentId ?? "")
+                productDetailVC.documentId = documentId
+                productDetailVC.newId = newId
+                productDetailVC.productDetailId = (productArray[rowSelected]["id"] as! String)
+            }
+        }
+    }
     
 }
