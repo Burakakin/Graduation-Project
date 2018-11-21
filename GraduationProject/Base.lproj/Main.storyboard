@@ -727,10 +727,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Desk.png" translatesAutoresizingMaskIntoConstraints="NO" id="EvO-bw-Vwa">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="221"/>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ush-G5-ses" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -760,6 +761,9 @@
                         <barButtonItem key="backBarButtonItem" title="&gt;" id="fL5-5s-kkx"/>
                     </navigationItem>
                     <size key="freeformSize" width="320" height="1000"/>
+                    <connections>
+                        <outlet property="imageSlider" destination="ush-G5-ses" id="I0Y-t1-9I0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmt-Wo-1w7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -767,7 +771,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Desk.png" width="187" height="187"/>
         <image name="facebook.png" width="24" height="40"/>
     </resources>
 </document>

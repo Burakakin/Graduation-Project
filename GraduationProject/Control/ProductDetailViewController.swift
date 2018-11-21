@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class ProductDetailViewController: UIViewController {
 
     var documentId: String?
     var newId: String?
     var productDetailId: String?
+    
+    @IBOutlet weak var imageSlider: ImageSlideshow!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,7 @@ class ProductDetailViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         //self.navigationController?.view.backgroundColor = .clear
         
-        
+        setupImageSlider()
     }
     
 
@@ -32,5 +35,17 @@ class ProductDetailViewController: UIViewController {
     }
 
     
+    
+    func setupImageSlider() {
+        
+        let pageIndicator = UIPageControl()
+        pageIndicator.currentPageIndicatorTintColor = UIColor.lightGray
+        pageIndicator.pageIndicatorTintColor = UIColor.black
+        imageSlider.pageIndicator = pageIndicator
+        
+        imageSlider.pageIndicatorPosition = PageIndicatorPosition(horizontal: .left(padding: 20), vertical: .bottom)
+        
+        imageSlider.setImageInputs([ImageSource(image: UIImage(named: "Desk")!),ImageSource(image: UIImage(named: "Desk")!)])
+    }
 
 }

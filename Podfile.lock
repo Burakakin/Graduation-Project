@@ -72,6 +72,9 @@ PODS:
     - gRPC-Core (= 1.13.0)
     - gRPC-RxLibrary (= 1.13.0)
   - GTMSessionFetcher/Core (1.1.15)
+  - ImageSlideshow (1.6.1):
+    - ImageSlideshow/Core (= 1.6.1)
+  - ImageSlideshow/Core (1.6.1)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -85,6 +88,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Storage
+  - ImageSlideshow (~> 1.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -102,6 +106,7 @@ SPEC REPOS:
     - gRPC-ProtoRPC
     - gRPC-RxLibrary
     - GTMSessionFetcher
+    - ImageSlideshow
     - leveldb-library
     - nanopb
     - Protobuf
@@ -121,10 +126,11 @@ SPEC CHECKSUMS:
   gRPC-ProtoRPC: 842797fbe05dfcf891afb4a5048e5ccf5f06ef86
   gRPC-RxLibrary: fa6852f98d6ec0b73c0ec2f6406c26943099d501
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  ImageSlideshow: f0f33e1a20668e83d77f5fb7729e4ae4437c0759
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
 
-PODFILE CHECKSUM: b0ec1d2e5f3e84cac4370543cab50edc90cfa84a
+PODFILE CHECKSUM: a637019b88d53f5319b36fe929ddfed34a66388d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2
