@@ -83,6 +83,7 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
             }
             else {
                 guard let user = authResult?.user else { return }
+                let userId = user.uid
                 //print("User was created")
                 self.alert(with: "Info", for: "User was created")
                 
@@ -106,7 +107,7 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
                         let urlString = downloadURL.absoluteString
                         print("image url: \(urlString)")
                         
-                        let userData: [String: Any] = ["nameSurname": username, "email": email, "password": password, "profileImageUrl": urlString]
+                        let userData: [String: Any] = ["userId": userId,"nameSurname": username, "email": email, "password": password, "profileImageUrl": urlString]
                         self.signUpUserIntoDatabse(dataToSaveDatabase: userData)
                         
                     }

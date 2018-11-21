@@ -31,10 +31,17 @@ class ProductsViewController: UIViewController {
         self.navigationItem.leftItemsSupplementBackButton = true
         self.navigationItem.leftBarButtonItem = newBtn
         self.navigationItem.title = "All " + (documentId ?? "")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shoppingCard))
+        
         // Do any additional setup after loading the view.
         getsubCollectionFurniture()
         getAllProduct()
     }
+    
+    @objc func shoppingCard() {
+        print("brk")
+    }
+    
     
 
     @objc func leftSideButtonTapped()  {

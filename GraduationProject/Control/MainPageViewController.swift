@@ -30,7 +30,7 @@ class MainPageViewController: UIViewController {
 //        navigationController?.navigationBar.barTintColor = UIColor.black
 //        navigationController?.navigationBar.tintColor = UIColor.orange
 //        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
+      
         getAllFurniture()
         
     }

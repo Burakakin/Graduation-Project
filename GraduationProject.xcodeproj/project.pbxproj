@@ -20,6 +20,7 @@
 		A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */; };
 		A86EF2A721668CE800701DEB /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A86EF2A621668CE800701DEB /* facebook.png */; };
 		A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */; };
+		A8766FE521A5EB3000C6889F /* ar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8766FE421A5EB3000C6889F /* ar.png */; };
 		A883956421727DB400B591B5 /* Desk.png in Resources */ = {isa = PBXBuildFile; fileRef = A883956321727DB400B591B5 /* Desk.png */; };
 		A888B7F221767DB800814EBC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888B7F121767DB800814EBC /* LocalAuthentication.framework */; };
 		A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2C21A5AD6700D2720D /* sofa.jpg */; };
@@ -55,6 +56,7 @@
 		A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideCustomMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A86EF2A621668CE800701DEB /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
+		A8766FE421A5EB3000C6889F /* ar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ar.png; sourceTree = "<group>"; };
 		A883956321727DB400B591B5 /* Desk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Desk.png; sourceTree = "<group>"; };
 		A888B7F121767DB800814EBC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		A8C26A2C21A5AD6700D2720D /* sofa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa.jpg; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				A8C26A2E21A5AD6700D2720D /* sofa2.jpg */,
 				A883956321727DB400B591B5 /* Desk.png */,
 				A8146F2421A5BA53004F493F /* icons8-share-80.png */,
+				A8766FE421A5EB3000C6889F /* ar.png */,
 				A86EF2A621668CE800701DEB /* facebook.png */,
 			);
 			path = Images;
@@ -287,6 +290,7 @@
 				A86EF2A721668CE800701DEB /* facebook.png in Resources */,
 				A8F5BF4521651C360077B597 /* Assets.xcassets in Resources */,
 				A8F5BF4021651C350077B597 /* Main.storyboard in Resources */,
+				A8766FE521A5EB3000C6889F /* ar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
