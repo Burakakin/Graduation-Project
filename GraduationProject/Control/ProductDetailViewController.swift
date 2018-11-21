@@ -45,7 +45,7 @@ class ProductDetailViewController: UIViewController {
         
         imageSlider.pageIndicatorPosition = PageIndicatorPosition(horizontal: .left(padding: 20), vertical: .bottom)
         
-        imageSlider.setImageInputs([ImageSource(image: UIImage(named: "Desk")!),ImageSource(image: UIImage(named: "Desk")!)])
+        imageSlider.setImageInputs([ImageSource(image: UIImage(named: "sofa.jpg")!),ImageSource(image: UIImage(named: "sofa1.jpg")!),ImageSource(image: UIImage(named: "sofa2.jpg")!)])
     }
 
 }

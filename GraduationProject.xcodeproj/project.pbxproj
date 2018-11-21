@@ -10,6 +10,7 @@
 		13A93EF7D6FD3E6034EEDA96 /* Pods_GraduationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */; };
 		A8082D2321A31C79005E3377 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */; };
 		A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8096BE9217A3661006C8F25 /* ProductsViewController.swift */; };
+		A8146F2521A5BA53004F493F /* icons8-share-80.png in Resources */ = {isa = PBXBuildFile; fileRef = A8146F2421A5BA53004F493F /* icons8-share-80.png */; };
 		A8182581217249500091A50D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8182580217249500091A50D /* MyAccountViewController.swift */; };
 		A818258321724BBD0091A50D /* MyAccountCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818258221724BBD0091A50D /* MyAccountCustomTableViewCell.swift */; };
 		A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */; };
@@ -21,6 +22,9 @@
 		A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */; };
 		A883956421727DB400B591B5 /* Desk.png in Resources */ = {isa = PBXBuildFile; fileRef = A883956321727DB400B591B5 /* Desk.png */; };
 		A888B7F221767DB800814EBC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888B7F121767DB800814EBC /* LocalAuthentication.framework */; };
+		A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2C21A5AD6700D2720D /* sofa.jpg */; };
+		A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2D21A5AD6700D2720D /* sofa1.jpg */; };
+		A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2E21A5AD6700D2720D /* sofa2.jpg */; };
 		A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF3A21651C350077B597 /* AppDelegate.swift */; };
 		A8F5BF4021651C350077B597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F5BF3E21651C350077B597 /* Main.storyboard */; };
 		A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */; };
@@ -41,6 +45,7 @@
 		4544BD1EBA2689C75334460E /* Pods-GraduationProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GraduationProject/Pods-GraduationProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A8096BE9217A3661006C8F25 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		A8146F2421A5BA53004F493F /* icons8-share-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-share-80.png"; sourceTree = "<group>"; };
 		A8182580217249500091A50D /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		A818258221724BBD0091A50D /* MyAccountCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountCustomTableViewCell.swift; sourceTree = "<group>"; };
 		A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -52,6 +57,9 @@
 		A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		A883956321727DB400B591B5 /* Desk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Desk.png; sourceTree = "<group>"; };
 		A888B7F121767DB800814EBC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		A8C26A2C21A5AD6700D2720D /* sofa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa.jpg; sourceTree = "<group>"; };
+		A8C26A2D21A5AD6700D2720D /* sofa1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa1.jpg; sourceTree = "<group>"; };
+		A8C26A2E21A5AD6700D2720D /* sofa2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa2.jpg; sourceTree = "<group>"; };
 		A8F5BF3721651C350077B597 /* GraduationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F5BF3A21651C350077B597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F5BF3F21651C350077B597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,7 +118,11 @@
 		A86EF2A521668CB100701DEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A8C26A2C21A5AD6700D2720D /* sofa.jpg */,
+				A8C26A2D21A5AD6700D2720D /* sofa1.jpg */,
+				A8C26A2E21A5AD6700D2720D /* sofa2.jpg */,
 				A883956321727DB400B591B5 /* Desk.png */,
+				A8146F2421A5BA53004F493F /* icons8-share-80.png */,
 				A86EF2A621668CE800701DEB /* facebook.png */,
 			);
 			path = Images;
@@ -266,7 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A883956421727DB400B591B5 /* Desk.png in Resources */,
+				A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */,
+				A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */,
+				A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */,
 				A8F5BF4821651C360077B597 /* LaunchScreen.storyboard in Resources */,
+				A8146F2521A5BA53004F493F /* icons8-share-80.png in Resources */,
 				A8F5BF6E216523080077B597 /* GoogleService-Info.plist in Resources */,
 				A86EF2A721668CE800701DEB /* facebook.png in Resources */,
 				A8F5BF4521651C360077B597 /* Assets.xcassets in Resources */,
