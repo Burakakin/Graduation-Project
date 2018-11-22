@@ -108,7 +108,7 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
                         print("image url: \(urlString)")
                         
                         let userData: [String: Any] = ["userId": userId,"nameSurname": username, "email": email, "password": password, "profileImageUrl": urlString]
-                        self.signUpUserIntoDatabse(dataToSaveDatabase: userData)
+                        self.signUpUserIntoDatabse(dataToSaveDatabase: userData, userIdInfo: userId)
                         
                     }
                 }
@@ -130,8 +130,8 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func signUpUserIntoDatabse(dataToSaveDatabase: [String: Any]){
-        self.ref?.addDocument(data: dataToSaveDatabase) { err in
+    func signUpUserIntoDatabse(dataToSaveDatabase: [String: Any], userIdInfo: String){
+        self.ref?.document(userIdInfo).setData(dataToSaveDatabase) { err in
             if let err = err {
                 print("Error adding document: \(err.localizedDescription)")
             } else {

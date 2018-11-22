@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13A93EF7D6FD3E6034EEDA96 /* Pods_GraduationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */; };
 		A8082D2321A31C79005E3377 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */; };
+		A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */; };
 		A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8096BE9217A3661006C8F25 /* ProductsViewController.swift */; };
 		A8146F2521A5BA53004F493F /* icons8-share-80.png in Resources */ = {isa = PBXBuildFile; fileRef = A8146F2421A5BA53004F493F /* icons8-share-80.png */; };
 		A8182581217249500091A50D /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8182580217249500091A50D /* MyAccountViewController.swift */; };
@@ -45,6 +46,7 @@
 		1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraduationProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4544BD1EBA2689C75334460E /* Pods-GraduationProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GraduationProject/Pods-GraduationProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		A8096BE9217A3661006C8F25 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		A8146F2421A5BA53004F493F /* icons8-share-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-share-80.png"; sourceTree = "<group>"; };
 		A8182580217249500091A50D /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				A8182580217249500091A50D /* MyAccountViewController.swift */,
 				A8096BE9217A3661006C8F25 /* ProductsViewController.swift */,
 				A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */,
+				A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				A818258321724BBD0091A50D /* MyAccountCustomTableViewCell.swift in Sources */,
 				A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */,
 				A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */,
+				A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */,
 				A8F5BF6A21651DDF0077B597 /* MMDrawerController.m in Sources */,
 				A8F6F84821727506001B36F6 /* MainPageCollectionViewCell.swift in Sources */,
 				A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */,
