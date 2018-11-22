@@ -22,6 +22,9 @@ class PersonalInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
+        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.clipsToBounds = true
         // Do any additional setup after loading the view.
         getUserInfo()
     }
@@ -31,16 +34,21 @@ class PersonalInfoViewController: UIViewController {
         
         let currentUser = Auth.auth().currentUser
         guard let user = currentUser else { return }
-        //let email = user.email
         let userId = user.uid
         
         ref = Firestore.firestore().document("User/\(userId)")
-       
-        
         ref.getDocument{ (document, error) in
             if let document = document, document.exists {
-                print(document.documentID)
-                //print("Document data: \(dataDescription)")
+                let dataDescription = document.data()
+                //print("Document data: \(String(describing: dataDescription))")
+                self.nameSurnameLabel.text = (dataDescription?["nameSurname"] as! String)
+                self.emailLabel.text = (dataDescription?["email"] as! String)
+                let imageUrl = (dataDescription?["profileImageUrl"] as! String)
+                self.addressLabel.text = (dataDescription?["address"] as! String)
+                imageDownload.getImage(withUrl: imageUrl, completion: { (image) in
+                    self.profileImageView.image = image
+                })
+                
             } else {
                 print("document doesn't exit")
             }

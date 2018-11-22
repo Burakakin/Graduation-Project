@@ -16,9 +16,8 @@ class ProductDetailViewController: UIViewController {
     var documentId: String?
     var newId: String?
     var productDetailId: String?
-    
-    var ref: CollectionReference!
-    var reference: DocumentReference!
+ 
+    var ref: DocumentReference!
     
     @IBOutlet weak var imageSlider: ImageSlideshow!
     
@@ -62,38 +61,26 @@ class ProductDetailViewController: UIViewController {
         
         var pathToSave: String
         pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
-        
+        let myFavorite: [String: Any] = ["myFavourite": [pathToSave]]
         
         let user = Auth.auth().currentUser
         if let user = user {
             let uid = user.uid
-            let name = user.displayName
-            let email = user.email
             
             
-            
-            ref = Firestore.firestore().collection("User")
-            let query = ref.whereField("userId", isEqualTo: uid)
-            query.getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            print("\(document.documentID) => \(document.data())")
-                            
-                            let myFavorite: [String: Any] = ["myFavourite": [pathToSave]]
-                            self.reference =  Firestore.firestore().collection("User").document(document.documentID).collection("userDetail").document("userDetailDocument")
-                            
-                            self.reference.setData(myFavorite) { err in
-                                if let err = err {
-                                    print("Error writing document: \(err)")
-                                } else {
-                                    print("Document successfully written!")
-                                }
-                            }
-                           
-                        }
-                    }
+            ref = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
+            ref.getDocument{ (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data()
+                    print("Document data: \(String(describing: dataDescription))")
+                    
+                    
+                   
+                    
+                    
+                } else {
+                    print("document doesn't exit")
+                }
             }
             
         }
@@ -112,3 +99,8 @@ class ProductDetailViewController: UIViewController {
     
 
 }
+
+
+
+
+
