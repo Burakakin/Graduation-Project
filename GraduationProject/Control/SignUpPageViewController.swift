@@ -30,6 +30,8 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height / 2
+        profilePictureImageView.clipsToBounds = true
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         profilePictureImageView.isUserInteractionEnabled = true

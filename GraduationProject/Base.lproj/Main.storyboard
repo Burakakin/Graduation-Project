@@ -579,9 +579,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="bLk-7t-DY2">
                                 <rect key="frame" x="241" y="43" width="63" height="72.5"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JYo-Mg-0bz">
-                                <rect key="frame" x="93" y="139" width="135" height="91"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xCu-Ig-m4T">
                                 <rect key="frame" x="16" y="271" width="288" height="174"/>
                                 <subviews>
@@ -634,10 +631,13 @@
                                     <segue destination="SID-BT-hAF" kind="show" id="PeG-Yz-mwX"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyProfileImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="JYo-Mg-0bz">
+                                <rect key="frame" x="95" y="117" width="130" height="145.5"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JYo-Mg-0bz" firstAttribute="top" secondItem="Mlf-Nu-vNX" secondAttribute="bottom" constant="25.5" id="4Xy-gm-pqe"/>
+                            <constraint firstItem="JYo-Mg-0bz" firstAttribute="top" secondItem="Mlf-Nu-vNX" secondAttribute="bottom" constant="3.5" id="4Xy-gm-pqe"/>
                             <constraint firstItem="yPu-LE-iry" firstAttribute="bottom" secondItem="hlw-9o-XUb" secondAttribute="bottom" constant="10" id="6ps-x9-VtE"/>
                             <constraint firstItem="yPu-LE-iry" firstAttribute="trailing" secondItem="2mM-yN-3hb" secondAttribute="trailing" constant="69" id="6uK-aw-5B0"/>
                             <constraint firstItem="bLk-7t-DY2" firstAttribute="leading" secondItem="yPu-LE-iry" secondAttribute="leading" constant="241" id="8hh-xb-qln"/>
@@ -650,8 +650,8 @@
                             <constraint firstItem="2mM-yN-3hb" firstAttribute="top" secondItem="xCu-Ig-m4T" secondAttribute="bottom" constant="27" id="S09-e8-85R"/>
                             <constraint firstItem="Mlf-Nu-vNX" firstAttribute="leading" secondItem="yPu-LE-iry" secondAttribute="leading" constant="16" id="TDB-fL-EF0"/>
                             <constraint firstItem="yPu-LE-iry" firstAttribute="bottom" secondItem="2mM-yN-3hb" secondAttribute="bottom" constant="51" id="Toj-h3-PcP"/>
-                            <constraint firstItem="yPu-LE-iry" firstAttribute="trailing" secondItem="JYo-Mg-0bz" secondAttribute="trailing" constant="92" id="Y79-OD-NPf"/>
-                            <constraint firstItem="xCu-Ig-m4T" firstAttribute="top" secondItem="JYo-Mg-0bz" secondAttribute="bottom" constant="41" id="Yso-4D-Oe5"/>
+                            <constraint firstItem="yPu-LE-iry" firstAttribute="trailing" secondItem="JYo-Mg-0bz" secondAttribute="trailing" constant="95" id="Y79-OD-NPf"/>
+                            <constraint firstItem="xCu-Ig-m4T" firstAttribute="top" secondItem="JYo-Mg-0bz" secondAttribute="bottom" constant="8.5" id="Yso-4D-Oe5"/>
                             <constraint firstItem="bLk-7t-DY2" firstAttribute="leading" secondItem="Mlf-Nu-vNX" secondAttribute="trailing" constant="39.5" id="Z96-8q-pma"/>
                             <constraint firstItem="2mM-yN-3hb" firstAttribute="leading" secondItem="yPu-LE-iry" secondAttribute="leading" constant="70" id="a2Y-ev-GMk"/>
                             <constraint firstItem="Mlf-Nu-vNX" firstAttribute="centerY" secondItem="bLk-7t-DY2" secondAttribute="centerY" id="dGV-x3-eap"/>
@@ -660,7 +660,7 @@
                             <constraint firstItem="xCu-Ig-m4T" firstAttribute="leading" secondItem="yPu-LE-iry" secondAttribute="leading" constant="16" id="fDg-c4-XgB"/>
                             <constraint firstItem="bLk-7t-DY2" firstAttribute="top" secondItem="yPu-LE-iry" secondAttribute="top" constant="23" id="gNy-xT-LcT"/>
                             <constraint firstItem="yPu-LE-iry" firstAttribute="trailing" secondItem="xCu-Ig-m4T" secondAttribute="trailing" constant="16" id="moL-Ex-UVp"/>
-                            <constraint firstItem="JYo-Mg-0bz" firstAttribute="leading" secondItem="yPu-LE-iry" secondAttribute="leading" constant="93" id="vGz-Ij-JG3"/>
+                            <constraint firstItem="JYo-Mg-0bz" firstAttribute="leading" secondItem="yPu-LE-iry" secondAttribute="leading" constant="95" id="vGz-Ij-JG3"/>
                             <constraint firstItem="yPu-LE-iry" firstAttribute="trailing" secondItem="hlw-9o-XUb" secondAttribute="trailing" constant="21" id="z3K-xA-1Px"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yPu-LE-iry"/>
@@ -989,6 +989,7 @@
     </scenes>
     <resources>
         <image name="ar.png" width="512" height="512"/>
+        <image name="emptyProfileImage.png" width="400" height="400"/>
         <image name="facebook.png" width="24" height="40"/>
         <image name="icons8-share-80.png" width="80" height="80"/>
     </resources>
