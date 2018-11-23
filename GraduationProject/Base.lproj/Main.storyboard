@@ -356,6 +356,57 @@
             </objects>
             <point key="canvasLocation" x="219" y="131"/>
         </scene>
+        <!--Change Password Page View Controller-->
+        <scene sceneID="DNL-Sw-TLj">
+            <objects>
+                <viewController id="QWy-s4-JlY" customClass="changePasswordPageViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2jE-ZO-IQe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o23-9s-da5">
+                                <rect key="frame" x="32" y="254" width="265" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F6c-pl-pAT">
+                                <rect key="frame" x="32" y="355" width="249" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoX-ar-oXv">
+                                <rect key="frame" x="64" y="456" width="121" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Update Password"/>
+                                <connections>
+                                    <action selector="updatePasswordButton:" destination="QWy-s4-JlY" eventType="touchUpInside" id="gRh-Mw-ZXo"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="old password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PYA-rH-oPy">
+                                <rect key="frame" x="32" y="150" width="249" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="c2l-Jz-AKB"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="PYA-rH-oPy" id="g8w-kv-hwQ"/>
+                        <outlet property="newPasswordTextField" destination="F6c-pl-pAT" id="AE8-7X-2Oq"/>
+                        <outlet property="oldPasswordTextField" destination="o23-9s-da5" id="U4e-0A-Clc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h42-sF-Ugp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159.375" y="1683.8028169014085"/>
+        </scene>
         <!--My Account-->
         <scene sceneID="QUp-Dv-3uW">
             <objects>
@@ -453,6 +504,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="mlY-mO-rUW" kind="show" identifier="personalInfo" id="apS-K2-QnK"/>
+                        <segue destination="QWy-s4-JlY" kind="show" identifier="changePassword" id="Ke8-Gk-gID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5H9-LQ-RzK" userLabel="First Responder" sceneMemberID="firstResponder"/>

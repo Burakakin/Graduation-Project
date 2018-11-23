@@ -17,7 +17,8 @@
 		A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */; };
 		A81D1C22217BC5E700EB5386 /* ProductPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D1C21217BC5E700EB5386 /* ProductPageCollectionViewCell.swift */; };
 		A82A3753217A2B700026E60C /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82A3752217A2B700026E60C /* extension.swift */; };
-		A83CB69721A8587B0098ED7D /* emptyProfileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CB69621A8587B0098ED7D /* emptyProfileImage.png */; };
+		A83CB69921A865EC0098ED7D /* emptyProfileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CB69821A865EC0098ED7D /* emptyProfileImage.png */; };
+		A83CB69B21A866C00098ED7D /* changePasswordPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */; };
 		A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */; };
 		A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */; };
 		A86EF2A721668CE800701DEB /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A86EF2A621668CE800701DEB /* facebook.png */; };
@@ -55,7 +56,8 @@
 		A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageTableViewCell.swift; sourceTree = "<group>"; };
 		A81D1C21217BC5E700EB5386 /* ProductPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A82A3752217A2B700026E60C /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
-		A83CB69621A8587B0098ED7D /* emptyProfileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emptyProfileImage.png; path = ../../../../../Desktop/emptyProfileImage.png; sourceTree = "<group>"; };
+		A83CB69821A865EC0098ED7D /* emptyProfileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyProfileImage.png; sourceTree = "<group>"; };
+		A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordPageViewController.swift; sourceTree = "<group>"; };
 		A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
 		A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideCustomMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A86EF2A621668CE800701DEB /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
@@ -125,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				A8C26A2C21A5AD6700D2720D /* sofa.jpg */,
-				A83CB69621A8587B0098ED7D /* emptyProfileImage.png */,
+				A83CB69821A865EC0098ED7D /* emptyProfileImage.png */,
 				A8C26A2D21A5AD6700D2720D /* sofa1.jpg */,
 				A8C26A2E21A5AD6700D2720D /* sofa2.jpg */,
 				A883956321727DB400B591B5 /* Desk.png */,
@@ -209,6 +211,7 @@
 				A8096BE9217A3661006C8F25 /* ProductsViewController.swift */,
 				A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */,
 				A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */,
+				A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -290,7 +293,7 @@
 				A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */,
 				A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */,
 				A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */,
-				A83CB69721A8587B0098ED7D /* emptyProfileImage.png in Resources */,
+				A83CB69921A865EC0098ED7D /* emptyProfileImage.png in Resources */,
 				A8F5BF4821651C360077B597 /* LaunchScreen.storyboard in Resources */,
 				A8146F2521A5BA53004F493F /* icons8-share-80.png in Resources */,
 				A8F5BF6E216523080077B597 /* GoogleService-Info.plist in Resources */,
@@ -382,6 +385,7 @@
 				A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */,
 				A8F5BF6A21651DDF0077B597 /* MMDrawerController.m in Sources */,
 				A8F6F84821727506001B36F6 /* MainPageCollectionViewCell.swift in Sources */,
+				A83CB69B21A866C00098ED7D /* changePasswordPageViewController.swift in Sources */,
 				A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */,
 				A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */,
 				A8082D2321A31C79005E3377 /* ProductDetailViewController.swift in Sources */,

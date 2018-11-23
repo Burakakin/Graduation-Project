@@ -19,7 +19,7 @@ class MyAccountViewController: UIViewController {
     }
     
 
-    let arr = ["Personal Info", "Change E-Mail", "Change Password","My Address", "My Orders"]
+    let arr = ["Personal Info", "Change Password", "Change Password","My Address", "My Orders"]
     
     @IBAction func myAccount(_ sender: Any) {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -68,6 +68,8 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             performSegue(withIdentifier: "personalInfo", sender: self)
+        case 1:
+            performSegue(withIdentifier: "changePassword", sender: self)
         default:
             print("Merhaba")
         }
