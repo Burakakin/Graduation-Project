@@ -20,6 +20,9 @@ class ProductCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let newBtn = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(leftSideButtonTapped))
+        self.navigationItem.leftItemsSupplementBackButton = true
+        self.navigationItem.leftBarButtonItem = newBtn
         self.navigationItem.title = (subCategory ?? "") + (documentId ?? "")
         //print(subCategory)
         getProducts()
@@ -29,6 +32,10 @@ class ProductCategoryViewController: UIViewController {
     var subCategory: String?
     var documentId: String?
     
+    @objc func leftSideButtonTapped()  {
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
+    }
     
     func getProducts() {
         
