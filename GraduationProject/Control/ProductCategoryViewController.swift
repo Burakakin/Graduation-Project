@@ -13,9 +13,11 @@ class ProductCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(subCategory)
         // Do any additional setup after loading the view.
     }
     
+    var subCategory: String?
 
     /*
     // MARK: - Navigation

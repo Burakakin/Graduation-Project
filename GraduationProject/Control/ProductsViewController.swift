@@ -56,11 +56,22 @@ class ProductsViewController: UIViewController {
         ref = Firestore.firestore().document("Furniture/\(documentId ?? "")")
         ref.getDocument { (document, error) in
             if let document = document, document.exists {
-                let array = document["subCollection"] as? Array ?? [""]
-                DispatchQueue.main.async {
-                    self.imageArray.append(contentsOf: array)
-                    self.productPageCollectionView.reloadData()
+                if let subCategory = document.data()!["subCategory"] as? Dictionary<String, AnyObject> {
+                    let home = subCategory["home"] as! String
+                    let office = subCategory["office"] as! String
+                    
+                    self.imageArray = [home, office]
+                    DispatchQueue.main.async {
+                        self.productPageCollectionView.reloadData()
+                    }
                 }
+                
+               
+//                let array = document["subCollection"] as? Array ?? [""]
+//                DispatchQueue.main.async {
+//                    self.imageArray.append(contentsOf: array)
+//                    self.productPageCollectionView.reloadData()
+//                }
             } else {
                 print("Document does not exist")
             }
@@ -109,6 +120,8 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCollectionCell", for: indexPath) as! ProductPageCollectionViewCell
+        
+        
         imageDownload.getImage(withUrl: imageArray[indexPath.row]) { (image) in
             cell.productPageImageView.image = image
         }
@@ -118,6 +131,7 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //print(indexPath)
         performSegue(withIdentifier: "productCategory", sender: indexPath)
+        
     }
     
     
@@ -139,7 +153,7 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.productPriceLabel.text = "TL" + String(product["price"] as! Int)
         cell.productDimensionLabel.text = (product["dimension"] as! String)
         
-        imageDownload.getImage(withUrl: imageArray[indexPath.row]) { (image) in
+        imageDownload.getImage(withUrl: product["imageUrl"] as! String) { (image) in
             cell.producImageView.image = image
         }
         
@@ -161,6 +175,19 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
                 productDetailVC.productDetailId = (productArray[rowSelected]["id"] as! String)
             }
         }
+        if segue.identifier == "productCategory" {
+            if let productCategory = segue.destination as? ProductCategoryViewController {
+                if rowSelected == 0 {
+                    productCategory.subCategory = "home"
+                }
+                else if rowSelected == 1 {
+                    productCategory.subCategory = "office"
+                }
+            }
+            
+        }
+        
+        
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
