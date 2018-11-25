@@ -51,27 +51,21 @@ class ProductsViewController: UIViewController {
     
     
     func getsubCollectionFurniture() {
-        
+        //homeDesk
+        //print("home" + "\(self.documentId ?? "")")
         var ref: DocumentReference!
         ref = Firestore.firestore().document("Furniture/\(documentId ?? "")")
         ref.getDocument { (document, error) in
             if let document = document, document.exists {
                 if let subCategory = document.data()!["subCategory"] as? Dictionary<String, AnyObject> {
-                    let home = subCategory["home"] as! String
-                    let office = subCategory["office"] as! String
+                    let home = subCategory["home" + "\(self.documentId ?? "")"] as! String
+                    let office = subCategory["office" + "\(self.documentId ?? "")"] as! String
                     
                     self.imageArray = [home, office]
                     DispatchQueue.main.async {
                         self.productPageCollectionView.reloadData()
                     }
                 }
-                
-               
-//                let array = document["subCollection"] as? Array ?? [""]
-//                DispatchQueue.main.async {
-//                    self.imageArray.append(contentsOf: array)
-//                    self.productPageCollectionView.reloadData()
-//                }
             } else {
                 print("Document does not exist")
             }
@@ -179,9 +173,11 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
             if let productCategory = segue.destination as? ProductCategoryViewController {
                 if rowSelected == 0 {
                     productCategory.subCategory = "home"
+                    productCategory.documentId = documentId
                 }
                 else if rowSelected == 1 {
                     productCategory.subCategory = "office"
+                    productCategory.documentId = documentId
                 }
             }
             

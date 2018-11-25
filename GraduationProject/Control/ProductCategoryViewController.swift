@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class ProductCategoryViewController: UIViewController {
 
+    var ref: DocumentReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print(subCategory)
+        getProducts()
         // Do any additional setup after loading the view.
     }
     
     var subCategory: String?
-
+    var documentId: String?
     /*
     // MARK: - Navigation
 
@@ -28,6 +33,15 @@ class ProductCategoryViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func getProducts() {
+        let ref: CollectionReference!
+        let newId = "all" + (documentId ?? "")
+        ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
+        let query = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")")
+        
+        
+    }
 
 }
 
