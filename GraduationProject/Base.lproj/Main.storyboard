@@ -345,6 +345,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zj3-pD-GAE"/>
                     </view>
+                    <connections>
+                        <outlet property="productCategoryPageCollectionView" destination="EoX-BT-6Ff" id="l7q-N3-3Kc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fb-O7-Oyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
