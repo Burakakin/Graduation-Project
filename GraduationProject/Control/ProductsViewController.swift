@@ -112,11 +112,13 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         imageDownload.getImage(withUrl: imageArray[indexPath.row]) { (image) in
             cell.productPageImageView.image = image
         }
-        
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //print(indexPath)
+        performSegue(withIdentifier: "productCategory", sender: indexPath)
+    }
     
     
 }

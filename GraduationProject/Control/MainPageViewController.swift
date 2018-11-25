@@ -89,6 +89,8 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
         imageDownload.getImage(withUrl: imageUrl[indexPath.row]["imageUrl"]!) { (image) in
             cell.mainPageImageView.image = image
         }
+        print(indexPath.row)
+        
         return cell
     }
     

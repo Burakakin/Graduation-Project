@@ -17,6 +17,8 @@
 		A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */; };
 		A81D1C22217BC5E700EB5386 /* ProductPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D1C21217BC5E700EB5386 /* ProductPageCollectionViewCell.swift */; };
 		A82A3753217A2B700026E60C /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82A3752217A2B700026E60C /* extension.swift */; };
+		A834F89921419CB200D8843D /* ProductCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834F89821419CB200D8843D /* ProductCategoryViewController.swift */; };
+		A834F89B21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834F89A21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift */; };
 		A83CB69921A865EC0098ED7D /* emptyProfileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CB69821A865EC0098ED7D /* emptyProfileImage.png */; };
 		A83CB69B21A866C00098ED7D /* changePasswordPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */; };
 		A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */; };
@@ -56,6 +58,8 @@
 		A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageTableViewCell.swift; sourceTree = "<group>"; };
 		A81D1C21217BC5E700EB5386 /* ProductPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A82A3752217A2B700026E60C /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		A834F89821419CB200D8843D /* ProductCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryViewController.swift; sourceTree = "<group>"; };
+		A834F89A21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A83CB69821A865EC0098ED7D /* emptyProfileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyProfileImage.png; sourceTree = "<group>"; };
 		A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordPageViewController.swift; sourceTree = "<group>"; };
 		A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */,
 				A8182580217249500091A50D /* MyAccountViewController.swift */,
 				A8096BE9217A3661006C8F25 /* ProductsViewController.swift */,
+				A834F89821419CB200D8843D /* ProductCategoryViewController.swift */,
 				A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */,
 				A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */,
 				A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */,
@@ -224,6 +229,7 @@
 				A8F6F84721727506001B36F6 /* MainPageCollectionViewCell.swift */,
 				A81D1C1F217BC58C00EB5386 /* ProductPageTableViewCell.swift */,
 				A81D1C21217BC5E700EB5386 /* ProductPageCollectionViewCell.swift */,
+				A834F89A21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				A818258321724BBD0091A50D /* MyAccountCustomTableViewCell.swift in Sources */,
 				A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */,
 				A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */,
+				A834F89B21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift in Sources */,
 				A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */,
 				A8F5BF6A21651DDF0077B597 /* MMDrawerController.m in Sources */,
 				A8F6F84821727506001B36F6 /* MainPageCollectionViewCell.swift in Sources */,
@@ -390,6 +397,7 @@
 				A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */,
 				A8082D2321A31C79005E3377 /* ProductDetailViewController.swift in Sources */,
 				A8F5BF6B21651DDF0077B597 /* MMDrawerVisualState.m in Sources */,
+				A834F89921419CB200D8843D /* ProductCategoryViewController.swift in Sources */,
 				A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

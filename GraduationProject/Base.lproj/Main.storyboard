@@ -240,11 +240,115 @@
                         <outlet property="productPageCollectionView" destination="yg6-u2-glm" id="gPQ-4N-CW5"/>
                         <outlet property="productPageTableView" destination="DQ8-ch-M21" id="Ot0-8S-tdT"/>
                         <segue destination="kla-Om-K9a" kind="show" identifier="productDetail" id="qjs-VF-gC7"/>
+                        <segue destination="hYS-lH-UBj" kind="show" identifier="productCategory" id="hSV-8A-0mp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRj-tk-5d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2643.75" y="140.49295774647888"/>
+        </scene>
+        <!--Product Category View Controller-->
+        <scene sceneID="vKq-fu-gaq">
+            <objects>
+                <viewController id="hYS-lH-UBj" customClass="ProductCategoryViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HAw-Yc-KY0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EoX-BT-6Ff">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zLW-lf-vxZ">
+                                    <size key="itemSize" width="151" height="233"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productPageCell" id="bo0-v5-rsk" customClass="ProductCategoryPageCollectionViewCell" customModule="GraduationProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="151" height="233"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="151" height="233"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jug-OE-hYD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="151" height="108"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="108" id="L7l-QG-Lg8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ngf-Sk-cfA">
+                                                    <rect key="frame" x="0.0" y="108" width="151" height="125"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoX-GV-loE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="151" height="31.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYS-f3-Olv">
+                                                            <rect key="frame" x="0.0" y="31.5" width="151" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="RqT-lP-eap"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUD-3k-rq4">
+                                                            <rect key="frame" x="0.0" y="71.5" width="151" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBP-w4-MgY">
+                                                            <rect key="frame" x="0.0" y="102.5" width="151" height="22.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ngf-Sk-cfA" secondAttribute="trailing" id="14U-eQ-n62"/>
+                                            <constraint firstAttribute="trailing" secondItem="jug-OE-hYD" secondAttribute="trailing" id="Hf6-mu-Iks"/>
+                                            <constraint firstAttribute="bottom" secondItem="ngf-Sk-cfA" secondAttribute="bottom" id="NnG-NW-fzn"/>
+                                            <constraint firstItem="ngf-Sk-cfA" firstAttribute="top" secondItem="jug-OE-hYD" secondAttribute="bottom" id="ZHo-fC-Q5c"/>
+                                            <constraint firstItem="jug-OE-hYD" firstAttribute="leading" secondItem="bo0-v5-rsk" secondAttribute="leading" id="pGg-3Q-9sm"/>
+                                            <constraint firstItem="jug-OE-hYD" firstAttribute="top" secondItem="bo0-v5-rsk" secondAttribute="top" id="pm7-QT-zZS"/>
+                                            <constraint firstItem="ngf-Sk-cfA" firstAttribute="leading" secondItem="bo0-v5-rsk" secondAttribute="leading" id="yOZ-JT-a7Q"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="productDescriptionLabel" destination="PYS-f3-Olv" id="F9l-8x-a51"/>
+                                            <outlet property="productDimensionLabel" destination="oUD-3k-rq4" id="dNX-2D-00Q"/>
+                                            <outlet property="productImageView" destination="jug-OE-hYD" id="7FF-Wc-n69"/>
+                                            <outlet property="productNameLabel" destination="XoX-GV-loE" id="uB0-oT-b45"/>
+                                            <outlet property="productPriceLabel" destination="eBP-w4-MgY" id="ZTc-aY-Ejf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="hYS-lH-UBj" id="zNE-5b-h67"/>
+                                    <outlet property="delegate" destination="hYS-lH-UBj" id="Lt3-Tp-ldE"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EoX-BT-6Ff" firstAttribute="leading" secondItem="Zj3-pD-GAE" secondAttribute="leading" id="01E-Rh-8my"/>
+                            <constraint firstItem="EoX-BT-6Ff" firstAttribute="trailing" secondItem="Zj3-pD-GAE" secondAttribute="trailing" id="HOG-rc-6ox"/>
+                            <constraint firstItem="EoX-BT-6Ff" firstAttribute="bottom" secondItem="Zj3-pD-GAE" secondAttribute="bottom" id="rEz-GU-09U"/>
+                            <constraint firstItem="EoX-BT-6Ff" firstAttribute="top" secondItem="Zj3-pD-GAE" secondAttribute="top" id="wnH-wc-hee"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zj3-pD-GAE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fb-O7-Oyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2643.75" y="963.38028169014081"/>
         </scene>
         <!--Left Side Menu View Controller-->
         <scene sceneID="wdg-j4-N5b">
