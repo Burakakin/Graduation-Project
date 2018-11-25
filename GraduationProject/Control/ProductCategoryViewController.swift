@@ -20,7 +20,8 @@ class ProductCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(subCategory)
+        self.navigationItem.title = (subCategory ?? "") + (documentId ?? "")
+        //print(subCategory)
         getProducts()
         // Do any additional setup after loading the view.
     }
@@ -40,7 +41,7 @@ class ProductCategoryViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+                    //print("\(document.documentID) => \(document.data())")
                     let name = document.data()["name"] as! String
                     let description = document.data()["description"] as! String
                     let imageUrl = document.data()["imageUrl"] as! String
