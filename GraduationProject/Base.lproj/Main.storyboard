@@ -1222,6 +1222,10 @@
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="imageSlider" destination="ush-G5-ses" id="I0Y-t1-9I0"/>
+                        <outlet property="productDetailDescriptionLabel" destination="3Io-cy-wSH" id="kgk-2S-p78"/>
+                        <outlet property="productDetailDimensionLabel" destination="Ov5-Qs-f3G" id="udL-jD-yCD"/>
+                        <outlet property="productDetailNameLabel" destination="eUU-VL-PC2" id="taD-lF-s9t"/>
+                        <outlet property="productDetailPriceLabel" destination="o4h-Fm-DjH" id="ul7-hV-7in"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmt-Wo-1w7" userLabel="First Responder" sceneMemberID="firstResponder"/>

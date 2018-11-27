@@ -13,11 +13,21 @@ import ImageSlideshow
 
 class ProductDetailViewController: UIViewController {
 
+    @IBOutlet weak var productDetailNameLabel: UILabel!
+    @IBOutlet weak var productDetailDescriptionLabel: UILabel!
+    @IBOutlet weak var productDetailDimensionLabel: UILabel!
+    @IBOutlet weak var productDetailPriceLabel: UILabel!
+    
+    
+    
+    
     var documentId: String?
     var newId: String?
     var productDetailId: String?
  
     var ref: DocumentReference!
+    
+    var productDetailData = [[String: Any]]()
     
     @IBOutlet weak var imageSlider: ImageSlideshow!
     
@@ -31,6 +41,7 @@ class ProductDetailViewController: UIViewController {
         //self.navigationController?.view.backgroundColor = .clear
         
         setupImageSlider()
+        setUpProductDetail()
     }
     
     @objc func abc() {
@@ -57,35 +68,65 @@ class ProductDetailViewController: UIViewController {
     }
     
     
+    func setUpProductDetail() {
+        
+        
+        let newId = "all" + (documentId ?? "")
+        ref = Firestore.firestore().document("Furniture/\(documentId ?? "")/\(newId)/\(productDetailId ?? "")")
+        print("Furniture/\(documentId ?? "")/\(newId)/\(productDetailId ?? "")")
+        ref.getDocument() { (document, err) in
+            if let document = document, document.exists {
+                let productDetail = document.data()!
+                //print(productDetail)
+                let name = productDetail["name"] as! String
+                let description = productDetail["description"] as! String
+                //let imageUrl = productDetail["imageUrl"] as! String
+                let price = productDetail["price"] as! Int
+                let dimension = productDetail["dimension"] as! String
+                
+                self.productDetailNameLabel.text = name
+                self.productDetailDescriptionLabel.text = description
+                self.productDetailDimensionLabel.text = dimension
+                self.productDetailPriceLabel.text = String(price)
+               
+                
+               
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+    
+    
     @IBAction func addToFavouriteButton(_ sender: UIButton) {
         
-        var pathToSave: String
-        pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
-        let myFavorite: [String: Any] = ["myFavourite": [pathToSave]]
-        
-        let user = Auth.auth().currentUser
-        if let user = user {
-            let uid = user.uid
-            
-            
-            ref = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
-            ref.getDocument{ (document, error) in
-                if let document = document, document.exists {
-                    let dataDescription = document.data()
-                    print("Document data: \(String(describing: dataDescription))")
-                    
-                    
-                   
-                    
-                    
-                } else {
-                    print("document doesn't exit")
-                }
-            }
-            
-        }
-        
-        
+//        var pathToSave: String
+//        pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
+//        let myFavorite: [String: Any] = ["myFavourite": [pathToSave]]
+//
+//        let user = Auth.auth().currentUser
+//        if let user = user {
+//            let uid = user.uid
+//
+//
+//            ref = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
+//            ref.getDocument{ (document, error) in
+//                if let document = document, document.exists {
+//                    let dataDescription = document.data()
+//                    print("Document data: \(String(describing: dataDescription))")
+//
+//
+//
+//
+//
+//                } else {
+//                    print("document doesn't exit")
+//                }
+//            }
+//
+//        }
+//
+//
         
     
         
