@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="154" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ylv-Uf-7e5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ylv-Uf-7e5">
                                                     <rect key="frame" x="0.0" y="0.0" width="154" height="142"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
@@ -103,21 +103,21 @@
                                             <rect key="frame" x="5" y="5" width="310" height="180"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4ta-Yd-h6g">
-                                                <size key="itemSize" width="120" height="180"/>
+                                                <size key="itemSize" width="140" height="180"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productCollectionCell" id="hJc-Qm-DBs" customClass="ProductPageCollectionViewCell" customModule="GraduationProject" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZTg-l8-8zY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZTg-l8-8zY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
                                                             </imageView>
                                                         </subviews>
                                                     </view>
@@ -163,7 +163,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFd-4D-0Hx">
                                                     <rect key="frame" x="108" y="31" width="133" height="44"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="133" id="K36-ci-2Uj"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="K36-ci-2Uj"/>
                                                         <constraint firstAttribute="height" constant="44" id="Pfx-Ip-aRz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
@@ -256,7 +256,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EoX-BT-6Ff">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="104" width="320" height="464"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zLW-lf-vxZ">
                                     <size key="itemSize" width="151" height="287"/>
@@ -341,23 +341,59 @@
                                     <outlet property="delegate" destination="hYS-lH-UBj" id="Lt3-Tp-ldE"/>
                                 </connections>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="be5-bz-HB1">
+                                <rect key="frame" x="0.0" y="64" width="320" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-Me-pTg">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                        <state key="normal" title="Filter"/>
+                                        <connections>
+                                            <segue destination="bqI-xn-8K8" kind="presentation" id="iqd-ey-NdF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bX2-Vj-EYn">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="40"/>
+                                        <state key="normal" title="Sort"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EoX-BT-6Ff" firstAttribute="leading" secondItem="Zj3-pD-GAE" secondAttribute="leading" id="01E-Rh-8my"/>
+                            <constraint firstItem="be5-bz-HB1" firstAttribute="top" secondItem="Zj3-pD-GAE" secondAttribute="top" id="5Ik-Sj-2tl"/>
+                            <constraint firstItem="Zj3-pD-GAE" firstAttribute="trailing" secondItem="be5-bz-HB1" secondAttribute="trailing" id="Cj8-Bt-vfV"/>
                             <constraint firstItem="EoX-BT-6Ff" firstAttribute="trailing" secondItem="Zj3-pD-GAE" secondAttribute="trailing" id="HOG-rc-6ox"/>
+                            <constraint firstItem="EoX-BT-6Ff" firstAttribute="top" secondItem="be5-bz-HB1" secondAttribute="bottom" id="KzT-rC-T6w"/>
                             <constraint firstItem="EoX-BT-6Ff" firstAttribute="bottom" secondItem="Zj3-pD-GAE" secondAttribute="bottom" id="rEz-GU-09U"/>
-                            <constraint firstItem="EoX-BT-6Ff" firstAttribute="top" secondItem="Zj3-pD-GAE" secondAttribute="top" id="wnH-wc-hee"/>
+                            <constraint firstItem="be5-bz-HB1" firstAttribute="leading" secondItem="Zj3-pD-GAE" secondAttribute="leading" id="rvT-Zo-NK2"/>
+                            <constraint firstItem="EoX-BT-6Ff" firstAttribute="top" secondItem="Zj3-pD-GAE" secondAttribute="top" constant="40" id="wnH-wc-hee"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zj3-pD-GAE"/>
                     </view>
                     <connections>
                         <outlet property="productCategoryPageCollectionView" destination="EoX-BT-6Ff" id="l7q-N3-3Kc"/>
+                        <segue destination="kla-Om-K9a" kind="show" identifier="productCategoryDetail" id="0kF-wO-PND"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fb-O7-Oyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2643.75" y="963.38028169014081"/>
+        </scene>
+        <!--Filter Product Category View Controller-->
+        <scene sceneID="aIp-oF-L3U">
+            <objects>
+                <viewController id="bqI-xn-8K8" customClass="FilterProductCategoryViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JI6-qC-3TG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0p4-jS-Suj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaI-rL-dcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3533" y="1049"/>
         </scene>
         <!--Left Side Menu View Controller-->
         <scene sceneID="wdg-j4-N5b">
@@ -1199,4 +1235,7 @@
         <image name="facebook.png" width="24" height="40"/>
         <image name="icons8-share-80.png" width="80" height="80"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0kF-wO-PND"/>
+    </inferredMetricsTieBreakers>
 </document>

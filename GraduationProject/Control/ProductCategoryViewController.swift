@@ -12,8 +12,12 @@ import FirebaseFirestore
 
 class ProductCategoryViewController: UIViewController {
 
-    var ref: DocumentReference!
+    var ref: CollectionReference!
+    
     var productCategoryArray = [[String: Any]]()
+    
+    var subCategory: String?
+    var documentId: String?
     
     @IBOutlet weak var productCategoryPageCollectionView: UICollectionView!
     
@@ -25,23 +29,22 @@ class ProductCategoryViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = newBtn
         self.navigationItem.title = (subCategory ?? "") + (documentId ?? "")
         //print(subCategory)
+        let newId = "all" + (documentId ?? "")
+        ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
         getProducts()
         // Do any additional setup after loading the view.
     }
-    
-    var subCategory: String?
-    var documentId: String?
     
     @objc func leftSideButtonTapped()  {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
     }
     
+    
+    
     func getProducts() {
         
-        let ref: CollectionReference!
-        let newId = "all" + (documentId ?? "")
-        ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
+      
         let query = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")")
         query.getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -92,7 +95,26 @@ extension ProductCategoryViewController: UICollectionViewDelegate, UICollectionV
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         performSegue(withIdentifier: "productCategoryDetail", sender: indexPath)
+    }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let rowSelected = (sender as! IndexPath).row
+        if segue.identifier == "productCategoryDetail" {
+            if let productDetailVC =  segue.destination as? ProductDetailViewController {
+                let newId = "all" + (documentId ?? "")
+                productDetailVC.documentId = documentId
+                productDetailVC.newId = newId
+                productDetailVC.productDetailId = (productCategoryArray[rowSelected]["id"] as! String)
+            }
+        }
+        
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+    }
     
 }
