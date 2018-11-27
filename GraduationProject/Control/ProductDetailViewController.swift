@@ -40,8 +40,9 @@ class ProductDetailViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(abc))
         //self.navigationController?.view.backgroundColor = .clear
         
-        setupImageSlider()
+       
         setUpProductDetail()
+         setupImageSlider()
     }
     
     @objc func abc() {
@@ -58,13 +59,21 @@ class ProductDetailViewController: UIViewController {
     func setupImageSlider() {
         
         let pageIndicator = UIPageControl()
-        pageIndicator.currentPageIndicatorTintColor = UIColor.lightGray
-        pageIndicator.pageIndicatorTintColor = UIColor.black
+        pageIndicator.currentPageIndicatorTintColor = UIColor.black
+        pageIndicator.pageIndicatorTintColor = UIColor.lightGray
         imageSlider.pageIndicator = pageIndicator
         
-        imageSlider.pageIndicatorPosition = PageIndicatorPosition(horizontal: .right(padding: 10), vertical: .bottom)
+        imageSlider.pageIndicatorPosition = PageIndicatorPosition(horizontal: .center, vertical: .bottom)
         
-        imageSlider.setImageInputs([ImageSource(image: UIImage(named: "sofa.jpg")!),ImageSource(image: UIImage(named: "sofa1.jpg")!),ImageSource(image: UIImage(named: "sofa2.jpg")!)])
+//        imageSlider.setImageInputs([ImageSource(image: UIImage(named: "sofa.jpg")!),ImageSource(image: UIImage(named: "sofa1.jpg")!),ImageSource(image: UIImage(named: "sofa2.jpg")!)])
+        
+//        for i in 0...2 {
+//            imageDownload.getImage(withUrl: imageSliderUrlArray[i]) { (image) in
+//                self.imageSlider.setImageInputs([ImageSource(image: image!)])
+//            }
+//
+//        }
+        
     }
     
     
@@ -79,17 +88,23 @@ class ProductDetailViewController: UIViewController {
                 let productDetail = document.data()!
                 //print(productDetail)
                 let name = productDetail["name"] as! String
-                let description = productDetail["description"] as! String
+                let description = productDetail["longDescription"] as! String
                 //let imageUrl = productDetail["imageUrl"] as! String
                 let price = productDetail["price"] as! Int
                 let dimension = productDetail["dimension"] as! String
+                if let imageSliderUrl = productDetail["imageSlider"] as? [String] {
+                    for images in imageSliderUrl {
+                        imageDownload.getImage(withUrl: images) { (image) in
+                            self.imageSlider.setImageInputs([ImageSource(image: image!),ImageSource(image: image!)])
+                        }
+                    }
+                   
+                }
                 
                 self.productDetailNameLabel.text = name
                 self.productDetailDescriptionLabel.text = description
                 self.productDetailDimensionLabel.text = dimension
-                self.productDetailPriceLabel.text = String(price)
-               
-                
+                self.productDetailPriceLabel.text = String(price) + "TL"
                
             } else {
                 print("Document does not exist")
