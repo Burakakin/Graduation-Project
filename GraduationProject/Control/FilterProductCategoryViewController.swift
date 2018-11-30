@@ -16,10 +16,14 @@ class FilterProductCategoryViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
-    var rowsWhichAreChecked = [Int]()
+   
     var filterTypeArr = [String]()
-    var names = [String]()
     
+    
+    
+    
+    var colorFilterName = [String]()
+    var priceFilterName = [String]()
     
     var documentId: String?
     var newId: String?
@@ -53,7 +57,17 @@ class FilterProductCategoryViewController: UIViewController {
 
     }
     
-
+    @IBAction func unWindToFilterProductCategory(_ unwindSegue: UIStoryboardSegue){
+        print("Welcome to Filter Product Category Page")
+        print("Welcome to Product Category Page")
+        colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
+        priceFilterName = (defaults.array(forKey: "priceFilterName") as? [String] ?? [])
+        
+        
+        print(colorFilterName)
+        print(priceFilterName)
+    }
+    
 }
 
 
@@ -79,6 +93,7 @@ extension FilterProductCategoryViewController: UITableViewDelegate, UITableViewD
             let rowSelected = (sender as! IndexPath).row
             if let filterDetailVC =  segue.destination as? FilterDetailProductCategoryViewController {
                 filterDetailVC.filterType = filterTypeArr[rowSelected]
+                filterDetailVC.documentId = documentId
             }
         }
     }

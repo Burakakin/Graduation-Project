@@ -14,6 +14,11 @@ class ProductCategoryViewController: UIViewController {
 
     var ref: CollectionReference!
     
+    
+    let defaults = UserDefaults.standard
+    var colorFilterName = [String]()
+    var priceFilterName = [String]()
+    
     var productCategoryArray = [[String: Any]]()
     
     var subCategory: String?
@@ -45,7 +50,12 @@ class ProductCategoryViewController: UIViewController {
     @IBAction func unWindToProductCategoryVC (_ unwindSegue: UIStoryboardSegue){
     
         print("Welcome to Product Category Page")
+        colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
+        priceFilterName = (defaults.array(forKey: "priceFilterName") as? [String] ?? [])
+
     
+        print(colorFilterName)
+        print(priceFilterName)
     }
     
     
