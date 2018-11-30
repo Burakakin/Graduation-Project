@@ -36,7 +36,9 @@ class ProductCategoryViewController: UIViewController {
         //print(subCategory)
         let newId = "all" + (documentId ?? "")
         ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
-        getProducts()
+        var query = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")")
+        
+        getProducts(queryFirestore: query)
         // Do any additional setup after loading the view.
     }
     
@@ -50,22 +52,34 @@ class ProductCategoryViewController: UIViewController {
     @IBAction func unWindToProductCategoryVC (_ unwindSegue: UIStoryboardSegue){
     
         print("Welcome to Product Category Page")
+        
+        productCategoryArray.removeAll()
+        
         colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
         priceFilterName = (defaults.array(forKey: "priceFilterName") as? [String] ?? [])
-
-    
-        print(colorFilterName)
-        print(priceFilterName)
+        
+        let colorFilterTitle = colorFilterName.first
+        let priceFilterTitle = priceFilterName.first
+        
+        print(colorFilterTitle!)
+        print(colorFilterName.dropFirst())
+        
+        print(priceFilterTitle!)
+        print( priceFilterName.dropFirst())
+        
+        let filteredQuery = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")").whereField("\(colorFilterTitle ?? "")", isEqualTo: "white")
+        
+        getProducts(queryFirestore: filteredQuery)
     }
     
     
     
     
-    func getProducts() {
+    func getProducts(queryFirestore: Query) {
         
       
-        let query = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")")
-        query.getDocuments() { (querySnapshot, err) in
+        
+        queryFirestore.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {

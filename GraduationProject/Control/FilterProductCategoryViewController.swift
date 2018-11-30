@@ -31,9 +31,21 @@ class FilterProductCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clear))
         getFilterType()
     }
     
+    @objc func clear() {
+        colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
+        priceFilterName = (defaults.array(forKey: "priceFilterName") as? [String] ?? [])
+        
+        colorFilterName.removeAll()
+        priceFilterName.removeAll()
+        
+        defaults.set(priceFilterName, forKey: "priceFilterName")
+        defaults.set(colorFilterName, forKey: "colorFilterName")
+        
+    }
    
     func getFilterType() {
         var ref: DocumentReference!
@@ -58,8 +70,8 @@ class FilterProductCategoryViewController: UIViewController {
     }
     
     @IBAction func unWindToFilterProductCategory(_ unwindSegue: UIStoryboardSegue){
+        
         print("Welcome to Filter Product Category Page")
-        print("Welcome to Product Category Page")
         colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
         priceFilterName = (defaults.array(forKey: "priceFilterName") as? [String] ?? [])
         
@@ -79,6 +91,7 @@ extension FilterProductCategoryViewController: UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath)
         cell.textLabel?.text = filterTypeArr[indexPath.row]
+        
         return cell
     }
     
