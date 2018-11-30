@@ -42,6 +42,15 @@ class ProductCategoryViewController: UIViewController {
     
     
     
+    @IBAction func unWindToProductCategoryVC (_ unwindSegue: UIStoryboardSegue){
+    
+        print("Welcome to Product Category Page")
+    
+    }
+    
+    
+    
+    
     func getProducts() {
         
       
@@ -101,20 +110,28 @@ extension ProductCategoryViewController: UICollectionViewDelegate, UICollectionV
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let rowSelected = (sender as! IndexPath).row
+        
         if segue.identifier == "productCategoryDetail" {
+            let rowSelected = (sender as! IndexPath).row
             if let productDetailVC =  segue.destination as? ProductDetailViewController {
                 let newId = "all" + (documentId ?? "")
                 productDetailVC.documentId = documentId
                 productDetailVC.newId = newId
                 productDetailVC.productDetailId = (productCategoryArray[rowSelected]["id"] as! String)
             }
+            
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
         
+        if segue.identifier == "filterSegue" {
+            if let filterCategoryVC =  segue.destination as? FilterProductCategoryViewController {
+                filterCategoryVC.documentId = documentId
+            }
+        }
         
-        let backItem = UIBarButtonItem()
-        backItem.title = ""
-        navigationItem.backBarButtonItem = backItem
+       
     }
     
 }

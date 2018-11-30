@@ -348,7 +348,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
                                         <state key="normal" title="Filter"/>
                                         <connections>
-                                            <segue destination="bqI-xn-8K8" kind="presentation" id="iqd-ey-NdF"/>
+                                            <segue destination="bqI-xn-8K8" kind="presentation" identifier="filterSegue" id="iqd-ey-NdF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bX2-Vj-EYn">
@@ -387,13 +387,101 @@
                     <view key="view" contentMode="scaleToFill" id="JI6-qC-3TG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WbG-CY-28I">
+                                <rect key="frame" x="0.0" y="20" width="320" height="478"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterCell" id="UCw-od-9wY">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UCw-od-9wY" id="fFg-yH-3a1">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bqI-xn-8K8" id="eKG-mS-YJ0"/>
+                                    <outlet property="delegate" destination="bqI-xn-8K8" id="FUZ-Nq-NJ9"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuh-6k-xcx">
+                                <rect key="frame" x="0.0" y="498" width="320" height="70"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="QL7-tb-JqQ"/>
+                                </constraints>
+                                <state key="normal" title="APPLY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YaZ-al-iZE" kind="unwind" unwindAction="unWindToProductCategoryVC:" id="jFx-Ki-2Li"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Tuh-6k-xcx" firstAttribute="leading" secondItem="0p4-jS-Suj" secondAttribute="leading" id="7D6-PY-rAa"/>
+                            <constraint firstItem="Tuh-6k-xcx" firstAttribute="bottom" secondItem="0p4-jS-Suj" secondAttribute="bottom" id="DN7-0d-ZNN"/>
+                            <constraint firstItem="Tuh-6k-xcx" firstAttribute="trailing" secondItem="0p4-jS-Suj" secondAttribute="trailing" id="EPx-Hp-Pzf"/>
+                            <constraint firstItem="WbG-CY-28I" firstAttribute="top" secondItem="0p4-jS-Suj" secondAttribute="top" id="F5h-lN-DCK"/>
+                            <constraint firstItem="WbG-CY-28I" firstAttribute="trailing" secondItem="0p4-jS-Suj" secondAttribute="trailing" id="NFt-cc-r00"/>
+                            <constraint firstItem="Tuh-6k-xcx" firstAttribute="top" secondItem="WbG-CY-28I" secondAttribute="bottom" id="W3C-kW-bim"/>
+                            <constraint firstItem="WbG-CY-28I" firstAttribute="leading" secondItem="0p4-jS-Suj" secondAttribute="leading" id="WvE-RF-Ze0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0p4-jS-Suj"/>
                     </view>
+                    <connections>
+                        <outlet property="filterTableView" destination="WbG-CY-28I" id="6Fz-Th-rID"/>
+                        <segue destination="Yd5-ky-cJ3" kind="show" identifier="toDetailFilter" id="wTq-h0-YYG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaI-rL-dcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YaZ-al-iZE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3533" y="1049"/>
+            <point key="canvasLocation" x="3532.5" y="1048.943661971831"/>
+        </scene>
+        <!--Filter Detail Product Category View Controller-->
+        <scene sceneID="KyE-2P-s30">
+            <objects>
+                <viewController id="Yd5-ky-cJ3" customClass="FilterDetailProductCategoryViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tVR-Tf-TdH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nko-7K-aSN">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterDetailCell" id="lib-Ac-aRP">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lib-Ac-aRP" id="1kc-dt-VRQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yd5-ky-cJ3" id="QPB-HB-aq9"/>
+                                    <outlet property="delegate" destination="Yd5-ky-cJ3" id="c33-gw-5c9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nko-7K-aSN" firstAttribute="top" secondItem="Rwb-RZ-fF0" secondAttribute="top" id="8np-HV-35D"/>
+                            <constraint firstItem="Rwb-RZ-fF0" firstAttribute="bottom" secondItem="nko-7K-aSN" secondAttribute="bottom" id="CtA-Ey-ME4"/>
+                            <constraint firstItem="Rwb-RZ-fF0" firstAttribute="trailing" secondItem="nko-7K-aSN" secondAttribute="trailing" id="JIj-2d-ljh"/>
+                            <constraint firstItem="nko-7K-aSN" firstAttribute="leading" secondItem="Rwb-RZ-fF0" secondAttribute="leading" id="tJI-dx-CWD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rwb-RZ-fF0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROm-og-J8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4254" y="1046"/>
         </scene>
         <!--Left Side Menu View Controller-->
         <scene sceneID="wdg-j4-N5b">
@@ -1240,6 +1328,6 @@
         <image name="icons8-share-80.png" width="80" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qjs-VF-gC7"/>
+        <segue reference="0kF-wO-PND"/>
     </inferredMetricsTieBreakers>
 </document>
