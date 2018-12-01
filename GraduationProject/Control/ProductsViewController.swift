@@ -87,7 +87,7 @@ class ProductsViewController: UIViewController {
                     let name = document.data()["name"] as! String
                     let description = document.data()["description"] as! String
                     let imageUrl = document.data()["imageUrl"] as! String
-                    let price = document.data()["price"] as! Int
+                    let price = document.data()["price"] as! String
                     let dimension = document.data()["dimension"] as! String
                     
                     let productData: [String: Any] = ["id": document.documentID, "name": name, "description": description, "imageUrl": imageUrl, "price": price, "dimension": dimension]
@@ -144,7 +144,7 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.productNameLabel.text = (product["name"] as! String)
         cell.productDescriptionLabel.text = (product["description"] as! String)
-        cell.productPriceLabel.text = "TL" + String(product["price"] as! Int)
+        cell.productPriceLabel.text = "TL" + String(product["price"] as! String)
         cell.productDimensionLabel.text = (product["dimension"] as! String)
         
         imageDownload.getImage(withUrl: product["imageUrl"] as! String) { (image) in

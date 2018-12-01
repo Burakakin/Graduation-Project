@@ -36,7 +36,7 @@ class ProductCategoryViewController: UIViewController {
         //print(subCategory)
         let newId = "all" + (documentId ?? "")
         ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
-        var query = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")")
+        let query = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")")
         
         getProducts(queryFirestore: query)
         // Do any additional setup after loading the view.
@@ -46,9 +46,7 @@ class ProductCategoryViewController: UIViewController {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
     }
-    
-    
-    
+
     @IBAction func unWindToProductCategoryVC (_ unwindSegue: UIStoryboardSegue){
     
         print("Welcome to Product Category Page")
@@ -61,23 +59,39 @@ class ProductCategoryViewController: UIViewController {
         let colorFilterTitle = colorFilterName.first
         let priceFilterTitle = priceFilterName.first
         
-        print(colorFilterTitle!)
-        print(colorFilterName.dropFirst())
+        var filteredQuery = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")")
         
-        print(priceFilterTitle!)
-        print( priceFilterName.dropFirst())
+        //print(colorFilterTitle!)
+        let droppedColorFilterName = colorFilterName.dropFirst()
+         let droppedPriceFilterName = priceFilterName.dropFirst()
+        print(droppedColorFilterName)
+        if droppedColorFilterName.count == 1 || droppedPriceFilterName.count == 1 {
+            filteredQuery = filteredQuery.whereField("\(colorFilterTitle ?? "")", isEqualTo: "\(droppedColorFilterName[1])")
+            filteredQuery = filteredQuery.whereField("\(priceFilterTitle ?? "")", isEqualTo: "\(droppedPriceFilterName[1])")
+            
+        }
+        if droppedColorFilterName.count > 1 {
+            for item in droppedColorFilterName{
+                filteredQuery = filteredQuery.whereField("\(colorFilterTitle ?? "")", isEqualTo: "\(item)")
+                
+            }
+        }
         
-        let filteredQuery = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")").whereField("\(colorFilterTitle ?? "")", isEqualTo: "white")
+        if droppedPriceFilterName.count > 1 {
+            for item in droppedPriceFilterName{
+                filteredQuery = filteredQuery.whereField("\(priceFilterTitle ?? "")", isEqualTo: "\(item)")
+                
+            }
+        }
         
         getProducts(queryFirestore: filteredQuery)
+
     }
     
     
     
     
     func getProducts(queryFirestore: Query) {
-        
-      
         
         queryFirestore.getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -88,7 +102,7 @@ class ProductCategoryViewController: UIViewController {
                     let name = document.data()["name"] as! String
                     let description = document.data()["description"] as! String
                     let imageUrl = document.data()["imageUrl"] as! String
-                    let price = document.data()["price"] as! Int
+                    let price = document.data()["price"] as! String
                     let dimension = document.data()["dimension"] as! String
                     
                     let productData: [String: Any] = ["id": document.documentID, "name": name, "description": description, "imageUrl": imageUrl, "price": price, "dimension": dimension]
@@ -117,7 +131,7 @@ extension ProductCategoryViewController: UICollectionViewDelegate, UICollectionV
         
         cell.productNameLabel.text = (product["name"] as! String)
         cell.productDescriptionLabel.text = (product["description"] as! String)
-        cell.productPriceLabel.text = "TL" + String(product["price"] as! Int)
+        cell.productPriceLabel.text = "TL" + String(product["price"] as! String)
         cell.productDimensionLabel.text = (product["dimension"] as! String)
         
         imageDownload.getImage(withUrl: product["imageUrl"] as! String) { (image) in

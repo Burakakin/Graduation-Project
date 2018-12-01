@@ -74,24 +74,12 @@ class FilterDetailProductCategoryViewController: UIViewController {
 
 extension FilterDetailProductCategoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if filterType == "color" {
-//            return colorFilter.count
-//        }
-//        else {
-//            return priceFilter.count
-//        }
         return filterDetailArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterDetailCell", for: indexPath)
         
-//        if filterType == "Color" {
-//            cell.textLabel?.text = colorFilter[indexPath.row]
-//        }
-//        if filterType == "Price" {
-//            cell.textLabel?.text = priceFilter[indexPath.row]
-//        }
         
         cell.textLabel?.text = filterDetailArr[indexPath.row]
         
