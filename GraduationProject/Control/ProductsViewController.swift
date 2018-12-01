@@ -31,7 +31,19 @@ class ProductsViewController: UIViewController {
         self.navigationItem.leftItemsSupplementBackButton = true
         self.navigationItem.leftBarButtonItem = newBtn
         self.navigationItem.title = "All " + (documentId ?? "")
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shoppingCard))
+        
+        
+        
+        let notificationButton = SSBadgeButton()
+        notificationButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        notificationButton.setImage(UIImage(named: "shoppingCard")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        notificationButton.badgeEdgeInsets = UIEdgeInsets(top: 12, left: 10, bottom: 0, right: 0)
+        notificationButton.badge = "5"
+       
+        notificationButton.addTarget(self, action: #selector(shoppingCard), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: notificationButton)
+        
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shoppingCard))
         
         // Do any additional setup after loading the view.
         getsubCollectionFurniture()

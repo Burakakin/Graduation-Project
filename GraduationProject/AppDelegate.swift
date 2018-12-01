@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         
-        UINavigationBar.appearance().barTintColor = UIColor.black
-        UINavigationBar.appearance().tintColor = UIColor.orange
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().barTintColor = UIColor.lightGray
+        UINavigationBar.appearance().tintColor = UIColor.black
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
