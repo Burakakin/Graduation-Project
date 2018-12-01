@@ -90,7 +90,7 @@ class ProductDetailViewController: UIViewController {
                 let name = productDetail["name"] as! String
                 let description = productDetail["longDescription"] as! String
                 //let imageUrl = productDetail["imageUrl"] as! String
-                let price = productDetail["price"] as! Int
+                let price = productDetail["price"] as! String
                 let dimension = productDetail["dimension"] as! String
                 if let imageSliderUrl = productDetail["imageSlider"] as? [String] {
                     for images in imageSliderUrl {
@@ -114,34 +114,41 @@ class ProductDetailViewController: UIViewController {
     
     
     @IBAction func addToFavouriteButton(_ sender: UIButton) {
+        let refDoc: DocumentReference!
+        let defaults = UserDefaults.standard
+        var myFavorite = [String]()
+        myFavorite = (defaults.array(forKey: "fav") as? [String] ?? [])
         
-//        var pathToSave: String
-//        pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
-//        let myFavorite: [String: Any] = ["myFavourite": [pathToSave]]
-//
-//        let user = Auth.auth().currentUser
-//        if let user = user {
-//            let uid = user.uid
-//
-//
-//            ref = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
-//            ref.getDocument{ (document, error) in
-//                if let document = document, document.exists {
-//                    let dataDescription = document.data()
-//                    print("Document data: \(String(describing: dataDescription))")
-//
-//
-//
-//
-//
-//                } else {
-//                    print("document doesn't exit")
-//                }
-//            }
-//
-//        }
-//
-//
+        let pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
+        if myFavorite.contains(pathToSave) {
+            let indexOfSavedPath = myFavorite.firstIndex(of: pathToSave)
+            myFavorite.remove(at: indexOfSavedPath!)
+            defaults.set(myFavorite, forKey: "fav")
+        }
+        else {
+            myFavorite.append(pathToSave)
+            defaults.set(myFavorite, forKey: "fav")
+        }
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let uid = user.uid
+
+
+            refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
+            refDoc!.setData([
+                "pathToLiked": myFavorite
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
+
+        }
+
+
         
     
         
