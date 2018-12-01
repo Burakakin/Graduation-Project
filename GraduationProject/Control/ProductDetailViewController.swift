@@ -43,6 +43,7 @@ class ProductDetailViewController: UIViewController {
        
         setUpProductDetail()
          setupImageSlider()
+        setUpLastViewed()
     }
     
     @objc func abc() {
@@ -76,6 +77,37 @@ class ProductDetailViewController: UIViewController {
         
     }
     
+    
+    func setUpLastViewed() {
+        let refDoc: DocumentReference!
+        let defaults = UserDefaults.standard
+        
+        let pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
+        var lastViewed = [String]()
+        lastViewed = (defaults.array(forKey: "lastViewed") as? [String] ?? [])
+        lastViewed.append(pathToSave)
+        defaults.set(lastViewed, forKey: "lastViewed")
+        
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let uid = user.uid
+            
+            
+            refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
+            
+            refDoc!.updateData([
+                "lastViewed": lastViewed
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
+        }
+        
+    }
     
     func setUpProductDetail() {
         
@@ -129,14 +161,14 @@ class ProductDetailViewController: UIViewController {
             myFavorite.append(pathToSave)
             defaults.set(myFavorite, forKey: "fav")
         }
-        
+
         let user = Auth.auth().currentUser
         if let user = user {
             let uid = user.uid
 
 
             refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
-            refDoc!.setData([
+            refDoc!.updateData([
                 "pathToLiked": myFavorite
             ]) { err in
                 if let err = err {
@@ -145,18 +177,17 @@ class ProductDetailViewController: UIViewController {
                     print("Document successfully updated")
                 }
             }
-
         }
-
-
-        
-    
-        
-       
         
         
         
     }
+    
+    
+    @IBAction func shoppingCardTapped(_ sender: Any) {
+        print("Shopping Card Tapped")
+    }
+    
     
     
     

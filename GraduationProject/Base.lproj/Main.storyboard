@@ -245,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRj-tk-5d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2643.75" y="140.49295774647888"/>
+            <point key="canvasLocation" x="3641" y="109"/>
         </scene>
         <!--Product Category View Controller-->
         <scene sceneID="vKq-fu-gaq">
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fb-O7-Oyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2643.75" y="963.38028169014081"/>
+            <point key="canvasLocation" x="3641.25" y="963.38028169014081"/>
         </scene>
         <!--Filter Product Category View Controller-->
         <scene sceneID="aIp-oF-L3U">
@@ -449,7 +449,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaI-rL-dcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="YaZ-al-iZE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3532.5" y="1048.943661971831"/>
+            <point key="canvasLocation" x="4530" y="1048.943661971831"/>
         </scene>
         <!--Filter Detail Product Category View Controller-->
         <scene sceneID="KyE-2P-s30">
@@ -510,7 +510,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROm-og-J8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ABP-1X-HNS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4252.5" y="1045.7746478873239"/>
+            <point key="canvasLocation" x="5250" y="1045.7746478873239"/>
         </scene>
         <!--Left Side Menu View Controller-->
         <scene sceneID="wdg-j4-N5b">
@@ -712,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h42-sF-Ugp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159.375" y="1683.8028169014085"/>
+            <point key="canvasLocation" x="981" y="2429"/>
         </scene>
         <!--My Account-->
         <scene sceneID="QUp-Dv-3uW">
@@ -816,7 +816,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5H9-LQ-RzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157.5" y="887.32394366197184"/>
+            <point key="canvasLocation" x="981" y="1631"/>
         </scene>
         <!--Personal Info View Controller-->
         <scene sceneID="o61-wD-Hqv">
@@ -919,7 +919,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13F-Sb-Kcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646.875" y="891.54929577464793"/>
+            <point key="canvasLocation" x="1819" y="1631"/>
         </scene>
         <!--Sign Up Page View Controller-->
         <scene sceneID="9sw-qb-eW4">
@@ -1255,6 +1255,9 @@
                                                 <state key="normal" title="Add To Cart">
                                                     <color key="titleColor" red="0.99209111928939819" green="0.9922059178352356" blue="0.99203974008560181" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="shoppingCardTapped:" destination="kla-Om-K9a" eventType="touchUpInside" id="6PU-GJ-wfb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gg5-MA-EXd">
                                                 <rect key="frame" x="25" y="587" width="270" height="44"/>
@@ -1347,7 +1350,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmt-Wo-1w7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3532.5" y="139.43661971830986"/>
+            <point key="canvasLocation" x="4530" y="139.43661971830986"/>
+        </scene>
+        <!--Shopping Card-->
+        <scene sceneID="5bT-v4-LUt">
+            <objects>
+                <viewController storyboardIdentifier="ShoppingCardViewController" id="n0N-q3-jAo" customClass="ShoppingCardViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kry-qe-ggI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W3I-RH-lNG">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingCell" rowHeight="161" id="dcb-7U-na3" customClass="ShoppingCardTableViewCell" customModule="GraduationProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="161"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dcb-7U-na3" id="ANo-7i-5oG">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="160.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ejK-h7-Mnq" firstAttribute="trailing" secondItem="W3I-RH-lNG" secondAttribute="trailing" id="LrN-84-QlK"/>
+                            <constraint firstItem="ejK-h7-Mnq" firstAttribute="bottom" secondItem="W3I-RH-lNG" secondAttribute="bottom" id="RT5-cn-76x"/>
+                            <constraint firstItem="W3I-RH-lNG" firstAttribute="top" secondItem="ejK-h7-Mnq" secondAttribute="top" id="fxy-kp-0w8"/>
+                            <constraint firstItem="W3I-RH-lNG" firstAttribute="leading" secondItem="ejK-h7-Mnq" secondAttribute="leading" id="ibe-vD-IUX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ejK-h7-Mnq"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Shopping Card" id="kdi-fs-rPV">
+                        <barButtonItem key="backBarButtonItem" title=" " id="m5j-Rz-mHh"/>
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="fVx-Tr-RNT">
+                            <connections>
+                                <action selector="leftSideButtonTapped:" destination="n0N-q3-jAo" id="9bG-o2-XP0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i3H-vM-uwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818.75" y="860.91549295774644"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0cy-MN-OkG">
+            <objects>
+                <navigationController storyboardIdentifier="4" automaticallyAdjustsScrollViewInsets="NO" id="HkB-X5-O2n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wvg-mR-N9j">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n0N-q3-jAo" kind="relationship" relationship="rootViewController" id="8Or-O1-foU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bs-ME-Xpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981" y="861"/>
         </scene>
     </scenes>
     <resources>
@@ -1357,6 +1423,6 @@
         <image name="icons8-share-80.png" width="80" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0kF-wO-PND"/>
+        <segue reference="qjs-VF-gC7"/>
     </inferredMetricsTieBreakers>
 </document>
