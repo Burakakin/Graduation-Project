@@ -70,6 +70,8 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: "personalInfo", sender: self)
         case 1:
             performSegue(withIdentifier: "changePassword", sender: self)
+        case 3:
+            performSegue(withIdentifier: "myAddress", sender: self)
         default:
             print("Merhaba")
         }

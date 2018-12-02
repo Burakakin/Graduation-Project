@@ -36,6 +36,8 @@
 		A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2C21A5AD6700D2720D /* sofa.jpg */; };
 		A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2D21A5AD6700D2720D /* sofa1.jpg */; };
 		A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2E21A5AD6700D2720D /* sofa2.jpg */; };
+		A8E58E8221B4443200CC4980 /* MyAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E58E8121B4443200CC4980 /* MyAddressViewController.swift */; };
+		A8E58E8421B44DF500CC4980 /* AddressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E58E8321B44DF500CC4980 /* AddressDetailViewController.swift */; };
 		A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF3A21651C350077B597 /* AppDelegate.swift */; };
 		A8F5BF4021651C350077B597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F5BF3E21651C350077B597 /* Main.storyboard */; };
 		A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */; };
@@ -82,6 +84,8 @@
 		A8C26A2C21A5AD6700D2720D /* sofa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa.jpg; sourceTree = "<group>"; };
 		A8C26A2D21A5AD6700D2720D /* sofa1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa1.jpg; sourceTree = "<group>"; };
 		A8C26A2E21A5AD6700D2720D /* sofa2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa2.jpg; sourceTree = "<group>"; };
+		A8E58E8121B4443200CC4980 /* MyAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAddressViewController.swift; sourceTree = "<group>"; };
+		A8E58E8321B44DF500CC4980 /* AddressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDetailViewController.swift; sourceTree = "<group>"; };
 		A8F5BF3721651C350077B597 /* GraduationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F5BF3A21651C350077B597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F5BF3F21651C350077B597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 				A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */,
 				A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */,
 				A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */,
+				A8E58E8121B4443200CC4980 /* MyAddressViewController.swift */,
+				A8E58E8321B44DF500CC4980 /* AddressDetailViewController.swift */,
 				A83FBF2821AC4DC5002E106B /* FilterProductCategoryViewController.swift */,
 				A81E2A0921B16E7900E8EF3F /* FilterDetailProductCategoryViewController.swift */,
 				A81D765B21B31D92006BCFFF /* ShoppingCardViewController.swift */,
@@ -403,6 +409,8 @@
 				A8F5BF6C21651DDF0077B597 /* UIViewController+MMDrawerController.m in Sources */,
 				A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */,
 				A818258321724BBD0091A50D /* MyAccountCustomTableViewCell.swift in Sources */,
+				A8E58E8221B4443200CC4980 /* MyAddressViewController.swift in Sources */,
+				A8E58E8421B44DF500CC4980 /* AddressDetailViewController.swift in Sources */,
 				A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */,
 				A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */,
 				A834F89B21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift in Sources */,
