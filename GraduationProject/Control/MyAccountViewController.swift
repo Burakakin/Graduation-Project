@@ -72,6 +72,8 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: "changePassword", sender: self)
         case 2:
             performSegue(withIdentifier: "myAddress", sender: self)
+        case 3:
+            performSegue(withIdentifier: "uploadProduct", sender: self)
         default:
             print("Merhaba")
         }
