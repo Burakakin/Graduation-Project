@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class AddressDetailViewController: UIViewController {
 
+    var ref: DocumentReference!
+    @IBOutlet weak var addressNameTextField: UITextField!
+    @IBOutlet weak var fullAddressTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,14 +23,29 @@ class AddressDetailViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveToDatabase(_ sender: Any) {
+        guard let addressName = addressNameTextField.text, !addressName.isEmpty else { return }
+        guard let fullAddress = fullAddressTextField.text, !fullAddress.isEmpty else { return }
+        
+        let currentUser = Auth.auth().currentUser
+        guard let user = currentUser else { return }
+        let userId = user.uid
+        
+        
+        ref = Firestore.firestore().document("User/\(userId)")
+        
+        ref.updateData([
+            "address.address\(addressName)": fullAddress
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+        
+        
     }
-    */
+    
 
 }

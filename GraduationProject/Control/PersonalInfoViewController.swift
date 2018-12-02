@@ -44,7 +44,11 @@ class PersonalInfoViewController: UIViewController {
                 self.nameSurnameLabel.text = (dataDescription?["nameSurname"] as! String)
                 self.emailLabel.text = (dataDescription?["email"] as! String)
                 let imageUrl = (dataDescription?["profileImageUrl"] as! String)
-                self.addressLabel.text = (dataDescription?["address"] as! String)
+                if let homeAddress = dataDescription!["address"] as? Dictionary<String, String> {
+                    let home = (homeAddress["addressHome"] as! String)
+                    self.addressLabel.text = home
+                }
+                
                 imageDownload.getImage(withUrl: imageUrl, completion: { (image) in
                     self.profileImageView.image = image
                 })
