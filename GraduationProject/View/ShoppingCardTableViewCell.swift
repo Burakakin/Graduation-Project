@@ -10,6 +10,17 @@ import UIKit
 
 class ShoppingCardTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var shoppingCardProductImageView: UIImageView!
+    @IBOutlet weak var shoppingCardProductName: UILabel!
+    @IBOutlet weak var shoppingCardProductDescription: UILabel!
+    @IBOutlet weak var shoppingCardProductSeller: UILabel!
+    
+    @IBOutlet weak var shoppingCardProductPrice: UILabel!
+    @IBOutlet weak var shoppingCardMinusButton: UIButton!
+    @IBOutlet weak var shoppingCardPieceLabel: UILabel!
+    @IBOutlet weak var shoppingCardPlusButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
