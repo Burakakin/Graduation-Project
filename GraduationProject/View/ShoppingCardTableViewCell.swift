@@ -22,6 +22,7 @@ class ShoppingCardTableViewCell: UITableViewCell {
     @IBOutlet weak var shoppingCardPlusButton: UIButton!
     
     var PlusButtonTapped: ((ShoppingCardTableViewCell) -> Void)?
+    var MinusButtonTapped: ((ShoppingCardTableViewCell) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +38,9 @@ class ShoppingCardTableViewCell: UITableViewCell {
     
     @IBAction func plusButton(_ sender: Any) {
         PlusButtonTapped?(self)
+    }
+    @IBAction func minusButton(_ sender: Any) {
+        MinusButtonTapped?(self)
     }
     
 }

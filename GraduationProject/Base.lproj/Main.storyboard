@@ -1698,6 +1698,9 @@
                                                             <state key="normal" title="-">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="minusButton:" destination="dcb-7U-na3" eventType="touchUpInside" id="QEP-Yj-Eez"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piece(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlC-jE-Fg7">
                                                             <rect key="frame" x="30" y="0.0" width="63" height="30"/>
