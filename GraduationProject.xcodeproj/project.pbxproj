@@ -36,6 +36,10 @@
 		A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2C21A5AD6700D2720D /* sofa.jpg */; };
 		A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2D21A5AD6700D2720D /* sofa1.jpg */; };
 		A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2E21A5AD6700D2720D /* sofa2.jpg */; };
+		A8C2C37D21B7375900FF20EB /* AddressSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C2C37C21B7375900FF20EB /* AddressSelectionViewController.swift */; };
+		A8C2C37F21B73A7100FF20EB /* AddressSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C2C37E21B73A7100FF20EB /* AddressSelectionTableViewCell.swift */; };
+		A8C2C38221B73D3300FF20EB /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C2C38021B73D3200FF20EB /* checked.png */; };
+		A8C2C38321B73D3300FF20EB /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C2C38121B73D3300FF20EB /* unchecked.png */; };
 		A8E58E8221B4443200CC4980 /* MyAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E58E8121B4443200CC4980 /* MyAddressViewController.swift */; };
 		A8E58E8421B44DF500CC4980 /* AddressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E58E8321B44DF500CC4980 /* AddressDetailViewController.swift */; };
 		A8E58E8621B47FD400CC4980 /* UploadNewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E58E8521B47FD400CC4980 /* UploadNewProductViewController.swift */; };
@@ -86,6 +90,10 @@
 		A8C26A2C21A5AD6700D2720D /* sofa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa.jpg; sourceTree = "<group>"; };
 		A8C26A2D21A5AD6700D2720D /* sofa1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa1.jpg; sourceTree = "<group>"; };
 		A8C26A2E21A5AD6700D2720D /* sofa2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa2.jpg; sourceTree = "<group>"; };
+		A8C2C37C21B7375900FF20EB /* AddressSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectionViewController.swift; sourceTree = "<group>"; };
+		A8C2C37E21B73A7100FF20EB /* AddressSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		A8C2C38021B73D3200FF20EB /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		A8C2C38121B73D3300FF20EB /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 		A8E58E8121B4443200CC4980 /* MyAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAddressViewController.swift; sourceTree = "<group>"; };
 		A8E58E8321B44DF500CC4980 /* AddressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDetailViewController.swift; sourceTree = "<group>"; };
 		A8E58E8521B47FD400CC4980 /* UploadNewProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNewProductViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +156,8 @@
 		A86EF2A521668CB100701DEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A8C2C38021B73D3200FF20EB /* checked.png */,
+				A8C2C38121B73D3300FF20EB /* unchecked.png */,
 				A82B81CB21B3135200EB5354 /* shoppingCard.png */,
 				A8C26A2C21A5AD6700D2720D /* sofa.jpg */,
 				A83CB69821A865EC0098ED7D /* emptyProfileImage.png */,
@@ -243,6 +253,7 @@
 				A81D765B21B31D92006BCFFF /* ShoppingCardViewController.swift */,
 				A8E58E8521B47FD400CC4980 /* UploadNewProductViewController.swift */,
 				A8E58E8721B480B200CC4980 /* AddProductViewController.swift */,
+				A8C2C37C21B7375900FF20EB /* AddressSelectionViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 				A81D1C21217BC5E700EB5386 /* ProductPageCollectionViewCell.swift */,
 				A834F89A21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift */,
 				A81D765D21B3210E006BCFFF /* ShoppingCardTableViewCell.swift */,
+				A8C2C37E21B73A7100FF20EB /* AddressSelectionTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +338,7 @@
 				A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */,
 				A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */,
 				A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */,
+				A8C2C38321B73D3300FF20EB /* unchecked.png in Resources */,
 				A83CB69921A865EC0098ED7D /* emptyProfileImage.png in Resources */,
 				A8F5BF4821651C360077B597 /* LaunchScreen.storyboard in Resources */,
 				A8146F2521A5BA53004F493F /* icons8-share-80.png in Resources */,
@@ -333,6 +346,7 @@
 				A86EF2A721668CE800701DEB /* facebook.png in Resources */,
 				A8F5BF4521651C360077B597 /* Assets.xcassets in Resources */,
 				A8F5BF4021651C350077B597 /* Main.storyboard in Resources */,
+				A8C2C38221B73D3300FF20EB /* checked.png in Resources */,
 				A82B81CC21B3135200EB5354 /* shoppingCard.png in Resources */,
 				A8766FE521A5EB3000C6889F /* ar.png in Resources */,
 			);
@@ -409,11 +423,13 @@
 				A8182581217249500091A50D /* MyAccountViewController.swift in Sources */,
 				A82A3753217A2B700026E60C /* extension.swift in Sources */,
 				A8E58E8821B480B200CC4980 /* AddProductViewController.swift in Sources */,
+				A8C2C37F21B73A7100FF20EB /* AddressSelectionTableViewCell.swift in Sources */,
 				A81D765E21B3210E006BCFFF /* ShoppingCardTableViewCell.swift in Sources */,
 				A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */,
 				A81D1C22217BC5E700EB5386 /* ProductPageCollectionViewCell.swift in Sources */,
 				A8F5BF6921651DDF0077B597 /* MMDrawerBarButtonItem.m in Sources */,
 				A8F5BF6C21651DDF0077B597 /* UIViewController+MMDrawerController.m in Sources */,
+				A8C2C37D21B7375900FF20EB /* AddressSelectionViewController.swift in Sources */,
 				A8F5BF4321651C350077B597 /* GraduationProject.xcdatamodeld in Sources */,
 				A818258321724BBD0091A50D /* MyAccountCustomTableViewCell.swift in Sources */,
 				A8E58E8221B4443200CC4980 /* MyAddressViewController.swift in Sources */,
