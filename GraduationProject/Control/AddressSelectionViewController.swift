@@ -13,6 +13,7 @@ import FirebaseFirestore
 class AddressSelectionViewController: UIViewController {
 
     var addressDetail = [[String]]()
+    var selectedAddress = [String]()
     
     @IBOutlet weak var addressSelectionTableView: UITableView!
     override func viewDidLoad() {
@@ -20,6 +21,10 @@ class AddressSelectionViewController: UIViewController {
 
         navigationItem.title = "Address Selection"
         getAddressToSelect()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("Disappear: \(selectedAddress)")
     }
     
     func getAddressToSelect(){
@@ -35,7 +40,7 @@ class AddressSelectionViewController: UIViewController {
             if let document = document, document.exists {
                 let dataDescription = document.data()
                 if let homeAddress = dataDescription!["address"] as? Dictionary<String, String> {
-                    print(homeAddress.keys)
+                    //print(homeAddress.keys)
                     var addressDetailArr = [String]()
                     for key in homeAddress.keys {
                         addressDetailArr = ["\(key)", "\(homeAddress[key] ?? "")" ]
@@ -69,26 +74,31 @@ extension AddressSelectionViewController: UITableViewDelegate, UITableViewDataSo
         
         cell.addressNameLabel.text = address[0]
         cell.fullAddressLabel.text = address[1]
-        cell.checkedButton.addTarget(self, action: #selector(buttonSelected), for: .touchUpInside)
+        
+        cell.checkedButtonTapped = { (selectedCell) -> Void in
+            let path = tableView.indexPathForRow(at: selectedCell.center)!
+            let selectedKey = self.addressDetail[path.row]
+            //print(selectedKey)
+            self.selectedAddress = selectedKey
+            cell.checkedButton.isSelected = !cell.checkedButton.isSelected
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
-    
-    
-    @objc func buttonSelected(sender: UIButton) {
-
-        if sender.isSelected {
-            sender.isSelected = false
-        }
-        else {
-            sender.isSelected = true
-        }
+        
         
     }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+            cell.accessoryType = .none
+        }
+    }
+    
+    
+    
     
     
 }

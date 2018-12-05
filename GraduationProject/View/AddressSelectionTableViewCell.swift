@@ -14,6 +14,8 @@ class AddressSelectionTableViewCell: UITableViewCell {
     @IBOutlet weak var fullAddressLabel: UILabel!
     @IBOutlet weak var checkedButton: UIButton!
     
+    var checkedButtonTapped: ((AddressSelectionTableViewCell) -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +27,7 @@ class AddressSelectionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func addressSelectionButton(_ sender: Any) {
+         checkedButtonTapped?(self)
+    }
 }

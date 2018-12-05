@@ -1895,6 +1895,9 @@
                                                     </constraints>
                                                     <state key="normal" image="unchecked.png"/>
                                                     <state key="selected" image="checked.png"/>
+                                                    <connections>
+                                                        <action selector="addressSelectionButton:" destination="Vct-QX-ek0" eventType="touchUpInside" id="XYc-ob-OXO"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

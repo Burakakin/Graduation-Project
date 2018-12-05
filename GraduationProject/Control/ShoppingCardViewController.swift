@@ -137,7 +137,9 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
              let path = tableView.indexPathForRow(at: selectedCell.center)!
              let selectedKey = self.shoppingCartArr[path.row]["key"]
             self.deleteField(key: selectedKey!)
-            tableView.reloadData()
+            self.shoppingCartArr.removeAll()
+            self.getShoppingCartPath()
+            
         }
         
         
