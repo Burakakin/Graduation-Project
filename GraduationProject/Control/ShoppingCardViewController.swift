@@ -40,6 +40,22 @@ class ShoppingCardViewController: UIViewController {
     }
    
     
+    func deleteField(key: String) {
+        let user = Auth.auth().currentUser
+        guard let uid = user?.uid else { return }
+        ref = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
+        
+        ref.updateData([
+            "shoppingCart.\(key)": FieldValue.delete(),
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+        }
+    }
+    
     func getShoppingCartPath() {
         
         let user = Auth.auth().currentUser
@@ -49,19 +65,20 @@ class ShoppingCardViewController: UIViewController {
         ref.getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()
-                if let shoppingCartArr = data!["shoppingCart"] as? [String] {
+                if let shoppingCartArr = data!["shoppingCart"] as? Dictionary<String, String> {
                     for item in shoppingCartArr {
-                        self.refItem = Firestore.firestore().document("\(item)")
+                        self.refItem = Firestore.firestore().document("\(item.value)")
                         self.refItem.getDocument { (document, error) in
                             if let document = document, document.exists {
                                 let dataDescription = document.data()
+                                let key = item.key
                                 let imageUrl = dataDescription!["imageUrl"] as! String
                                 let name = dataDescription!["name"] as! String
                                 let seller = dataDescription!["seller"] as! String
                                 let description = dataDescription!["description"] as! String
                                 let price = Int(dataDescription!["price"] as! String)
                                 //print("Document data: \(dataDescription)")
-                                let shoppingCart: [String: String] = ["name": name, "imageUrl": imageUrl, "description": description, "seller": seller ]
+                                let shoppingCart: [String: String] = ["key": key,"name": name, "imageUrl": imageUrl, "description": description, "seller": seller ]
                                 let priceKeeper: [String: Int] = ["price": price!, "total": price!, "amount": 1]
                                 DispatchQueue.main.async {
                                     self.priceKeeperArr.append(priceKeeper)
@@ -99,7 +116,13 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingCell", for: indexPath) as! ShoppingCardTableViewCell
         
+        var totalPrice = 0
         
+        
+        for i in 0..<self.priceKeeperArr.count {
+            totalPrice += self.priceKeeperArr[i]["total"]!
+            self.totalPriceLabel.text = "Total Price: \(totalPrice)TL"
+        }
         
         cell.shoppingCardProductName.text = shoppingCartArr[indexPath.row]["name"]
         cell.shoppingCardProductDescription.text = shoppingCartArr[indexPath.row]["description"]
@@ -109,6 +132,14 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
         imageDownload.getImage(withUrl: shoppingCartArr[indexPath.row]["imageUrl"]!) { (image) in
             cell.shoppingCardProductImageView.image = image
         }
+        
+        cell.DeleteButtonTapped = { (selectedCell) -> Void in
+             let path = tableView.indexPathForRow(at: selectedCell.center)!
+             let selectedKey = self.shoppingCartArr[path.row]["key"]
+            self.deleteField(key: selectedKey!)
+            tableView.reloadData()
+        }
+        
         
         cell.PlusButtonTapped = { (selectedCell) -> Void in
             let path = tableView.indexPathForRow(at: selectedCell.center)!
@@ -177,6 +208,5 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
         
         return cell
     }
-    
     
 }

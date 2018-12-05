@@ -15,6 +15,7 @@ class ShoppingCardTableViewCell: UITableViewCell {
     @IBOutlet weak var shoppingCardProductName: UILabel!
     @IBOutlet weak var shoppingCardProductDescription: UILabel!
     @IBOutlet weak var shoppingCardProductSeller: UILabel!
+    @IBOutlet weak var shoppingCardDeleteButton: UIButton!
     
     @IBOutlet weak var shoppingCardProductPrice: UILabel!
     @IBOutlet weak var shoppingCardMinusButton: UIButton!
@@ -23,6 +24,8 @@ class ShoppingCardTableViewCell: UITableViewCell {
     
     var PlusButtonTapped: ((ShoppingCardTableViewCell) -> Void)?
     var MinusButtonTapped: ((ShoppingCardTableViewCell) -> Void)?
+    var DeleteButtonTapped: ((ShoppingCardTableViewCell) -> Void)?
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,4 +46,7 @@ class ShoppingCardTableViewCell: UITableViewCell {
         MinusButtonTapped?(self)
     }
     
+    @IBAction func deleteButton(_ sender: Any) {
+        DeleteButtonTapped?(self)
+    }
 }

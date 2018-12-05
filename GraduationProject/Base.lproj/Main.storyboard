@@ -1731,7 +1731,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ue7-b8-sYq">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ue7-b8-sYq">
                                                             <rect key="frame" x="0.0" y="28.5" width="184" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -1746,29 +1746,39 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk3-jy-HRY">
-                                                    <rect key="frame" x="270" y="105" width="42" height="21"/>
+                                                    <rect key="frame" x="270" y="95.5" width="42" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjT-Ci-Oom">
+                                                    <rect key="frame" x="270" y="127" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <state key="normal" title="Delete"/>
+                                                    <connections>
+                                                        <action selector="deleteButton:" destination="dcb-7U-na3" eventType="touchUpInside" id="9EA-Br-ViM"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="hk3-jy-HRY" secondAttribute="trailing" constant="8" id="5Ee-xo-Saj"/>
                                                 <constraint firstItem="quS-fa-bdP" firstAttribute="leading" secondItem="09W-ZP-Zko" secondAttribute="trailing" constant="8" id="6KG-7A-OWP"/>
                                                 <constraint firstItem="09W-ZP-Zko" firstAttribute="leading" secondItem="ANo-7i-5oG" secondAttribute="leading" id="8PR-Mp-rCc"/>
-                                                <constraint firstAttribute="bottom" secondItem="hk3-jy-HRY" secondAttribute="bottom" constant="23.5" id="BGP-rb-NDE"/>
+                                                <constraint firstAttribute="bottom" secondItem="hk3-jy-HRY" secondAttribute="bottom" constant="30" id="BGP-rb-NDE"/>
                                                 <constraint firstItem="09W-ZP-Zko" firstAttribute="top" secondItem="ANo-7i-5oG" secondAttribute="top" id="EGE-fp-u2S"/>
                                                 <constraint firstItem="hk3-jy-HRY" firstAttribute="leading" relation="lessThanOrEqual" secondItem="quS-fa-bdP" secondAttribute="trailing" constant="40" id="K95-wA-a2v"/>
                                                 <constraint firstItem="quS-fa-bdP" firstAttribute="top" secondItem="szc-Wb-fkj" secondAttribute="bottom" constant="14.5" id="UzL-e9-rzc"/>
                                                 <constraint firstItem="szc-Wb-fkj" firstAttribute="leading" secondItem="09W-ZP-Zko" secondAttribute="trailing" constant="8" id="Z3w-xb-mY0"/>
                                                 <constraint firstAttribute="bottom" secondItem="quS-fa-bdP" secondAttribute="bottom" constant="19.5" id="kRY-gR-YiI"/>
-                                                <constraint firstItem="hk3-jy-HRY" firstAttribute="top" secondItem="szc-Wb-fkj" secondAttribute="bottom" constant="19.5" id="kqU-GT-lrj"/>
+                                                <constraint firstItem="hk3-jy-HRY" firstAttribute="top" secondItem="szc-Wb-fkj" secondAttribute="bottom" constant="10" id="kqU-GT-lrj"/>
                                                 <constraint firstItem="szc-Wb-fkj" firstAttribute="top" secondItem="ANo-7i-5oG" secondAttribute="top" constant="8" id="ptV-1i-aVF"/>
                                                 <constraint firstAttribute="bottom" secondItem="09W-ZP-Zko" secondAttribute="bottom" id="rRr-g2-Sxm"/>
                                                 <constraint firstAttribute="trailing" secondItem="szc-Wb-fkj" secondAttribute="trailing" constant="8" id="vud-cS-gdY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="shoppingCardDeleteButton" destination="fjT-Ci-Oom" id="WdY-Ar-oE5"/>
                                             <outlet property="shoppingCardMinusButton" destination="53o-FA-N4f" id="ABn-rY-W1w"/>
                                             <outlet property="shoppingCardPieceLabel" destination="KlC-jE-Fg7" id="XpZ-zG-CJa"/>
                                             <outlet property="shoppingCardPlusButton" destination="KG5-bA-mEQ" id="4Gb-Ei-Y5s"/>
