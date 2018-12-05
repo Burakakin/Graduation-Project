@@ -33,7 +33,22 @@ class MyAddressViewController: UIViewController {
         performSegue(withIdentifier: "addAddress", sender: self)
     }
     
-    
+    func deleteField(key: String) {
+        let user = Auth.auth().currentUser
+        guard let uid = user?.uid else { return }
+        var ref: DocumentReference!
+        ref = Firestore.firestore().document("User/\(uid)")
+        
+        ref.updateData([
+            "address.\(key)": FieldValue.delete(),
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+        }
+    }
     
     func getAddress(){
         
@@ -73,14 +88,22 @@ extension MyAddressViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath) as! MyAddressTableViewCell
         
        let address = addressDetail[indexPath.row]
     
-        cell.textLabel?.text = address[0]
-        cell.detailTextLabel?.text = address[1]
+        cell.addressNameLabel.text = address[0]
+        cell.fullAddressLabel.text = address[1]
         
        
+        cell.deleteButtonTapped = { (selectedCell) -> Void in
+            let path = tableView.indexPathForRow(at: selectedCell.center)!
+            let selectedKey = self.addressDetail[path.row][0]
+            self.deleteField(key: selectedKey)
+            self.addressDetail.removeAll()
+            self.getAddress()
+            
+        }
         
         return cell
     }

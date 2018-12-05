@@ -21,6 +21,7 @@
 		A81E2A0A21B16E7900E8EF3F /* FilterDetailProductCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81E2A0921B16E7900E8EF3F /* FilterDetailProductCategoryViewController.swift */; };
 		A82A3753217A2B700026E60C /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82A3752217A2B700026E60C /* extension.swift */; };
 		A82B81CC21B3135200EB5354 /* shoppingCard.png in Resources */ = {isa = PBXBuildFile; fileRef = A82B81CB21B3135200EB5354 /* shoppingCard.png */; };
+		A82E0FC521B8561F00651CCB /* MyAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E0FC421B8561F00651CCB /* MyAddressTableViewCell.swift */; };
 		A834F89921419CB200D8843D /* ProductCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834F89821419CB200D8843D /* ProductCategoryViewController.swift */; };
 		A834F89B21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834F89A21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift */; };
 		A83CB69921A865EC0098ED7D /* emptyProfileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A83CB69821A865EC0098ED7D /* emptyProfileImage.png */; };
@@ -75,6 +76,7 @@
 		A81E2A0921B16E7900E8EF3F /* FilterDetailProductCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailProductCategoryViewController.swift; sourceTree = "<group>"; };
 		A82A3752217A2B700026E60C /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		A82B81CB21B3135200EB5354 /* shoppingCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingCard.png; sourceTree = "<group>"; };
+		A82E0FC421B8561F00651CCB /* MyAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAddressTableViewCell.swift; sourceTree = "<group>"; };
 		A834F89821419CB200D8843D /* ProductCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryViewController.swift; sourceTree = "<group>"; };
 		A834F89A21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A83CB69821A865EC0098ED7D /* emptyProfileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyProfileImage.png; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				A834F89A21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift */,
 				A81D765D21B3210E006BCFFF /* ShoppingCardTableViewCell.swift */,
 				A8C2C37E21B73A7100FF20EB /* AddressSelectionTableViewCell.swift */,
+				A82E0FC421B8561F00651CCB /* MyAddressTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */,
 				A834F89B21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift in Sources */,
 				A8E58E8621B47FD400CC4980 /* UploadNewProductViewController.swift in Sources */,
+				A82E0FC521B8561F00651CCB /* MyAddressTableViewCell.swift in Sources */,
 				A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */,
 				A81D765C21B31D92006BCFFF /* ShoppingCardViewController.swift in Sources */,
 				A8F5BF6A21651DDF0077B597 /* MMDrawerController.m in Sources */,

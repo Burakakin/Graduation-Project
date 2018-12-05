@@ -35,7 +35,7 @@ class AddressDetailViewController: UIViewController {
         ref = Firestore.firestore().document("User/\(userId)")
         
         ref.updateData([
-            "address.address\(addressName)": fullAddress
+            "address.\(addressName)": fullAddress
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
