@@ -101,8 +101,9 @@ class ProductsViewController: UIViewController {
                     let imageUrl = document.data()["imageUrl"] as! String
                     let price = document.data()["price"] as! String
                     let dimension = document.data()["dimension"] as! String
+                    let seller = document.data()["seller"] as! String
                     
-                    let productData: [String: Any] = ["id": document.documentID, "name": name, "description": description, "imageUrl": imageUrl, "price": price, "dimension": dimension]
+                    let productData: [String: Any] = ["id": document.documentID, "name": name, "description": description, "imageUrl": imageUrl, "price": price, "dimension": dimension, "seller": seller]
                     DispatchQueue.main.async {
                         self.productArray.append(productData)
                         self.productPageTableView.reloadData()
@@ -158,6 +159,7 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.productDescriptionLabel.text = (product["description"] as! String)
         cell.productPriceLabel.text = "TL" + String(product["price"] as! String)
         cell.productDimensionLabel.text = (product["dimension"] as! String)
+        cell.productSellerLabel.text = (product["seller"] as! String)
         
         imageDownload.getImage(withUrl: product["imageUrl"] as! String) { (image) in
             cell.producImageView.image = image

@@ -9,11 +9,13 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 class AddProductViewController: UIViewController {
 
     var ref: CollectionReference!
     var refDoc: DocumentReference!
+    var refDb: CollectionReference!
     
     var category = [String]()
     var subCategory = [String]()
@@ -22,6 +24,13 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var subCategoryTextField: UITextField!
     @IBOutlet weak var sellerName: UITextField!
     @IBOutlet weak var sellerEmail: UITextField!
+    @IBOutlet weak var productNameTextField: UITextField!
+    @IBOutlet weak var productDescriptionTextField: UITextField!
+    @IBOutlet weak var productDimensionTextField: UITextField!
+    @IBOutlet weak var productColorTextField: UITextField!
+    @IBOutlet weak var productLongDescriptionTextField: UITextField!
+    @IBOutlet weak var productPriceTextField: UITextField!
+    @IBOutlet weak var productImageView: UIImageView!
     
     
     var selectedCategory: String?
@@ -33,6 +42,14 @@ class AddProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        productImageView.layer.cornerRadius = productImageView.frame.height / 2
+        productImageView.clipsToBounds = true
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addProductImageTapped(tapGestureRecognizer:)))
+        productImageView.isUserInteractionEnabled = true
+        productImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        
         categoryPicker.delegate = self
         categoryTextField.inputView = categoryPicker
         
@@ -41,7 +58,6 @@ class AddProductViewController: UIViewController {
         createToolbar()
         getCategories()
         getUserInfo()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -121,6 +137,72 @@ class AddProductViewController: UIViewController {
         
     }
     
+    func saveToDatabase() {
+        
+        
+        print("Furniture/\(selectedCategory ?? "")/\(newId ?? "")")
+        
+        guard let productName = productNameTextField.text, !productName.isEmpty else { return }
+        guard let productDescription = productDescriptionTextField.text, !productDescription.isEmpty else { return }
+        guard let productDimension = productDimensionTextField.text, !productDimension.isEmpty else { return }
+        guard let productColor = productColorTextField.text, !productColor.isEmpty else { return }
+        guard let productLongDescription = productLongDescriptionTextField.text, !productLongDescription.isEmpty else { return }
+        guard let productPrice = productPriceTextField.text, !productPrice.isEmpty else { return }
+        
+       
+        let storageRef = Storage.storage().reference().child("AllCategories/\(selectedCategory ?? "")/\(selectedSubCategory ?? "")/")
+        
+        
+        
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/jpeg"
+        let uploadImage = self.productImageView.image?.jpegData(compressionQuality: 0.8)
+        // Upload the file to the path "images/rivers.jpg"
+        storageRef.putData(uploadImage!, metadata: uploadMetadata) { (metadata, error) in
+            guard let metadata = metadata else { return }
+            // Metadata contains file metadata such as size, content-type.
+            if error != nil {
+                print("Error! \(String(describing: error?.localizedDescription))")
+            }
+            else{
+                print("Upload Complete! \(String(describing: metadata))")
+            }
+            // You can also access to download URL after upload.
+            storageRef.downloadURL { (url, error) in
+                guard let downloadURL = url else { return }
+                let urlString = downloadURL.absoluteString
+                print("image url: \(urlString)")
+                
+//                let userData: [String: Any] = ["userId": userId,"nameSurname": username, "email": email, "password": password, "profileImageUrl": urlString]
+                let productData: [String: String] = ["name": productName, "description": productDescription, "dimension": productDimension, "longDescription": productLongDescription, "seller": self.sellerName.text!, "subCategory": self.selectedSubCategory!, "color": productColor, "price": productPrice, "imageUrl": urlString]
+                self.passDataToDatabase(productInfo: productData)
+                
+            }
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    func passDataToDatabase(productInfo: [String: String]){
+        
+         refDb = Firestore.firestore().collection("Furniture/\(selectedCategory ?? "")/\(newId ?? "")")
+        refDb.addDocument(data: productInfo) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+        
+    }
+    
+    @IBAction func saveToDatabase(_ sender: Any) {
+        saveToDatabase()
+    }
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -178,6 +260,28 @@ extension AddProductViewController: UIPickerViewDelegate, UIPickerViewDataSource
        
     }
     
+    
+    
+}
+
+extension AddProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @objc func addProductImageTapped(tapGestureRecognizer: UITapGestureRecognizer){
+        let profileImg = UIImagePickerController()
+        profileImg.delegate = self
+        profileImg.allowsEditing = false
+        profileImg.sourceType = .photoLibrary
+        profileImg.allowsEditing = false
+        present(profileImg, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedProfileImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            productImageView.contentMode = .scaleAspectFit
+            productImageView.image = pickedProfileImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
     
     
 }

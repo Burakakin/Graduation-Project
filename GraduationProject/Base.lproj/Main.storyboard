@@ -187,8 +187,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-qo-0DK">
-                                                    <rect key="frame" x="253" y="38" width="46" height="30"/>
+                                                    <rect key="frame" x="253" y="26" width="46" height="25"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="501-ub-bzm">
+                                                    <rect key="frame" x="253" y="59" width="34.5" height="28"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -201,15 +207,18 @@
                                                 <constraint firstAttribute="trailing" secondItem="eKv-9m-5EP" secondAttribute="trailing" constant="79" id="3md-Sx-Nff"/>
                                                 <constraint firstItem="nVe-qo-0DK" firstAttribute="leading" secondItem="HFd-4D-0Hx" secondAttribute="trailing" constant="12" id="9EJ-8A-kxK"/>
                                                 <constraint firstItem="0ub-ua-GGs" firstAttribute="leading" secondItem="oOy-TR-Gd3" secondAttribute="trailing" constant="8" id="9Qc-SZ-pdS"/>
+                                                <constraint firstItem="501-ub-bzm" firstAttribute="top" secondItem="nVe-qo-0DK" secondAttribute="bottom" constant="8" id="Gcs-jj-aTD"/>
                                                 <constraint firstAttribute="bottom" secondItem="HFd-4D-0Hx" secondAttribute="bottom" constant="23" id="IgM-SV-71N"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="nVe-qo-0DK" secondAttribute="bottom" constant="19" id="OuL-g2-7Uk"/>
+                                                <constraint firstItem="501-ub-bzm" firstAttribute="leading" secondItem="HFd-4D-0Hx" secondAttribute="trailing" constant="12" id="KbW-Qd-9Yy"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="501-ub-bzm" secondAttribute="trailing" constant="15" id="OQl-PL-0Nj"/>
+                                                <constraint firstAttribute="bottom" secondItem="501-ub-bzm" secondAttribute="bottom" constant="11" id="R7P-nr-Z7g"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="nVe-qo-0DK" secondAttribute="trailing" constant="6" id="REF-zM-aoF"/>
                                                 <constraint firstAttribute="trailing" secondItem="0ub-ua-GGs" secondAttribute="trailing" constant="79" id="Red-Kq-leR"/>
                                                 <constraint firstItem="eKv-9m-5EP" firstAttribute="leading" secondItem="oOy-TR-Gd3" secondAttribute="trailing" constant="8" id="UWy-oy-djV"/>
                                                 <constraint firstItem="HFd-4D-0Hx" firstAttribute="leading" secondItem="oOy-TR-Gd3" secondAttribute="trailing" constant="8" id="Wo4-kf-apZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="oOy-TR-Gd3" secondAttribute="bottom" id="eJU-y0-c06"/>
                                                 <constraint firstAttribute="bottom" secondItem="eKv-9m-5EP" secondAttribute="bottom" constant="5" id="o4T-Ht-gVi"/>
-                                                <constraint firstItem="nVe-qo-0DK" firstAttribute="top" secondItem="dEX-i8-g2y" secondAttribute="topMargin" constant="27" id="vzn-kA-NeL"/>
+                                                <constraint firstItem="nVe-qo-0DK" firstAttribute="top" secondItem="dEX-i8-g2y" secondAttribute="topMargin" constant="15" id="vzn-kA-NeL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -218,6 +227,7 @@
                                             <outlet property="productDimensionLabel" destination="eKv-9m-5EP" id="1gq-aa-ZUC"/>
                                             <outlet property="productNameLabel" destination="0ub-ua-GGs" id="RPo-Zx-VlF"/>
                                             <outlet property="productPriceLabel" destination="nVe-qo-0DK" id="FYP-GN-CGs"/>
+                                            <outlet property="productSellerLabel" destination="501-ub-bzm" id="Wx6-Wo-ojh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -245,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRj-tk-5d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3641" y="109"/>
+            <point key="canvasLocation" x="3639.375" y="108.80281690140845"/>
         </scene>
         <!--Product Category View Controller-->
         <scene sceneID="vKq-fu-gaq">
@@ -883,6 +893,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="wmn-aq-YP5"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="saveToDatabase:" destination="aaf-A7-A33" eventType="touchUpInside" id="bgk-MT-hv9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -921,6 +934,13 @@
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="categoryTextField" destination="ezF-W1-SOj" id="UyL-bl-sp1"/>
+                        <outlet property="productColorTextField" destination="TTf-Mb-nXD" id="jni-sl-k6h"/>
+                        <outlet property="productDescriptionTextField" destination="wmA-Gs-kdn" id="LZI-KI-Phm"/>
+                        <outlet property="productDimensionTextField" destination="wmA-Gs-kdn" id="U6Y-47-QIS"/>
+                        <outlet property="productImageView" destination="OOi-kc-dNC" id="fRT-aX-smw"/>
+                        <outlet property="productLongDescriptionTextField" destination="TTf-Mb-nXD" id="2Lf-sV-avs"/>
+                        <outlet property="productNameTextField" destination="16z-5w-uTy" id="juS-Bm-RMR"/>
+                        <outlet property="productPriceTextField" destination="30A-cf-TZA" id="1ZV-cw-Llf"/>
                         <outlet property="sellerEmail" destination="Oel-fI-kdB" id="RQ7-H3-9MA"/>
                         <outlet property="sellerName" destination="Kp0-uj-y4Y" id="2dL-DH-Vzc"/>
                         <outlet property="subCategoryTextField" destination="dxT-ZQ-MgI" id="wuz-Xa-wEn"/>
