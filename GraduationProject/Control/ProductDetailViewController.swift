@@ -17,6 +17,10 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var productDetailDescriptionLabel: UILabel!
     @IBOutlet weak var productDetailDimensionLabel: UILabel!
     @IBOutlet weak var productDetailPriceLabel: UILabel!
+    @IBOutlet weak var productDetailSeller: UILabel!
+    @IBOutlet weak var productDetailMaterialLabel: UILabel!
+    @IBOutlet weak var productDetailKeyFeatureLabel: UILabel!
+    @IBOutlet weak var productDetailCareInstructionsLabel: UILabel!
     
     
     
@@ -119,11 +123,21 @@ class ProductDetailViewController: UIViewController {
             if let document = document, document.exists {
                 let productDetail = document.data()!
                 //print(productDetail)
+                var materialString = [String]()
+                var careInstructionsString = [String]()
                 let name = productDetail["name"] as! String
                 let description = productDetail["longDescription"] as! String
                 //let imageUrl = productDetail["imageUrl"] as! String
                 let price = productDetail["price"] as! String
                 let dimension = productDetail["dimension"] as! String
+                let seller = productDetail["seller"] as! String
+                let keyFeatures = productDetail["keyFeatures"] as! String
+                if let material = productDetail["material"] as? [String] {
+                    materialString = material
+                }
+                if let careInstructions = productDetail["careInstructions"] as? [String] {
+                    careInstructionsString = careInstructions
+                }
                 if let imageSliderUrl = productDetail["imageSlider"] as? [String] {
                     for images in imageSliderUrl {
                         imageDownload.getImage(withUrl: images) { (image) in
@@ -137,6 +151,10 @@ class ProductDetailViewController: UIViewController {
                 self.productDetailDescriptionLabel.text = description
                 self.productDetailDimensionLabel.text = dimension
                 self.productDetailPriceLabel.text = String(price) + "TL"
+                self.productDetailSeller.text =  "Seller: " + seller
+                self.productDetailMaterialLabel.text = "\(materialString[0])\n\(materialString[1])\n\(materialString[2])"
+                self.productDetailKeyFeatureLabel.text = keyFeatures
+                self.productDetailCareInstructionsLabel.text = "\(careInstructionsString[0])\n\(careInstructionsString[1])\n\(careInstructionsString[2])"
                
             } else {
                 print("Document does not exist")
