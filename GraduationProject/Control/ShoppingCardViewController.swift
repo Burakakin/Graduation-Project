@@ -20,14 +20,19 @@ class ShoppingCardViewController: UIViewController {
     var priceKeeperArr = [[String: Int]]()
     
     @IBOutlet weak var shoppingCartTableView: UITableView!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getShoppingCartPath()
         
+        totalPriceLabel.text = "Total Price: \(0)TL"
+        getShoppingCartPath()
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        print("Disappear: \(priceKeeperArr)")
+    }
 
     @IBAction func leftSideButtonTapped(_ sender: Any) {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -94,6 +99,8 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingCell", for: indexPath) as! ShoppingCardTableViewCell
         
+        
+        
         cell.shoppingCardProductName.text = shoppingCartArr[indexPath.row]["name"]
         cell.shoppingCardProductDescription.text = shoppingCartArr[indexPath.row]["description"]
         cell.shoppingCardProductSeller.text = shoppingCartArr[indexPath.row]["seller"]
@@ -110,7 +117,6 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
             let price = selectedItem["price"]!
             var total = selectedItem["total"]!
             var amount = selectedItem["amount"]!
-            
            
             if amount > 5 {
                 print("We don't have much")
@@ -123,6 +129,13 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
                 cell.shoppingCardProductPrice.text = "\(total)"
                 cell.shoppingCardPieceLabel.text = "\(amount) Piece(s)"
                 print(self.priceKeeperArr)
+                
+                var totalPrice = 0
+                
+                for i in 0..<self.priceKeeperArr.count {
+                    totalPrice += self.priceKeeperArr[i]["total"]!
+                    self.totalPriceLabel.text = "Total Price: \(totalPrice)TL"
+                }
             }
         }
         
@@ -133,9 +146,7 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
             let price = selectedItem["price"]!
             var total = selectedItem["total"]!
             var amount = selectedItem["amount"]!
-            
-            
-            
+
             if amount > 1 {
                 
                 amount -= 1
@@ -146,11 +157,21 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
                 cell.shoppingCardPieceLabel.text = "\(amount) Piece(s)"
                 print(self.priceKeeperArr)
                 
+
+                var totalPrice = 0
+                
+                for i in 0..<self.priceKeeperArr.count {
+                    totalPrice += self.priceKeeperArr[i]["total"]!
+                    self.totalPriceLabel.text = "Total Price: \(totalPrice)TL"
+                }
+                
+                
             }
             else {
                 print("We don't have much")
             }
         }
+        
         
         
         

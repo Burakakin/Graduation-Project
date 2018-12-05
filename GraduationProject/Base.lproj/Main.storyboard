@@ -1785,28 +1785,39 @@
                                     <outlet property="delegate" destination="n0N-q3-jAo" id="Ceu-Lw-cW6"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAm-D9-ggM">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="e1k-DH-sBo">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwb-0Z-KpJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAm-D9-ggM">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="50"/>
+                                        <state key="normal" title="Proceed to Checkout">
+                                            <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="yUi-JL-tZ9" kind="show" id="3rP-hs-7TK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="CDD-m9-Kzj"/>
+                                    <constraint firstAttribute="height" constant="50" id="rO3-9r-b5J"/>
                                 </constraints>
-                                <state key="normal" title="Proceed to Checkout">
-                                    <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="yUi-JL-tZ9" kind="show" id="3rP-hs-7TK"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ejK-h7-Mnq" firstAttribute="bottom" secondItem="RAm-D9-ggM" secondAttribute="bottom" id="Gsg-cc-ftC"/>
-                            <constraint firstItem="RAm-D9-ggM" firstAttribute="leading" secondItem="ejK-h7-Mnq" secondAttribute="leading" id="ITe-dc-Kdy"/>
+                            <constraint firstItem="e1k-DH-sBo" firstAttribute="top" secondItem="W3I-RH-lNG" secondAttribute="bottom" id="5Hc-DW-fhZ"/>
+                            <constraint firstItem="e1k-DH-sBo" firstAttribute="trailing" secondItem="ejK-h7-Mnq" secondAttribute="trailing" id="98n-l4-YTs"/>
                             <constraint firstItem="ejK-h7-Mnq" firstAttribute="trailing" secondItem="W3I-RH-lNG" secondAttribute="trailing" id="LrN-84-QlK"/>
-                            <constraint firstItem="ejK-h7-Mnq" firstAttribute="trailing" secondItem="RAm-D9-ggM" secondAttribute="trailing" id="SXC-na-Ofl"/>
+                            <constraint firstItem="e1k-DH-sBo" firstAttribute="leading" secondItem="ejK-h7-Mnq" secondAttribute="leading" id="fYh-IE-p4m"/>
                             <constraint firstItem="W3I-RH-lNG" firstAttribute="top" secondItem="ejK-h7-Mnq" secondAttribute="top" id="fxy-kp-0w8"/>
                             <constraint firstItem="W3I-RH-lNG" firstAttribute="leading" secondItem="ejK-h7-Mnq" secondAttribute="leading" id="ibe-vD-IUX"/>
-                            <constraint firstItem="RAm-D9-ggM" firstAttribute="top" secondItem="W3I-RH-lNG" secondAttribute="bottom" id="ihs-qv-J9O"/>
+                            <constraint firstItem="ejK-h7-Mnq" firstAttribute="bottom" secondItem="e1k-DH-sBo" secondAttribute="bottom" id="vxe-zB-U08"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ejK-h7-Mnq"/>
                     </view>
@@ -1820,6 +1831,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="shoppingCartTableView" destination="W3I-RH-lNG" id="XcK-kh-Cff"/>
+                        <outlet property="totalPriceLabel" destination="zwb-0Z-KpJ" id="5ga-nB-ezT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3H-vM-uwF" userLabel="First Responder" sceneMemberID="firstResponder"/>

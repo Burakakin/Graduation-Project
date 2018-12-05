@@ -74,16 +74,20 @@ extension AddressSelectionViewController: UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
     
     @objc func buttonSelected(sender: UIButton) {
-        print("Button")
-        
+
         if sender.isSelected {
             sender.isSelected = false
         }
         else {
             sender.isSelected = true
         }
+        
     }
     
     
