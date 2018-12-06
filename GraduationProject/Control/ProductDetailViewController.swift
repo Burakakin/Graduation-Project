@@ -59,6 +59,21 @@ class ProductDetailViewController: UIViewController {
         return true
     }
 
+    @IBAction func productDetailShareButton(_ sender: Any) {
+        
+        let name = productDetailNameLabel.text
+        let price = productDetailPriceLabel.text
+        
+        //print(name)
+       
+        // If you want to put an image
+        let image : UIImage = UIImage(named: "sofa.jpg")!
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [name!,price!,image], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+    }
     
     
     func setupImageSlider() {
@@ -135,6 +150,7 @@ class ProductDetailViewController: UIViewController {
                 if let material = productDetail["material"] as? [String] {
                     materialString = material
                 }
+                //let imageUrl = productDetail["imageUrl"] as! String
                 if let careInstructions = productDetail["careInstructions"] as? [String] {
                     careInstructionsString = careInstructions
                 }

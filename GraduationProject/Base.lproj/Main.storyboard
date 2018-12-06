@@ -1586,6 +1586,9 @@
                                                 <state key="normal" image="icons8-share-80.png">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="productDetailShareButton:" destination="kla-Om-K9a" eventType="touchUpInside" id="P8R-07-nee"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Io-cy-wSH">
                                                 <rect key="frame" x="8" y="331" width="34.5" height="74"/>
