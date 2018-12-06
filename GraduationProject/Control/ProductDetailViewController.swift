@@ -44,7 +44,7 @@ class ProductDetailViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(abc))
         //self.navigationController?.view.backgroundColor = .clear
         
-       
+      
         setUpProductDetail()
          setupImageSlider()
         setUpLastViewed()
@@ -179,48 +179,65 @@ class ProductDetailViewController: UIViewController {
     }
     
     
-    @IBAction func addToFavouriteButton(_ sender: UIButton) {
+    
+    func checkFields(path: String) {
         let refDoc: DocumentReference!
-        let defaults = UserDefaults.standard
-        var myFavorite = [String]()
-        myFavorite = (defaults.array(forKey: "fav") as? [String] ?? [])
-        
-        let pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
-        if myFavorite.contains(pathToSave) {
-            let indexOfSavedPath = myFavorite.firstIndex(of: pathToSave)
-            myFavorite.remove(at: indexOfSavedPath!)
-            defaults.set(myFavorite, forKey: "fav")
-        }
-        else {
-            myFavorite.append(pathToSave)
-            defaults.set(myFavorite, forKey: "fav")
-        }
-
         let user = Auth.auth().currentUser
-        if let user = user {
-            let uid = user.uid
-
-
-            refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
-            refDoc!.updateData([
-                "pathToLiked": myFavorite
-            ]) { err in
-                if let err = err {
-                    print("Error updating document: \(err)")
-                } else {
-                    print("Document successfully updated")
+        guard let uid = user?.uid else { return }
+        refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
+        let pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
+        
+        refDoc.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                if let pathToLikedandCart = data![path] as? Dictionary<String, String> {
+                    print(pathToLikedandCart)
+                    if pathToLikedandCart.keys.contains("\(self.productDetailId ?? "")") {
+                        print("Contain")
+                        refDoc.updateData([
+                            "\(path).\(self.productDetailId ?? "")": FieldValue.delete(),
+                            ]) { err in
+                                if let err = err {
+                                    print("Error updating document: \(err)")
+                                } else {
+                                    print("Document successfully deleted")
+                                }
+                        }
+                    }
+                    else {
+                        print("Doesn't contain")
+                        refDoc.updateData([
+                            "\(path).\(self.productDetailId ?? "")": pathToSave
+                        ]) { err in
+                            if let err = err {
+                                print("Error updating document: \(err)")
+                            } else {
+                                print("Document successfully updated")
+                            }
+                        }
+                    }
                 }
+                
+            } else {
+                print("Document does not exist")
             }
         }
         
         
-        
     }
     
     
-    @IBAction func shoppingCardTapped(_ sender: Any) {
-        print("Shopping Card Tapped")
+    @IBAction func addToCartButton(_ sender: Any) {
+        let path = "shoppingCart"
+        checkFields(path: path)
     }
+    
+    
+    @IBAction func addToFavouriteButton(_ sender: UIButton) {
+        let path = "pathToLiked"
+        checkFields(path: path)
+    }
+    
     
     
     

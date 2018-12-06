@@ -1622,7 +1622,7 @@
                                                     <color key="titleColor" red="0.99209111928939819" green="0.9922059178352356" blue="0.99203974008560181" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="shoppingCardTapped:" destination="kla-Om-K9a" eventType="touchUpInside" id="6PU-GJ-wfb"/>
+                                                    <action selector="addToCartButton:" destination="kla-Om-K9a" eventType="touchUpInside" id="5sQ-0W-JuE"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gg5-MA-EXd">
@@ -1632,6 +1632,7 @@
                                                 <state key="normal" title="Add To Favourites">
                                                     <color key="titleColor" red="0.99601238965988159" green="0.99612754583358765" blue="0.9959607720375061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <state key="selected" title="Added To Favourites"/>
                                                 <connections>
                                                     <action selector="addToFavouriteButton:" destination="kla-Om-K9a" eventType="touchUpInside" id="dKF-4r-naq"/>
                                                 </connections>
