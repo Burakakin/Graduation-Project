@@ -159,7 +159,7 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.productDescriptionLabel.text = (product["description"] as! String)
         cell.productPriceLabel.text = "TL" + String(product["price"] as! String)
         cell.productDimensionLabel.text = (product["dimension"] as! String)
-        cell.productSellerLabel.text = (product["seller"] as! String)
+        cell.productSellerLabel.text = "Seller: " + (product["seller"] as! String)
         
         imageDownload.getImage(withUrl: product["imageUrl"] as! String) { (image) in
             cell.producImageView.image = image

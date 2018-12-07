@@ -163,7 +163,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFd-4D-0Hx">
                                                     <rect key="frame" x="108" y="31" width="133" height="44"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="K36-ci-2Uj"/>
+                                                        <constraint firstAttribute="width" constant="133" id="K36-ci-2Uj"/>
                                                         <constraint firstAttribute="height" constant="44" id="Pfx-Ip-aRz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
@@ -180,21 +180,21 @@
                                                     <rect key="frame" x="108" y="6" width="133" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="g9O-55-5UI"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="rWz-Qm-gwX"/>
+                                                        <constraint firstAttribute="width" constant="133" id="rWz-Qm-gwX"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-qo-0DK">
-                                                    <rect key="frame" x="253" y="26" width="46" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-qo-0DK">
+                                                    <rect key="frame" x="253" y="26" width="47" height="25"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="501-ub-bzm">
-                                                    <rect key="frame" x="253" y="59" width="34.5" height="28"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="501-ub-bzm">
+                                                    <rect key="frame" x="253" y="59" width="55" height="28"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -210,13 +210,13 @@
                                                 <constraint firstItem="501-ub-bzm" firstAttribute="top" secondItem="nVe-qo-0DK" secondAttribute="bottom" constant="8" id="Gcs-jj-aTD"/>
                                                 <constraint firstAttribute="bottom" secondItem="HFd-4D-0Hx" secondAttribute="bottom" constant="23" id="IgM-SV-71N"/>
                                                 <constraint firstItem="501-ub-bzm" firstAttribute="leading" secondItem="HFd-4D-0Hx" secondAttribute="trailing" constant="12" id="KbW-Qd-9Yy"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="501-ub-bzm" secondAttribute="trailing" constant="15" id="OQl-PL-0Nj"/>
+                                                <constraint firstAttribute="trailing" secondItem="501-ub-bzm" secondAttribute="trailing" constant="12" id="OQl-PL-0Nj"/>
                                                 <constraint firstAttribute="bottom" secondItem="501-ub-bzm" secondAttribute="bottom" constant="11" id="R7P-nr-Z7g"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="nVe-qo-0DK" secondAttribute="trailing" constant="6" id="REF-zM-aoF"/>
-                                                <constraint firstAttribute="trailing" secondItem="0ub-ua-GGs" secondAttribute="trailing" constant="79" id="Red-Kq-leR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="nVe-qo-0DK" secondAttribute="trailing" constant="5" id="REF-zM-aoF"/>
                                                 <constraint firstItem="eKv-9m-5EP" firstAttribute="leading" secondItem="oOy-TR-Gd3" secondAttribute="trailing" constant="8" id="UWy-oy-djV"/>
                                                 <constraint firstItem="HFd-4D-0Hx" firstAttribute="leading" secondItem="oOy-TR-Gd3" secondAttribute="trailing" constant="8" id="Wo4-kf-apZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="oOy-TR-Gd3" secondAttribute="bottom" id="eJU-y0-c06"/>
+                                                <constraint firstItem="nVe-qo-0DK" firstAttribute="leading" secondItem="0ub-ua-GGs" secondAttribute="trailing" constant="12" id="iYy-aI-aZe"/>
                                                 <constraint firstAttribute="bottom" secondItem="eKv-9m-5EP" secondAttribute="bottom" constant="5" id="o4T-Ht-gVi"/>
                                                 <constraint firstItem="nVe-qo-0DK" firstAttribute="top" secondItem="dEX-i8-g2y" secondAttribute="topMargin" constant="15" id="vzn-kA-NeL"/>
                                             </constraints>
@@ -1097,7 +1097,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="09j-g6-e43">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="09j-g6-e43">
                                 <rect key="frame" x="0.0" y="20" width="320" height="497"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="1I8-d2-btc" userLabel="footer">
@@ -1110,7 +1110,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q1Z-wS-IYO" id="3fb-40-fIM">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="oz9-kF-E0j">
@@ -2068,6 +2068,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lastViewedTableView" destination="JsK-0C-uAp" id="Ys8-u8-wzu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oQ-lI-h6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2337,6 +2340,6 @@
         <image name="unchecked.png" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="djh-WX-b6O"/>
+        <segue reference="qjs-VF-gC7"/>
     </inferredMetricsTieBreakers>
 </document>

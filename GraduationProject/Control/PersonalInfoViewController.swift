@@ -45,7 +45,7 @@ class PersonalInfoViewController: UIViewController {
                 self.emailLabel.text = (dataDescription?["email"] as! String)
                 let imageUrl = (dataDescription?["profileImageUrl"] as! String)
                 if let homeAddress = dataDescription!["address"] as? Dictionary<String, String> {
-                    let home = (homeAddress["addressHome"] as! String)
+                    let home = (homeAddress["Home"] as! String)
                     self.addressLabel.text = home
                 }
                 

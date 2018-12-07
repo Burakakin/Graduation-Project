@@ -30,6 +30,7 @@ class FavouritesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         favouritesDictionary.removeAll()
         getFavourites()
     }
