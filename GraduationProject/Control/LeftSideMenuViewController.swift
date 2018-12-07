@@ -83,6 +83,18 @@ extension LeftSideMenuViewController: UITableViewDelegate, UITableViewDataSource
             let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.centerContainer!.centerViewController = centerNavController
             appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
+        case 1:
+            let centerViewController = self.storyboard?.instantiateViewController(withIdentifier: "LastViewedViewController") as! LastViewedViewController
+            let centerNavController = UINavigationController(rootViewController: centerViewController)
+            let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.centerContainer!.centerViewController = centerNavController
+            appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
+        case 2:
+            let centerViewController = self.storyboard?.instantiateViewController(withIdentifier: "FavouritesViewController") as! FavouritesViewController
+            let centerNavController = UINavigationController(rootViewController: centerViewController)
+            let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.centerContainer!.centerViewController = centerNavController
+            appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
         case 4:
             let centerViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShoppingCardViewController") as! ShoppingCardViewController
             let centerNavController = UINavigationController(rootViewController: centerViewController)

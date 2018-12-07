@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		13A93EF7D6FD3E6034EEDA96 /* Pods_GraduationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */; };
+		A806B81221BAF44600DA2EDA /* LastViewedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806B81121BAF44600DA2EDA /* LastViewedViewController.swift */; };
+		A806B81421BAF45800DA2EDA /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806B81321BAF45800DA2EDA /* FavouritesViewController.swift */; };
+		A806B81621BAF81E00DA2EDA /* LastViewedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806B81521BAF81E00DA2EDA /* LastViewedTableViewCell.swift */; };
+		A806B81821BAF82C00DA2EDA /* FavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806B81721BAF82C00DA2EDA /* FavouritesTableViewCell.swift */; };
 		A8082D2321A31C79005E3377 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */; };
 		A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */; };
 		A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8096BE9217A3661006C8F25 /* ProductsViewController.swift */; };
@@ -63,6 +67,10 @@
 /* Begin PBXFileReference section */
 		1BD2298F60EB5D518492D5E8 /* Pods_GraduationProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraduationProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4544BD1EBA2689C75334460E /* Pods-GraduationProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GraduationProject/Pods-GraduationProject.debug.xcconfig"; sourceTree = "<group>"; };
+		A806B81121BAF44600DA2EDA /* LastViewedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewedViewController.swift; sourceTree = "<group>"; };
+		A806B81321BAF45800DA2EDA /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		A806B81521BAF81E00DA2EDA /* LastViewedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewedTableViewCell.swift; sourceTree = "<group>"; };
+		A806B81721BAF82C00DA2EDA /* FavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewCell.swift; sourceTree = "<group>"; };
 		A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		A8096BE9217A3661006C8F25 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +264,8 @@
 				A8E58E8521B47FD400CC4980 /* UploadNewProductViewController.swift */,
 				A8E58E8721B480B200CC4980 /* AddProductViewController.swift */,
 				A8C2C37C21B7375900FF20EB /* AddressSelectionViewController.swift */,
+				A806B81121BAF44600DA2EDA /* LastViewedViewController.swift */,
+				A806B81321BAF45800DA2EDA /* FavouritesViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -272,6 +282,8 @@
 				A81D765D21B3210E006BCFFF /* ShoppingCardTableViewCell.swift */,
 				A8C2C37E21B73A7100FF20EB /* AddressSelectionTableViewCell.swift */,
 				A82E0FC421B8561F00651CCB /* MyAddressTableViewCell.swift */,
+				A806B81521BAF81E00DA2EDA /* LastViewedTableViewCell.swift */,
+				A806B81721BAF82C00DA2EDA /* FavouritesTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -421,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A806B81421BAF45800DA2EDA /* FavouritesViewController.swift in Sources */,
 				A8F5BF5521651D4A0077B597 /* LeftSideMenuViewController.swift in Sources */,
 				A8F5BF5121651D1B0077B597 /* MainPageViewController.swift in Sources */,
 				A8182581217249500091A50D /* MyAccountViewController.swift in Sources */,
@@ -444,9 +457,12 @@
 				A82E0FC521B8561F00651CCB /* MyAddressTableViewCell.swift in Sources */,
 				A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */,
 				A81D765C21B31D92006BCFFF /* ShoppingCardViewController.swift in Sources */,
+				A806B81221BAF44600DA2EDA /* LastViewedViewController.swift in Sources */,
 				A8F5BF6A21651DDF0077B597 /* MMDrawerController.m in Sources */,
 				A8F6F84821727506001B36F6 /* MainPageCollectionViewCell.swift in Sources */,
 				A83FBF2921AC4DC5002E106B /* FilterProductCategoryViewController.swift in Sources */,
+				A806B81621BAF81E00DA2EDA /* LastViewedTableViewCell.swift in Sources */,
+				A806B81821BAF82C00DA2EDA /* FavouritesTableViewCell.swift in Sources */,
 				A83CB69B21A866C00098ED7D /* changePasswordPageViewController.swift in Sources */,
 				A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */,
 				A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */,

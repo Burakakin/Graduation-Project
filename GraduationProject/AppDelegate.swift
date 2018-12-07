@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.black
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "Futura-Medium", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
         let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")

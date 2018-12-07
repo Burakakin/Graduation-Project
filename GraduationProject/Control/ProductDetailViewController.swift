@@ -121,7 +121,7 @@ class ProductDetailViewController: UIViewController {
                 if let err = err {
                     print("Error updating document: \(err)")
                 } else {
-                    print("Document successfully updated")
+                    print("Last Viewed updated")
                 }
             }
         }
