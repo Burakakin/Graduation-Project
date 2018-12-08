@@ -69,7 +69,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="All Categories" id="b8H-3j-XJ0">
                         <barButtonItem key="backBarButtonItem" title=" " id="b9b-dI-S6X"/>
-                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="0xD-xQ-f5r">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="0xD-xQ-f5r">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="leftSideButtonTapped:" destination="BYZ-38-t0r" id="eLz-4o-5vR"/>
                             </connections>
@@ -1614,21 +1615,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6g-TC-B4s">
-                                                <rect key="frame" x="25" y="477.5" width="270" height="44"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6g-TC-B4s">
+                                                <rect key="frame" x="25" y="477.5" width="270" height="38"/>
                                                 <color key="backgroundColor" red="0.089526347815990448" green="0.12072306126356125" blue="0.45738565921783447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <state key="normal" title="Add To Cart">
                                                     <color key="titleColor" red="0.99209111928939819" green="0.9922059178352356" blue="0.99203974008560181" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <state key="selected" title="Added To Cart"/>
                                                 <connections>
                                                     <action selector="addToCartButton:" destination="kla-Om-K9a" eventType="touchUpInside" id="5sQ-0W-JuE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gg5-MA-EXd">
-                                                <rect key="frame" x="25" y="520.5" width="270" height="44"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gg5-MA-EXd">
+                                                <rect key="frame" x="25" y="514.5" width="270" height="40"/>
                                                 <color key="backgroundColor" red="0.71548068523406982" green="0.090701095759868622" blue="0.10778369754552841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="21"/>
                                                 <state key="normal" title="Add To Favourites">
                                                     <color key="titleColor" red="0.99601238965988159" green="0.99612754583358765" blue="0.9959607720375061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -1638,7 +1640,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7M-XB-JOb">
-                                                <rect key="frame" x="110" y="588.5" width="100" height="100"/>
+                                                <rect key="frame" x="110" y="578.5" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="SBv-4Z-eW7"/>
                                                     <constraint firstAttribute="height" constant="100" id="jO4-q7-gdM"/>
@@ -1652,7 +1654,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bzN-O7-SkC">
-                                                <rect key="frame" x="8" y="727" width="302" height="91"/>
+                                                <rect key="frame" x="8" y="717" width="302" height="91"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Material" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="639-gV-r48">
                                                         <rect key="frame" x="0.0" y="0.0" width="78" height="26"/>
@@ -1672,7 +1674,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dLO-Zp-j8j">
-                                                <rect key="frame" x="8" y="833" width="304" height="66"/>
+                                                <rect key="frame" x="8" y="823" width="304" height="66"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key Features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34K-DN-Su5">
                                                         <rect key="frame" x="0.0" y="0.0" width="116.5" height="26"/>
@@ -1692,7 +1694,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="YMt-Ta-BmP">
-                                                <rect key="frame" x="8" y="914" width="304" height="91"/>
+                                                <rect key="frame" x="8" y="904" width="304" height="91"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Care Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npg-vC-8Zz">
                                                         <rect key="frame" x="0.0" y="0.0" width="151" height="26"/>
@@ -1779,6 +1781,8 @@
                     </navigationItem>
                     <size key="freeformSize" width="320" height="1200"/>
                     <connections>
+                        <outlet property="addToCartButton" destination="u6g-TC-B4s" id="0w1-fV-fPJ"/>
+                        <outlet property="addToFavouritesButton" destination="gg5-MA-EXd" id="M8i-cf-59q"/>
                         <outlet property="imageSlider" destination="ush-G5-ses" id="I0Y-t1-9I0"/>
                         <outlet property="productDetailCareInstructionsLabel" destination="Lei-Qc-UEI" id="YjU-vY-d0M"/>
                         <outlet property="productDetailDescriptionLabel" destination="3Io-cy-wSH" id="kgk-2S-p78"/>
@@ -1964,7 +1968,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Shopping Card" id="kdi-fs-rPV">
                         <barButtonItem key="backBarButtonItem" title=" " id="m5j-Rz-mHh"/>
-                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="fVx-Tr-RNT">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" style="done" id="fVx-Tr-RNT">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="leftSideButtonTapped:" destination="n0N-q3-jAo" id="9bG-o2-XP0"/>
                             </connections>
@@ -2062,7 +2067,8 @@
                         <viewLayoutGuide key="safeArea" id="ruH-Hs-Eky"/>
                     </view>
                     <navigationItem key="navigationItem" id="59Y-bZ-hLq">
-                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="0lk-4m-jvT">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="0lk-4m-jvT">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="leftSideButtonTapped:" destination="wy6-HA-AgU" id="9k2-37-Uuc"/>
                             </connections>
@@ -2169,7 +2175,8 @@
                         <viewLayoutGuide key="safeArea" id="rwW-Bw-UjX"/>
                     </view>
                     <navigationItem key="navigationItem" id="3En-0F-KGV">
-                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="Tdy-Rr-f9g">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="Tdy-Rr-f9g">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="leftSideButtonTapped:" destination="KvT-82-A6A" id="SJX-fT-bJw"/>
                             </connections>
@@ -2337,9 +2344,10 @@
         <image name="emptyProfileImage.png" width="400" height="400"/>
         <image name="facebook.png" width="24" height="40"/>
         <image name="icons8-share-80.png" width="80" height="80"/>
+        <image name="menu.png" width="16" height="16"/>
         <image name="unchecked.png" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qjs-VF-gC7"/>
+        <segue reference="djh-WX-b6O"/>
     </inferredMetricsTieBreakers>
 </document>

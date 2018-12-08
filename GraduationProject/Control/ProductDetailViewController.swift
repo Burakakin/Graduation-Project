@@ -22,6 +22,8 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var productDetailKeyFeatureLabel: UILabel!
     @IBOutlet weak var productDetailCareInstructionsLabel: UILabel!
     
+    @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var addToFavouritesButton: UIButton!
     
     
     
@@ -44,10 +46,15 @@ class ProductDetailViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(abc))
         //self.navigationController?.view.backgroundColor = .clear
         
+        
       
         setUpProductDetail()
          setupImageSlider()
         setUpLastViewed()
+        selectedButtons(isSelectedPath: "shoppingCart")
+        selectedButtons(isSelectedPath: "pathToLiked")
+        
+       
     }
     
     @objc func abc() {
@@ -178,6 +185,42 @@ class ProductDetailViewController: UIViewController {
         }
     }
     
+    func selectedButtons(isSelectedPath: String) {
+        let refDoc: DocumentReference!
+        let user = Auth.auth().currentUser
+        guard let uid = user?.uid else { return }
+        refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
+        refDoc.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                if let pathToLikedandCart = data![isSelectedPath] as? Dictionary<String, String> {
+                    //print(pathToLikedandCart)
+                    if pathToLikedandCart.keys.contains("\(self.productDetailId ?? "")") {
+                        //print("Contain")
+                        if isSelectedPath == "shoppingCart" {
+                            self.addToCartButton.isSelected = true
+                        }
+                        else {
+                            self.addToFavouritesButton.isSelected = true
+                        }
+                    }
+                    else {
+                        //print("Doesn't contain")
+                        if isSelectedPath == "shoppingCart" {
+                            self.addToCartButton.isSelected = false
+                        }
+                        else {
+                            self.addToFavouritesButton.isSelected = false
+                        }
+                    }
+                }
+                
+            } else {
+                //print("Document does not exist")
+            }
+        }
+        
+    }
     
     
     func checkFields(path: String) {
@@ -194,6 +237,12 @@ class ProductDetailViewController: UIViewController {
                     print(pathToLikedandCart)
                     if pathToLikedandCart.keys.contains("\(self.productDetailId ?? "")") {
                         print("Contain")
+                        if path == "shoppingCart" {
+                            self.addToCartButton.isSelected = false
+                        }
+                        else {
+                            self.addToFavouritesButton.isSelected = false
+                        }
                         refDoc.updateData([
                             "\(path).\(self.productDetailId ?? "")": FieldValue.delete(),
                             ]) { err in
@@ -206,6 +255,12 @@ class ProductDetailViewController: UIViewController {
                     }
                     else {
                         print("Doesn't contain")
+                        if path == "shoppingCart" {
+                            self.addToCartButton.isSelected = true
+                        }
+                        else {
+                            self.addToFavouritesButton.isSelected = true
+                        }
                         refDoc.updateData([
                             "\(path).\(self.productDetailId ?? "")": pathToSave
                         ]) { err in
