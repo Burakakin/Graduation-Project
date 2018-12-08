@@ -2200,7 +2200,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zVp-dC-dDU">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addressSelectionCell" rowHeight="94" id="Vct-QX-ek0" customClass="AddressSelectionTableViewCell" customModule="GraduationProject" customModuleProvider="target">
@@ -2265,12 +2265,25 @@
                                     <outlet property="delegate" destination="yUi-JL-tZ9" id="Jrb-se-Jmd"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdY-rw-VRE">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zmj-kQ-zH9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="completeOrder:" destination="yUi-JL-tZ9" eventType="touchUpInside" id="sgD-mL-dCj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zVp-dC-dDU" firstAttribute="top" secondItem="0JR-9l-2bD" secondAttribute="top" id="6dC-Nq-aB2"/>
+                            <constraint firstItem="0JR-9l-2bD" firstAttribute="trailing" secondItem="JdY-rw-VRE" secondAttribute="trailing" id="VZj-mx-H33"/>
+                            <constraint firstItem="0JR-9l-2bD" firstAttribute="bottom" secondItem="JdY-rw-VRE" secondAttribute="bottom" id="Yhn-Di-Gk7"/>
                             <constraint firstItem="zVp-dC-dDU" firstAttribute="leading" secondItem="0JR-9l-2bD" secondAttribute="leading" id="aqP-WG-OPY"/>
-                            <constraint firstItem="0JR-9l-2bD" firstAttribute="bottom" secondItem="zVp-dC-dDU" secondAttribute="bottom" id="u6V-ai-xtY"/>
+                            <constraint firstItem="JdY-rw-VRE" firstAttribute="top" secondItem="zVp-dC-dDU" secondAttribute="bottom" id="cS3-U4-HKb"/>
+                            <constraint firstItem="JdY-rw-VRE" firstAttribute="leading" secondItem="0JR-9l-2bD" secondAttribute="leading" id="wZn-h8-opE"/>
                             <constraint firstItem="0JR-9l-2bD" firstAttribute="trailing" secondItem="zVp-dC-dDU" secondAttribute="trailing" id="ySB-Jd-ECS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0JR-9l-2bD"/>

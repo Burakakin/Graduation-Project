@@ -9,8 +9,9 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import UserNotifications
 
-class AddressSelectionViewController: UIViewController {
+class AddressSelectionViewController: UIViewController, UNUserNotificationCenterDelegate {
 
     var addressDetail = [[String]]()
     var selectedAddress = [String]()
@@ -19,6 +20,7 @@ class AddressSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
         navigationItem.title = "Address Selection"
         getAddressToSelect()
     }
@@ -26,6 +28,40 @@ class AddressSelectionViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         print("Disappear: \(selectedAddress)")
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        //displaying the ios local notification when app is in foreground
+        completionHandler([.alert, .badge, .sound])
+    }
+    
+    @IBAction func completeOrder(_ sender: Any) {
+        
+        //creating the notification content
+        let content = UNMutableNotificationContent()
+        
+        //adding title, subtitle, body and badge
+        content.title = "Hey this is Simplified iOS"
+        content.subtitle = "iOS Development is fun"
+        content.body = "We are learning about iOS Local Notification"
+        content.sound = UNNotificationSound.default
+        //content.badge = 1
+        
+        //getting the notification trigger
+        //it will be called after 5 seconds
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        //getting the notification request
+        let request = UNNotificationRequest(identifier: "SimplifiedIOSNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        //adding the notification to notification center
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        
+    }
+    
     
     func getAddressToSelect(){
         
