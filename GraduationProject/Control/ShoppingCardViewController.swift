@@ -117,8 +117,6 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingCell", for: indexPath) as! ShoppingCardTableViewCell
         
         var totalPrice = 0
-        
-        
         for i in 0..<self.priceKeeperArr.count {
             totalPrice += self.priceKeeperArr[i]["total"]!
             self.totalPriceLabel.text = "Total Price: \(totalPrice)TL"
@@ -127,7 +125,7 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
         cell.shoppingCardProductName.text = shoppingCartArr[indexPath.row]["name"]
         cell.shoppingCardProductDescription.text = shoppingCartArr[indexPath.row]["description"]
         cell.shoppingCardProductSeller.text = shoppingCartArr[indexPath.row]["seller"]
-        cell.shoppingCardProductPrice.text = "\(priceKeeperArr[indexPath.row]["price"] ?? 0)"
+        cell.shoppingCardProductPrice.text = "\(priceKeeperArr[indexPath.row]["total"] ?? 0)"
         cell.shoppingCardPieceLabel.text = "\(priceKeeperArr[indexPath.row]["amount"] ?? 0) Piece(s)"
         imageDownload.getImage(withUrl: shoppingCartArr[indexPath.row]["imageUrl"]!) { (image) in
             cell.shoppingCardProductImageView.image = image
@@ -137,8 +135,17 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
              let path = tableView.indexPathForRow(at: selectedCell.center)!
              let selectedKey = self.shoppingCartArr[path.row]["key"]
             self.deleteField(key: selectedKey!)
-            self.shoppingCartArr.removeAll()
-            self.getShoppingCartPath()
+            self.shoppingCartArr.remove(at: path.row)
+            tableView.reloadData()
+            //self.getShoppingCartPath()
+            self.priceKeeperArr.remove(at: path.row)
+            
+    
+            var totalPrice = 0
+            for i in 0..<self.priceKeeperArr.count {
+                totalPrice += self.priceKeeperArr[i]["total"]!
+                self.totalPriceLabel.text = "Total Price: \(totalPrice)TL"
+            }
             
         }
         

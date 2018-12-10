@@ -107,7 +107,7 @@ class ProductDetailViewController: UIViewController {
     func setUpLastViewed() {
         let refDoc: DocumentReference!
         let defaults = UserDefaults.standard
-        
+        newId = "all" + documentId!
         let pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
         var lastViewed = [String]()
         lastViewed = (defaults.array(forKey: "lastViewed") as? [String] ?? [])
