@@ -50,13 +50,13 @@ class LastViewedViewController: UIViewController {
                             if let document = document, document.exists {
                                 let dataFavourite = document.data()!
                                 let imageUrl = dataFavourite["imageUrl"] as! String
-                                let category = dataFavourite["category"] as! String
+                                //let category = dataFavourite["category"] as! String
                                 let name = dataFavourite["name"] as! String
                                 let description = dataFavourite["description"] as! String
                                 let price = dataFavourite["price"] as! String
                                 let dimension = dataFavourite["dimension"] as! String
                                 
-                                let dataDic = ["name": name,"imageUrl": imageUrl, "description": description, "price": price, "dimension": dimension, "category": category ]
+                                let dataDic = ["name": name,"imageUrl": imageUrl, "description": description, "price": price, "dimension": dimension ]
                                 DispatchQueue.main.async {
                                     self.lastViewedDictionary.append(dataDic)
                                     self.lastViewedTableView.reloadData()

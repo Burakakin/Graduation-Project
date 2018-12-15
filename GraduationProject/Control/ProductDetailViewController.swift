@@ -110,6 +110,8 @@ class ProductDetailViewController: UIViewController {
         newId = "all" + documentId!
         let pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
         var lastViewed = [String]()
+        let pathToLiked = [String: String]()
+        let shoppingCart = [String: String]()
         lastViewed = (defaults.array(forKey: "lastViewed") as? [String] ?? [])
         lastViewed.append(pathToSave)
         defaults.set(lastViewed, forKey: "lastViewed")
@@ -122,8 +124,10 @@ class ProductDetailViewController: UIViewController {
             
             refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
             
-            refDoc!.updateData([
-                "lastViewed": lastViewed
+            refDoc!.setData([
+                "lastViewed": lastViewed,
+                "pathToLiked": pathToLiked,
+                "shoppingCart": shoppingCart
             ]) { err in
                 if let err = err {
                     print("Error updating document: \(err)")
