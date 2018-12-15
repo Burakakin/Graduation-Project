@@ -19,8 +19,15 @@ class FavouritesViewController: UIViewController {
 
         navigationItem.title = "Favourites"
         // Do any additional setup after loading the view.
-       
+        self.favouriteTableView.reloadData()
+        if self.favouritesDictionary.count == 0 {
+            self.favouriteTableView.backgroundView = emptyView
+        }
+        else {
+            self.favouriteTableView.backgroundView = nil
+        }
     }
+    @IBOutlet weak var emptyView: UIView!
     
     @IBOutlet weak var favouriteTableView: UITableView!
     
@@ -63,6 +70,12 @@ class FavouritesViewController: UIViewController {
                                 DispatchQueue.main.async {
                                     self.favouritesDictionary.append(dataDic)
                                     self.favouriteTableView.reloadData()
+                                    if self.favouritesDictionary.count == 0 {
+                                        self.favouriteTableView.backgroundView = self.emptyView
+                                    }
+                                    else {
+                                        self.favouriteTableView.backgroundView = nil
+                                    }
                                 }
                             } else {
                                 print("Document does not exist")

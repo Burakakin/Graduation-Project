@@ -110,8 +110,6 @@ class ProductDetailViewController: UIViewController {
         newId = "all" + documentId!
         let pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
         var lastViewed = [String]()
-        let pathToLiked = [String: String]()
-        let shoppingCart = [String: String]()
         lastViewed = (defaults.array(forKey: "lastViewed") as? [String] ?? [])
         lastViewed.append(pathToSave)
         defaults.set(lastViewed, forKey: "lastViewed")
@@ -124,10 +122,8 @@ class ProductDetailViewController: UIViewController {
             
             refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
             
-            refDoc!.setData([
-                "lastViewed": lastViewed,
-                "pathToLiked": pathToLiked,
-                "shoppingCart": shoppingCart
+            refDoc!.updateData([
+                "lastViewed": lastViewed
             ]) { err in
                 if let err = err {
                     print("Error updating document: \(err)")
@@ -237,41 +233,54 @@ class ProductDetailViewController: UIViewController {
         refDoc.getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()
-                if let pathToLikedandCart = data![path] as? Dictionary<String, String> {
-                    print(pathToLikedandCart)
-                    if pathToLikedandCart.keys.contains("\(self.productDetailId ?? "")") {
-                        print("Contain")
-                        if path == "shoppingCart" {
-                            self.addToCartButton.isSelected = false
+                if data![path] == nil {
+                    refDoc.setData([
+                        "\(path)": ["\(self.productDetailId ?? "")": pathToSave]
+                    ]) { err in
+                        if let err = err {
+                            print("Error updating document: \(err)")
+                        } else {
+                            print("Document successfully updated")
+                        }
+                    }
+                }
+                else {
+                    if let pathToLikedandCart = data![path] as? Dictionary<String, String> {
+                        print(pathToLikedandCart)
+                        if pathToLikedandCart.keys.contains("\(self.productDetailId ?? "")") {
+                            print("Contain")
+                            if path == "shoppingCart" {
+                                self.addToCartButton.isSelected = false
+                            }
+                            else {
+                                self.addToFavouritesButton.isSelected = false
+                            }
+                            refDoc.updateData([
+                                "\(path).\(self.productDetailId ?? "")": FieldValue.delete(),
+                                ]) { err in
+                                    if let err = err {
+                                        print("Error updating document: \(err)")
+                                    } else {
+                                        print("Document successfully deleted")
+                                    }
+                            }
                         }
                         else {
-                            self.addToFavouritesButton.isSelected = false
-                        }
-                        refDoc.updateData([
-                            "\(path).\(self.productDetailId ?? "")": FieldValue.delete(),
+                            print("Doesn't contain")
+                            if path == "shoppingCart" {
+                                self.addToCartButton.isSelected = true
+                            }
+                            else {
+                                self.addToFavouritesButton.isSelected = true
+                            }
+                            refDoc.updateData([
+                                "\(path).\(self.productDetailId ?? "")": pathToSave
                             ]) { err in
                                 if let err = err {
                                     print("Error updating document: \(err)")
                                 } else {
-                                    print("Document successfully deleted")
+                                    print("Document successfully updated")
                                 }
-                        }
-                    }
-                    else {
-                        print("Doesn't contain")
-                        if path == "shoppingCart" {
-                            self.addToCartButton.isSelected = true
-                        }
-                        else {
-                            self.addToFavouritesButton.isSelected = true
-                        }
-                        refDoc.updateData([
-                            "\(path).\(self.productDetailId ?? "")": pathToSave
-                        ]) { err in
-                            if let err = err {
-                                print("Error updating document: \(err)")
-                            } else {
-                                print("Document successfully updated")
                             }
                         }
                     }

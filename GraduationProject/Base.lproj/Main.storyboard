@@ -2090,6 +2090,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8V-9g-MWk">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty Table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHf-2e-PPz">
+                                        <rect key="frame" x="40" y="40" width="127" height="424"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qHf-2e-PPz" firstAttribute="leading" secondItem="v8V-9g-MWk" secondAttribute="leading" constant="40" id="OZa-ke-YeC"/>
+                                    <constraint firstAttribute="bottom" secondItem="qHf-2e-PPz" secondAttribute="bottom" constant="40" id="U3K-0Q-qTZ"/>
+                                    <constraint firstItem="qHf-2e-PPz" firstAttribute="top" secondItem="v8V-9g-MWk" secondAttribute="top" constant="40" id="kl5-nC-AKP"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qHf-2e-PPz" secondAttribute="trailing" constant="20" symbolic="YES" id="rzc-N3-O2b"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fHs-3Y-12G">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2167,9 +2186,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rwW-Bw-UjX" firstAttribute="trailing" secondItem="v8V-9g-MWk" secondAttribute="trailing" id="0mj-ki-CZb"/>
                             <constraint firstItem="rwW-Bw-UjX" firstAttribute="trailing" secondItem="fHs-3Y-12G" secondAttribute="trailing" id="2pL-5J-jyp"/>
+                            <constraint firstItem="v8V-9g-MWk" firstAttribute="leading" secondItem="rwW-Bw-UjX" secondAttribute="leading" id="6c1-X5-wkE"/>
                             <constraint firstItem="rwW-Bw-UjX" firstAttribute="bottom" secondItem="fHs-3Y-12G" secondAttribute="bottom" id="EeG-1a-QoX"/>
                             <constraint firstItem="fHs-3Y-12G" firstAttribute="leading" secondItem="rwW-Bw-UjX" secondAttribute="leading" id="LfK-wO-for"/>
+                            <constraint firstItem="rwW-Bw-UjX" firstAttribute="bottom" secondItem="v8V-9g-MWk" secondAttribute="bottom" id="h4r-ft-rIo"/>
+                            <constraint firstItem="v8V-9g-MWk" firstAttribute="top" secondItem="rwW-Bw-UjX" secondAttribute="top" id="kcZ-mN-hkq"/>
                             <constraint firstItem="fHs-3Y-12G" firstAttribute="top" secondItem="rwW-Bw-UjX" secondAttribute="top" id="lDk-rj-4k2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rwW-Bw-UjX"/>
@@ -2183,6 +2206,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyView" destination="v8V-9g-MWk" id="AyP-tR-gdX"/>
                         <outlet property="favouriteTableView" destination="fHs-3Y-12G" id="zTI-Jl-QeS"/>
                         <segue destination="kla-Om-K9a" kind="show" identifier="favouriteDetail" id="djh-WX-b6O"/>
                     </connections>
@@ -2361,6 +2385,6 @@
         <image name="unchecked.png" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qjs-VF-gC7"/>
+        <segue reference="djh-WX-b6O"/>
     </inferredMetricsTieBreakers>
 </document>
