@@ -18,11 +18,11 @@ class FilterDetailProductCategoryViewController: UIViewController {
     var documentId: String?
     
     var colorFilterName = [String]()
-    var priceFilterName = [String]()
+   
     var names = [String]()
     //populate from Firestore
     var colorFilter = [String]()
-    var priceFilter = [String]()
+    
     
     var filterDetailArr = [String]()
     
@@ -33,7 +33,7 @@ class FilterDetailProductCategoryViewController: UIViewController {
         print(filterType)
         // Do any additional setup after loading the view.
         colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
-        priceFilterName = (defaults.array(forKey: "priceFilterName") as? [String] ?? [])
+        
         getFilterDetail()
     }
     
@@ -86,9 +86,6 @@ extension FilterDetailProductCategoryViewController: UITableViewDelegate, UITabl
         if filterType == "color" {
             cell.accessoryType = self.colorFilterName.contains("\(filterDetailArr[indexPath.row])") ? .checkmark : .none
         }
-        if filterType == "price" {
-            cell.accessoryType = self.priceFilterName.contains("\(filterDetailArr[indexPath.row])") ? .checkmark : .none
-        }
         
         return cell
         
@@ -111,23 +108,10 @@ extension FilterDetailProductCategoryViewController: UITableViewDelegate, UITabl
                 }
             }
         }
-        if filterType == "price" {
-            if self.priceFilterName.contains("\(filterDetailArr[indexPath.row])") {
-                self.priceFilterName.removeAll { $0 == "\(filterDetailArr[indexPath.row])" }
-            }
-            else {
-                if priceFilterName.contains("price"){
-                    priceFilterName.append(filterDetailArr[indexPath.row])
-                }
-                else {
-                    priceFilterName.insert("price", at: 0)
-                    priceFilterName.append(filterDetailArr[indexPath.row])
-                }
-            }
-        }
         
         
-        defaults.set(priceFilterName, forKey: "priceFilterName")
+        
+       
         defaults.set(colorFilterName, forKey: "colorFilterName")
         
         DispatchQueue.main.async {

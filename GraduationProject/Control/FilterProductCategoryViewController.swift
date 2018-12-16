@@ -23,7 +23,7 @@ class FilterProductCategoryViewController: UIViewController {
     
     
     var colorFilterName = [String]()
-    var priceFilterName = [String]()
+    
     
     var documentId: String?
     var newId: String?
@@ -37,12 +37,11 @@ class FilterProductCategoryViewController: UIViewController {
     
     @objc func clear() {
         colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
-        priceFilterName = (defaults.array(forKey: "priceFilterName") as? [String] ?? [])
+       
         
         colorFilterName.removeAll()
-        priceFilterName.removeAll()
+      
         
-        defaults.set(priceFilterName, forKey: "priceFilterName")
         defaults.set(colorFilterName, forKey: "colorFilterName")
         
     }
@@ -69,15 +68,18 @@ class FilterProductCategoryViewController: UIViewController {
 
     }
     
-    @IBAction func unWindToFilterProductCategory(_ unwindSegue: UIStoryboardSegue){
+    @IBAction func unWindToFilterProductCategory(_ sender: UIStoryboardSegue){
         
         print("Welcome to Filter Product Category Page")
         colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
-        priceFilterName = (defaults.array(forKey: "priceFilterName") as? [String] ?? [])
         
         
-        print(colorFilterName)
-        print(priceFilterName)
+        //print(colorFilterName)
+        
+        guard let priceFilterVC = sender.source as? PriceFilterViewController else { return }
+        print(priceFilterVC.minValueTextField.text)
+        print(priceFilterVC.maxValueTextField.text)
+        
     }
     
 }
@@ -97,7 +99,14 @@ extension FilterProductCategoryViewController: UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toDetailFilter", sender: indexPath)
+        let filter = filterTypeArr[indexPath.row]
+        if filter == "color" {
+            performSegue(withIdentifier: "toDetailFilter", sender: indexPath)
+        }
+        else {
+            performSegue(withIdentifier: "priceFilter", sender: indexPath)
+        }
+        
     }
     
     
@@ -107,6 +116,12 @@ extension FilterProductCategoryViewController: UITableViewDelegate, UITableViewD
             if let filterDetailVC =  segue.destination as? FilterDetailProductCategoryViewController {
                 filterDetailVC.filterType = filterTypeArr[rowSelected]
                 filterDetailVC.documentId = documentId
+            }
+        }
+        
+        if segue.identifier == "priceFilter" {
+            if let filterDetailVC =  segue.destination as? PriceFilterViewController {
+                
             }
         }
     }

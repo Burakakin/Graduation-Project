@@ -39,6 +39,7 @@
 		A8766FE521A5EB3000C6889F /* ar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8766FE421A5EB3000C6889F /* ar.png */; };
 		A883956421727DB400B591B5 /* Desk.png in Resources */ = {isa = PBXBuildFile; fileRef = A883956321727DB400B591B5 /* Desk.png */; };
 		A888B7F221767DB800814EBC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888B7F121767DB800814EBC /* LocalAuthentication.framework */; };
+		A88B5DF521C5FFFD00194567 /* PriceFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B5DF421C5FFFD00194567 /* PriceFilterViewController.swift */; };
 		A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2C21A5AD6700D2720D /* sofa.jpg */; };
 		A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2D21A5AD6700D2720D /* sofa1.jpg */; };
 		A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2E21A5AD6700D2720D /* sofa2.jpg */; };
@@ -99,6 +100,7 @@
 		A8766FE421A5EB3000C6889F /* ar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ar.png; sourceTree = "<group>"; };
 		A883956321727DB400B591B5 /* Desk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Desk.png; sourceTree = "<group>"; };
 		A888B7F121767DB800814EBC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		A88B5DF421C5FFFD00194567 /* PriceFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFilterViewController.swift; sourceTree = "<group>"; };
 		A8C26A2C21A5AD6700D2720D /* sofa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa.jpg; sourceTree = "<group>"; };
 		A8C26A2D21A5AD6700D2720D /* sofa1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa1.jpg; sourceTree = "<group>"; };
 		A8C26A2E21A5AD6700D2720D /* sofa2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa2.jpg; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				A8E58E8321B44DF500CC4980 /* AddressDetailViewController.swift */,
 				A83FBF2821AC4DC5002E106B /* FilterProductCategoryViewController.swift */,
 				A81E2A0921B16E7900E8EF3F /* FilterDetailProductCategoryViewController.swift */,
+				A88B5DF421C5FFFD00194567 /* PriceFilterViewController.swift */,
 				A81D765B21B31D92006BCFFF /* ShoppingCardViewController.swift */,
 				A8E58E8521B47FD400CC4980 /* UploadNewProductViewController.swift */,
 				A8E58E8721B480B200CC4980 /* AddProductViewController.swift */,
@@ -471,6 +474,7 @@
 				A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */,
 				A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */,
 				A8082D2321A31C79005E3377 /* ProductDetailViewController.swift in Sources */,
+				A88B5DF521C5FFFD00194567 /* PriceFilterViewController.swift in Sources */,
 				A8F5BF6B21651DDF0077B597 /* MMDrawerVisualState.m in Sources */,
 				A81E2A0A21B16E7900E8EF3F /* FilterDetailProductCategoryViewController.swift in Sources */,
 				A834F89921419CB200D8843D /* ProductCategoryViewController.swift in Sources */,

@@ -15,9 +15,16 @@ class ProductsViewController: UIViewController {
 
     var documentId: String?
     
-    
+    var ref: CollectionReference!
     var imageArray = [String]()
     var productArray = [[String: Any]]()
+     var priceFilter1 = [[String: Any]]()
+     var priceFilter2 = [[String: Any]]()
+    
+    var priceFilterSet1 = [String]()
+    var priceFilterSet2 = [String]()
+    
+    var output = [String]()
     
     
     @IBOutlet weak var productPageCollectionView: UICollectionView!
@@ -47,19 +54,121 @@ class ProductsViewController: UIViewController {
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(shoppingCard))
         
         // Do any additional setup after loading the view.
+        
+        let newId = "all" + (documentId ?? "")
+        ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
+        let query = ref
         getsubCollectionFurniture()
-        getAllProduct()
+        getAllProduct(queryFirestore: query!)
     }
     
     @objc func shoppingCard() {
         print("brk")
     }
     
+    func findIntersection (firstArray : [String], secondArray : [String]) -> [String]
+    {
+        return [String](Set<String>(firstArray).intersection(secondArray))
+    }
+
     
 
     @objc func leftSideButtonTapped()  {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
+    }
+    
+    @IBAction func unWindToProductVC (_ sender: UIStoryboardSegue){
+        
+        guard let priceFilterVC = sender.source as? PriceFilterViewController else { return }
+        let minValue = Int(priceFilterVC.minValueTextField.text!)
+        let maxValue = Int(priceFilterVC.maxValueTextField.text!)
+        let newId = "all" + (documentId ?? "")
+        ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
+       
+        priceFilterSet2.removeAll()
+        priceFilterSet1.removeAll()
+        priceFilter1.removeAll()
+        priceFilter2.removeAll()
+        productArray.removeAll()
+        
+        if minValue == nil {
+            let isLessThanQuery = ref.whereField("priceInt", isLessThanOrEqualTo: maxValue!)
+            
+            getAllProduct(queryFirestore: isLessThanQuery)
+        }
+        else if maxValue == nil {
+            let isGreaterThanQuery = ref.whereField("priceInt", isGreaterThanOrEqualTo: minValue!)
+           
+            getAllProduct(queryFirestore: isGreaterThanQuery)
+        }
+        else if minValue != nil && maxValue != nil {
+             let isLessThanQuery = ref.whereField("priceInt", isLessThanOrEqualTo: maxValue!)
+            let isGreaterThanQuery = ref.whereField("priceInt", isGreaterThanOrEqualTo: minValue!)
+      
+            isLessThanQuery.getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        //print("\(document.documentID) => \(document.data())")
+                        let name = document.data()["name"] as! String
+                        let description = document.data()["description"] as! String
+                        let imageUrl = document.data()["imageUrl"] as! String
+                        let price = document.data()["price"] as! String
+                        let dimension = document.data()["dimension"] as! String
+                        let seller = document.data()["seller"] as! String
+                        
+                        let productData: [String: Any] = ["id": document.documentID, "name": name, "description": description, "imageUrl": imageUrl, "price": price, "dimension": dimension, "seller": seller]
+                        DispatchQueue.main.async {
+                            self.priceFilter1.append(productData)
+                           self.priceFilterSet1.append("\(document.documentID)")
+                            self.output =  self.findIntersection(firstArray: self.priceFilterSet1, secondArray: self.priceFilterSet2)
+                            for item in self.output {
+                                if productData["id"] as? String == item {
+                                    self.productArray.append(productData)
+                                }
+                                self.productPageTableView.reloadData()
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
+            isGreaterThanQuery.getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        //print("\(document.documentID) => \(document.data())")
+                        let name = document.data()["name"] as! String
+                        let description = document.data()["description"] as! String
+                        let imageUrl = document.data()["imageUrl"] as! String
+                        let price = document.data()["price"] as! String
+                        let dimension = document.data()["dimension"] as! String
+                        let seller = document.data()["seller"] as! String
+                        
+                        let productData: [String: Any] = ["id": document.documentID, "name": name, "description": description, "imageUrl": imageUrl, "price": price, "dimension": dimension, "seller": seller]
+                        DispatchQueue.main.async {
+                            self.priceFilter2.append(productData)
+                            self.priceFilterSet2.append("\(document.documentID)")
+                            self.output =  self.findIntersection(firstArray: self.priceFilterSet1, secondArray: self.priceFilterSet2)
+                            for item in self.output {
+                                if productData["id"] as? String == item {
+                                    self.productArray.append(productData)
+                                }
+                            }
+                            self.productPageTableView.reloadData()
+                        }
+                        
+                    }
+                }
+            }
+        }
+      
+       
+        
     }
     
     
@@ -85,13 +194,9 @@ class ProductsViewController: UIViewController {
         }
     }
     
-    func getAllProduct() {
-        
-        let ref: CollectionReference!
-        let newId = "all" + (documentId ?? "")
-        ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
-        
-        ref.getDocuments() { (querySnapshot, err) in
+    func getAllProduct(queryFirestore: Query) {
+    
+        queryFirestore.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -175,8 +280,15 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let rowSelected = (sender as! IndexPath).row
+        
+        if segue.identifier == "filterSegue" {
+            if let filterCategoryVC =  segue.destination as? FilterProductCategoryViewController {
+                filterCategoryVC.documentId = documentId
+            }
+        }
+        
         if segue.identifier == "productDetail" {
+            let rowSelected = (sender as! IndexPath).row
             if let productDetailVC =  segue.destination as? ProductDetailViewController {
                 let newId = "all" + (documentId ?? "")
                 productDetailVC.documentId = documentId
@@ -185,6 +297,7 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         if segue.identifier == "productCategory" {
+            let rowSelected = (sender as! IndexPath).row
             if let productCategory = segue.destination as? ProductCategoryViewController {
                 if rowSelected == 0 {
                     productCategory.subCategory = "home"

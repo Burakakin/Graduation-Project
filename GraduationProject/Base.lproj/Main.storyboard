@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DQ8-ch-M21">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="144" width="320" height="424"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="W1o-Xv-5ad">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
@@ -237,13 +237,32 @@
                                     <outlet property="delegate" destination="PQG-BQ-PRT" id="8mr-Eh-L6y"/>
                                 </connections>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="t8Q-e6-dDh">
+                                <rect key="frame" x="0.0" y="64" width="320" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFh-W6-yEt">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                        <state key="normal" title="Filter"/>
+                                        <connections>
+                                            <segue destination="bqI-xn-8K8" kind="presentation" identifier="filterSegue" id="vci-aR-HQP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeN-Ht-Vhg">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="30"/>
+                                        <state key="normal" title="Sort"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DQ8-ch-M21" firstAttribute="leading" secondItem="Tw1-pJ-jul" secondAttribute="leading" id="4hK-7h-ayB"/>
+                            <constraint firstItem="t8Q-e6-dDh" firstAttribute="top" secondItem="Tw1-pJ-jul" secondAttribute="top" id="GvI-bo-5f8"/>
+                            <constraint firstItem="DQ8-ch-M21" firstAttribute="top" secondItem="t8Q-e6-dDh" secondAttribute="bottom" constant="50" id="c3o-8e-qTG"/>
                             <constraint firstItem="DQ8-ch-M21" firstAttribute="trailing" secondItem="Tw1-pJ-jul" secondAttribute="trailing" id="dDb-Yz-DIg"/>
+                            <constraint firstItem="Tw1-pJ-jul" firstAttribute="trailing" secondItem="t8Q-e6-dDh" secondAttribute="trailing" id="e9v-Eo-lkU"/>
                             <constraint firstItem="DQ8-ch-M21" firstAttribute="bottom" secondItem="Tw1-pJ-jul" secondAttribute="bottom" id="ipR-mn-x9V"/>
-                            <constraint firstItem="DQ8-ch-M21" firstAttribute="top" secondItem="Tw1-pJ-jul" secondAttribute="top" id="tXU-JI-cYj"/>
+                            <constraint firstItem="t8Q-e6-dDh" firstAttribute="leading" secondItem="Tw1-pJ-jul" secondAttribute="leading" id="oFF-0h-Os6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tw1-pJ-jul"/>
                     </view>
@@ -352,32 +371,12 @@
                                     <outlet property="delegate" destination="hYS-lH-UBj" id="Lt3-Tp-ldE"/>
                                 </connections>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="be5-bz-HB1">
-                                <rect key="frame" x="0.0" y="64" width="320" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWa-Me-pTg">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
-                                        <state key="normal" title="Filter"/>
-                                        <connections>
-                                            <segue destination="bqI-xn-8K8" kind="show" identifier="filterSegue" id="iqd-ey-NdF"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bX2-Vj-EYn">
-                                        <rect key="frame" x="160" y="0.0" width="160" height="40"/>
-                                        <state key="normal" title="Sort"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EoX-BT-6Ff" firstAttribute="leading" secondItem="Zj3-pD-GAE" secondAttribute="leading" id="01E-Rh-8my"/>
-                            <constraint firstItem="be5-bz-HB1" firstAttribute="top" secondItem="Zj3-pD-GAE" secondAttribute="top" id="5Ik-Sj-2tl"/>
-                            <constraint firstItem="Zj3-pD-GAE" firstAttribute="trailing" secondItem="be5-bz-HB1" secondAttribute="trailing" id="Cj8-Bt-vfV"/>
                             <constraint firstItem="EoX-BT-6Ff" firstAttribute="trailing" secondItem="Zj3-pD-GAE" secondAttribute="trailing" id="HOG-rc-6ox"/>
-                            <constraint firstItem="EoX-BT-6Ff" firstAttribute="top" secondItem="be5-bz-HB1" secondAttribute="bottom" id="KzT-rC-T6w"/>
                             <constraint firstItem="EoX-BT-6Ff" firstAttribute="bottom" secondItem="Zj3-pD-GAE" secondAttribute="bottom" id="rEz-GU-09U"/>
-                            <constraint firstItem="be5-bz-HB1" firstAttribute="leading" secondItem="Zj3-pD-GAE" secondAttribute="leading" id="rvT-Zo-NK2"/>
                             <constraint firstItem="EoX-BT-6Ff" firstAttribute="top" secondItem="Zj3-pD-GAE" secondAttribute="top" constant="40" id="wnH-wc-hee"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zj3-pD-GAE"/>
@@ -389,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fb-O7-Oyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4638.75" y="963.38028169014081"/>
+            <point key="canvasLocation" x="4509" y="1046"/>
         </scene>
         <!--Filter Product Category View Controller-->
         <scene sceneID="aIp-oF-L3U">
@@ -400,7 +399,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WbG-CY-28I">
-                                <rect key="frame" x="0.0" y="64" width="320" height="434"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="filterCell" textLabel="PHv-wa-92D" style="IBUITableViewCellStyleDefault" id="UCw-od-9wY">
@@ -436,7 +435,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YaZ-al-iZE" kind="unwind" unwindAction="unWindToProductCategoryVC:" id="jFx-Ki-2Li"/>
+                                    <segue destination="YaZ-al-iZE" kind="unwind" unwindAction="unWindToProductVC:" id="3qB-R7-YCi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -455,6 +454,7 @@
                     <connections>
                         <outlet property="filterTableView" destination="WbG-CY-28I" id="6Fz-Th-rID"/>
                         <segue destination="Yd5-ky-cJ3" kind="presentation" identifier="toDetailFilter" id="wTq-h0-YYG"/>
+                        <segue destination="1rf-Rl-c0O" kind="presentation" identifier="priceFilter" id="rrh-79-dyM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaI-rL-dcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -522,6 +522,63 @@
                 <exit id="ABP-1X-HNS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6247.5" y="1045.7746478873239"/>
+        </scene>
+        <!--Price Filter View Controller-->
+        <scene sceneID="e9S-Cg-4Yx">
+            <objects>
+                <viewController id="1rf-Rl-c0O" customClass="PriceFilterViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pmn-mc-kcC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="x3D-LL-pGD">
+                                <rect key="frame" x="0.0" y="60" width="320" height="101"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Min" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eza-9u-knV">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Max" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQK-Hj-bhO">
+                                        <rect key="frame" x="0.0" y="71" width="320" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wj-hf-9Ul">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5si-BG-4X9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="FkG-dG-FfZ" kind="unwind" unwindAction="unWindToProductVC:" id="qAj-8j-Fxx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x3D-LL-pGD" firstAttribute="leading" secondItem="HNw-HI-DmI" secondAttribute="leading" id="7Ex-CP-8cZ"/>
+                            <constraint firstItem="HNw-HI-DmI" firstAttribute="trailing" secondItem="x3D-LL-pGD" secondAttribute="trailing" id="BxT-sZ-kXG"/>
+                            <constraint firstItem="HNw-HI-DmI" firstAttribute="trailing" secondItem="7Wj-hf-9Ul" secondAttribute="trailing" id="T6F-z4-zYF"/>
+                            <constraint firstItem="x3D-LL-pGD" firstAttribute="top" secondItem="HNw-HI-DmI" secondAttribute="top" constant="40" id="TOQ-n3-NXd"/>
+                            <constraint firstItem="HNw-HI-DmI" firstAttribute="bottom" secondItem="7Wj-hf-9Ul" secondAttribute="bottom" id="WOY-ay-IDV"/>
+                            <constraint firstItem="7Wj-hf-9Ul" firstAttribute="leading" secondItem="HNw-HI-DmI" secondAttribute="leading" id="csT-IV-hZc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HNw-HI-DmI"/>
+                    </view>
+                    <connections>
+                        <outlet property="maxValueTextField" destination="EQK-Hj-bhO" id="h3H-qQ-Q99"/>
+                        <outlet property="minValueTextField" destination="Eza-9u-knV" id="eBm-Bh-AFW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22V-k5-8j0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FkG-dG-FfZ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5528" y="1836"/>
         </scene>
         <!--Left Side Menu View Controller-->
         <scene sceneID="wdg-j4-N5b">
@@ -2385,6 +2442,6 @@
         <image name="unchecked.png" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="djh-WX-b6O"/>
+        <segue reference="qjs-VF-gC7"/>
     </inferredMetricsTieBreakers>
 </document>

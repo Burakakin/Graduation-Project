@@ -16,8 +16,7 @@ class ProductCategoryViewController: UIViewController {
     
     
     let defaults = UserDefaults.standard
-    var colorFilterName = [String]()
-    var priceFilterName = [String]()
+    
     
     var productCategoryArray = [[String: Any]]()
     
@@ -45,47 +44,6 @@ class ProductCategoryViewController: UIViewController {
     @objc func leftSideButtonTapped()  {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.centerContainer!.toggle(MMDrawerSide.left, animated: true, completion: nil)
-    }
-
-    @IBAction func unWindToProductCategoryVC (_ unwindSegue: UIStoryboardSegue){
-    
-        print("Welcome to Product Category Page")
-        
-        productCategoryArray.removeAll()
-        
-        colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
-        priceFilterName = (defaults.array(forKey: "priceFilterName") as? [String] ?? [])
-        
-        let colorFilterTitle = colorFilterName.first
-        let priceFilterTitle = priceFilterName.first
-        
-        var filteredQuery = ref.whereField("subCategory", isEqualTo: "\(subCategory ?? "")")
-        
-        //print(colorFilterTitle!)
-        let droppedColorFilterName = colorFilterName.dropFirst()
-         let droppedPriceFilterName = priceFilterName.dropFirst()
-        print(droppedColorFilterName)
-        if droppedColorFilterName.count == 1 || droppedPriceFilterName.count == 1 {
-            filteredQuery = filteredQuery.whereField("\(colorFilterTitle ?? "")", isEqualTo: "\(droppedColorFilterName[1])")
-            filteredQuery = filteredQuery.whereField("\(priceFilterTitle ?? "")", isEqualTo: "\(droppedPriceFilterName[1])")
-            
-        }
-        if droppedColorFilterName.count > 1 {
-            for item in droppedColorFilterName{
-                filteredQuery = filteredQuery.whereField("\(colorFilterTitle ?? "")", isEqualTo: "\(item)")
-                
-            }
-        }
-        
-        if droppedPriceFilterName.count > 1 {
-            for item in droppedPriceFilterName{
-                filteredQuery = filteredQuery.whereField("\(priceFilterTitle ?? "")", isEqualTo: "\(item)")
-                
-            }
-        }
-        
-        getProducts(queryFirestore: filteredQuery)
-
     }
     
     
@@ -162,13 +120,6 @@ extension ProductCategoryViewController: UICollectionViewDelegate, UICollectionV
             backItem.title = ""
             navigationItem.backBarButtonItem = backItem
         }
-        
-        if segue.identifier == "filterSegue" {
-            if let filterCategoryVC =  segue.destination as? FilterProductCategoryViewController {
-                filterCategoryVC.documentId = documentId
-            }
-        }
-        
        
     }
     
