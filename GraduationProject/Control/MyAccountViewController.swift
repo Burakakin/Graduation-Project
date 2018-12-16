@@ -16,6 +16,10 @@ class MyAccountViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let newBtn =  UIBarButtonItem(image: UIImage(named: "menu.png"), style: .plain, target: self, action: #selector(myAccount(_:)))
+        
+        self.navigationItem.leftItemsSupplementBackButton = true
+        self.navigationItem.leftBarButtonItem = newBtn
     }
     
 

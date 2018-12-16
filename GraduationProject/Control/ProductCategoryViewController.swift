@@ -28,7 +28,8 @@ class ProductCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let newBtn = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(leftSideButtonTapped))
+        let newBtn =  UIBarButtonItem(image: UIImage(named: "menu.png"), style: .plain, target: self, action: #selector(leftSideButtonTapped))
+        
         self.navigationItem.leftItemsSupplementBackButton = true
         self.navigationItem.leftBarButtonItem = newBtn
         self.navigationItem.title = (subCategory ?? "") + (documentId ?? "")

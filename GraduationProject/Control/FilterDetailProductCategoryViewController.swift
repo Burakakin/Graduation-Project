@@ -30,9 +30,6 @@ class FilterDetailProductCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(filterType)
-        // Do any additional setup after loading the view.
-        colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
         
         getFilterDetail()
     }

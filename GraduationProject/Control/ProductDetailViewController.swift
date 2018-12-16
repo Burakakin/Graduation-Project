@@ -43,7 +43,7 @@ class ProductDetailViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(abc))
+       
         //self.navigationController?.view.backgroundColor = .clear
         
         
@@ -57,9 +57,7 @@ class ProductDetailViewController: UIViewController {
        
     }
     
-    @objc func abc() {
-        print("buttonTapped")
-    }
+    
 
 
     override var prefersStatusBarHidden: Bool {
@@ -235,7 +233,17 @@ class ProductDetailViewController: UIViewController {
                 let data = document.data()
                 if data![path] == nil {
                     refDoc.setData([
-                        "\(path)": ["\(self.productDetailId ?? "")": pathToSave]
+                        "pathToLiked": ["": ""],
+                        "shoppingCart": ["": ""]
+                    ]) { err in
+                        if let err = err {
+                            print("Error updating document: \(err)")
+                        } else {
+                            print("Document successfully updated")
+                        }
+                    }
+                    refDoc.updateData([
+                        "\(path).\(self.productDetailId ?? "")": pathToSave
                     ]) { err in
                         if let err = err {
                             print("Error updating document: \(err)")
@@ -246,7 +254,7 @@ class ProductDetailViewController: UIViewController {
                 }
                 else {
                     if let pathToLikedandCart = data![path] as? Dictionary<String, String> {
-                        print(pathToLikedandCart)
+                        //print(pathToLikedandCart)
                         if pathToLikedandCart.keys.contains("\(self.productDetailId ?? "")") {
                             print("Contain")
                             if path == "shoppingCart" {
