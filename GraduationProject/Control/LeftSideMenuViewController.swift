@@ -13,7 +13,7 @@ class LeftSideMenuViewController: UIViewController {
     
     @IBOutlet weak var myAccountButton: UIButton!
     
-    var menuItem = ["All Products","Last Viewed","My Favourite","My Products","My Card"]
+    var menuItem = ["All Products","Last Viewed","My Favourite","My Products","My Cart"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

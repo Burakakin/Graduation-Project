@@ -124,7 +124,7 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
         
         cell.shoppingCardProductName.text = shoppingCartArr[indexPath.row]["name"]
         cell.shoppingCardProductDescription.text = shoppingCartArr[indexPath.row]["description"]
-        cell.shoppingCardProductSeller.text = shoppingCartArr[indexPath.row]["seller"]
+        cell.shoppingCardProductSeller.text = "by " + shoppingCartArr[indexPath.row]["seller"]!
         cell.shoppingCardProductPrice.text = "\(priceKeeperArr[indexPath.row]["total"] ?? 0)" + "TL"
         cell.shoppingCardPieceLabel.text = "\(priceKeeperArr[indexPath.row]["amount"] ?? 0) Piece(s)"
         imageDownload.getImage(withUrl: shoppingCartArr[indexPath.row]["imageUrl"]!) { (image) in

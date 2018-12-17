@@ -29,6 +29,8 @@ class ProductsViewController: UIViewController {
     
     @IBOutlet weak var productPageCollectionView: UICollectionView!
     @IBOutlet weak var productPageTableView: UITableView!
+    @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var sortButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,16 @@ class ProductsViewController: UIViewController {
         self.navigationItem.title = "All " + (documentId ?? "")
         
         
+//        let icon = UIImage(named: "sort")!
+//        sortButton.setImage(icon, for: .normal)
+//        sortButton.imageView?.contentMode = .scaleAspectFit
+//        sortButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
+//        
+//        
+        let iconf = UIImage(named: "filter")!
+        filterButton.setImage(iconf, for: .normal)
+        filterButton.imageView?.contentMode = .scaleAspectFit
+        filterButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
         
         let notificationButton = SSBadgeButton()
         notificationButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
