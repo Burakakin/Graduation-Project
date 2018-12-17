@@ -16,14 +16,7 @@ class FilterDetailProductCategoryViewController: UIViewController {
     
     var filterType: String?
     var documentId: String?
-    
-    var colorFilterName = [String]()
-   
-    var names = [String]()
-    //populate from Firestore
-    var colorFilter = [String]()
-    
-    
+    var selectedColor: String?
     var filterDetailArr = [String]()
     
     @IBOutlet weak var filterDetailTableView: UITableView!
@@ -76,13 +69,7 @@ extension FilterDetailProductCategoryViewController: UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterDetailCell", for: indexPath)
-        
-        
         cell.textLabel?.text = filterDetailArr[indexPath.row]
-        
-        if filterType == "color" {
-            cell.accessoryType = self.colorFilterName.contains("\(filterDetailArr[indexPath.row])") ? .checkmark : .none
-        }
         
         return cell
         
@@ -91,30 +78,22 @@ extension FilterDetailProductCategoryViewController: UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if filterType == "color" {
-            if self.colorFilterName.contains("\(filterDetailArr[indexPath.row])") {
-                self.colorFilterName.removeAll { $0 == "\(filterDetailArr[indexPath.row])" }
-            }
-            else {
-                if colorFilterName.contains("color"){
-                    colorFilterName.append(filterDetailArr[indexPath.row])
-                }
-                else {
-                    colorFilterName.insert("color", at: 0)
-                    colorFilterName.append(filterDetailArr[indexPath.row])
-                }
+        selectedColor = filterDetailArr[indexPath.row]
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+            if cell.accessoryType == .checkmark {
+                cell.accessoryType = .none
+            } else {
+                cell.accessoryType = .checkmark
             }
         }
-        
-        
-        
-       
-        defaults.set(colorFilterName, forKey: "colorFilterName")
-        
         DispatchQueue.main.async {
             self.filterDetailTableView.reloadData()
         }
     }
+    
     
     
 }

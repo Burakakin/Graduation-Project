@@ -119,13 +119,13 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
         var totalPrice = 0
         for i in 0..<self.priceKeeperArr.count {
             totalPrice += self.priceKeeperArr[i]["total"]!
-            self.totalPriceLabel.text = "Total Price: \(totalPrice)TL"
+            self.totalPriceLabel.text = "Total Price: \(totalPrice) TL"
         }
         
         cell.shoppingCardProductName.text = shoppingCartArr[indexPath.row]["name"]
         cell.shoppingCardProductDescription.text = shoppingCartArr[indexPath.row]["description"]
         cell.shoppingCardProductSeller.text = shoppingCartArr[indexPath.row]["seller"]
-        cell.shoppingCardProductPrice.text = "\(priceKeeperArr[indexPath.row]["total"] ?? 0)"
+        cell.shoppingCardProductPrice.text = "\(priceKeeperArr[indexPath.row]["total"] ?? 0)" + "TL"
         cell.shoppingCardPieceLabel.text = "\(priceKeeperArr[indexPath.row]["amount"] ?? 0) Piece(s)"
         imageDownload.getImage(withUrl: shoppingCartArr[indexPath.row]["imageUrl"]!) { (image) in
             cell.shoppingCardProductImageView.image = image
@@ -144,7 +144,7 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
             var totalPrice = 0
             for i in 0..<self.priceKeeperArr.count {
                 totalPrice += self.priceKeeperArr[i]["total"]!
-                self.totalPriceLabel.text = "Total Price: \(totalPrice)TL"
+                self.totalPriceLabel.text = "Total Price: \(totalPrice) TL"
             }
             
         }
@@ -166,7 +166,7 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
                 total = price * amount
                 self.priceKeeperArr[indexPath.row]["total"] = total
                 self.priceKeeperArr[path.row]["amount"] = amount
-                cell.shoppingCardProductPrice.text = "\(total)"
+                cell.shoppingCardProductPrice.text = "\(total)" + "TL"
                 cell.shoppingCardPieceLabel.text = "\(amount) Piece(s)"
                 print(self.priceKeeperArr)
                 
@@ -174,7 +174,7 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
                 
                 for i in 0..<self.priceKeeperArr.count {
                     totalPrice += self.priceKeeperArr[i]["total"]!
-                    self.totalPriceLabel.text = "Total Price: \(totalPrice)TL"
+                    self.totalPriceLabel.text = "Total Price: \(totalPrice) TL"
                 }
             }
         }
@@ -193,7 +193,7 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
                 total = price * amount
                 self.priceKeeperArr[indexPath.row]["total"] = total
                 self.priceKeeperArr[path.row]["amount"] = amount
-                cell.shoppingCardProductPrice.text = "\(total)"
+                cell.shoppingCardProductPrice.text = "\(total)" + "TL"
                 cell.shoppingCardPieceLabel.text = "\(amount) Piece(s)"
                 print(self.priceKeeperArr)
                 
@@ -202,7 +202,7 @@ extension ShoppingCardViewController: UITableViewDelegate, UITableViewDataSource
                 
                 for i in 0..<self.priceKeeperArr.count {
                     totalPrice += self.priceKeeperArr[i]["total"]!
-                    self.totalPriceLabel.text = "Total Price: \(totalPrice)TL"
+                    self.totalPriceLabel.text = "Total Price: \(totalPrice) TL"
                 }
                 
                 

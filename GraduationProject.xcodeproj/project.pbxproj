@@ -40,6 +40,8 @@
 		A883956421727DB400B591B5 /* Desk.png in Resources */ = {isa = PBXBuildFile; fileRef = A883956321727DB400B591B5 /* Desk.png */; };
 		A888B7F221767DB800814EBC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888B7F121767DB800814EBC /* LocalAuthentication.framework */; };
 		A88B5DF521C5FFFD00194567 /* PriceFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B5DF421C5FFFD00194567 /* PriceFilterViewController.swift */; };
+		A88FA23E21C6F97900567BBA /* icons8-subtract-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FA23C21C6F97700567BBA /* icons8-subtract-filled-50.png */; };
+		A88FA23F21C6F97900567BBA /* icons8-plus-math-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FA23D21C6F97800567BBA /* icons8-plus-math-filled-50.png */; };
 		A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2C21A5AD6700D2720D /* sofa.jpg */; };
 		A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2D21A5AD6700D2720D /* sofa1.jpg */; };
 		A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2E21A5AD6700D2720D /* sofa2.jpg */; };
@@ -101,6 +103,8 @@
 		A883956321727DB400B591B5 /* Desk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Desk.png; sourceTree = "<group>"; };
 		A888B7F121767DB800814EBC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		A88B5DF421C5FFFD00194567 /* PriceFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFilterViewController.swift; sourceTree = "<group>"; };
+		A88FA23C21C6F97700567BBA /* icons8-subtract-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-subtract-filled-50.png"; sourceTree = "<group>"; };
+		A88FA23D21C6F97800567BBA /* icons8-plus-math-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-math-filled-50.png"; sourceTree = "<group>"; };
 		A8C26A2C21A5AD6700D2720D /* sofa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa.jpg; sourceTree = "<group>"; };
 		A8C26A2D21A5AD6700D2720D /* sofa1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa1.jpg; sourceTree = "<group>"; };
 		A8C26A2E21A5AD6700D2720D /* sofa2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa2.jpg; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 		A86EF2A521668CB100701DEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A88FA23D21C6F97800567BBA /* icons8-plus-math-filled-50.png */,
+				A88FA23C21C6F97700567BBA /* icons8-subtract-filled-50.png */,
 				A8C2C38021B73D3200FF20EB /* checked.png */,
 				A8C2C38121B73D3300FF20EB /* unchecked.png */,
 				A82B81CB21B3135200EB5354 /* shoppingCard.png */,
@@ -357,6 +363,8 @@
 			files = (
 				A8301C8A21BB4E3A00B5AA8E /* menu.png in Resources */,
 				A883956421727DB400B591B5 /* Desk.png in Resources */,
+				A88FA23F21C6F97900567BBA /* icons8-plus-math-filled-50.png in Resources */,
+				A88FA23E21C6F97900567BBA /* icons8-subtract-filled-50.png in Resources */,
 				A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */,
 				A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */,
 				A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */,

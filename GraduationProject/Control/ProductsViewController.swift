@@ -167,8 +167,18 @@ class ProductsViewController: UIViewController {
             }
         }
       
-       
         
+        
+    }
+    
+    @IBAction func unWindToColorProductVC (_ sender: UIStoryboardSegue){
+        guard let filterDetailVC = sender.source as? FilterDetailProductCategoryViewController else { return }
+        let selectedColorQuery =  filterDetailVC.selectedColor
+        productArray.removeAll()
+        let newId = "all" + (documentId ?? "")
+        ref = Firestore.firestore().collection("Furniture/\(documentId ?? "")/\(newId)")
+        let colorFilterQuery = ref.whereField("color", isEqualTo: selectedColorQuery!)
+        getAllProduct(queryFirestore: colorFilterQuery)
     }
     
     
