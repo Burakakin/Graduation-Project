@@ -68,19 +68,19 @@ class FilterProductCategoryViewController: UIViewController {
 
     }
     
-    @IBAction func unWindToFilterProductCategory(_ sender: UIStoryboardSegue){
-        
-        print("Welcome to Filter Product Category Page")
-        colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
-        
-        
-        //print(colorFilterName)
-        
-        guard let priceFilterVC = sender.source as? PriceFilterViewController else { return }
-        print(priceFilterVC.minValueTextField.text)
-        print(priceFilterVC.maxValueTextField.text)
-        
-    }
+//    @IBAction func unWindToFilterProductCategory(_ sender: UIStoryboardSegue){
+//        
+//        print("Welcome to Filter Product Category Page")
+//        colorFilterName = (defaults.array(forKey: "colorFilterName") as? [String] ?? [])
+//        
+//        
+//        //print(colorFilterName)
+//        
+//        guard let priceFilterVC = sender.source as? PriceFilterViewController else { return }
+//        print(priceFilterVC.minValueTextField.text)
+//        print(priceFilterVC.maxValueTextField.text)
+//        
+//    }
     
 }
 
@@ -93,7 +93,7 @@ extension FilterProductCategoryViewController: UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell", for: indexPath)
         cell.textLabel?.text = filterTypeArr[indexPath.row]
-        
+        cell.textLabel!.font = UIFont(name:"Futura-Medium", size:22)
         return cell
     }
     

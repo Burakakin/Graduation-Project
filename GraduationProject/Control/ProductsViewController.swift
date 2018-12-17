@@ -181,6 +181,13 @@ class ProductsViewController: UIViewController {
         getAllProduct(queryFirestore: colorFilterQuery)
     }
     
+    @IBAction func unWindSorttoProductVC (_ sender: UIStoryboardSegue){
+        guard let sortFilterVC = sender.source as? SortFilterViewController else { return }
+        let sortQuery =  sortFilterVC.sortQuery
+        productArray.removeAll()
+        getAllProduct(queryFirestore: sortQuery!)
+    }
+    
     
     func getsubCollectionFurniture() {
         //homeDesk
@@ -294,6 +301,12 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
         if segue.identifier == "filterSegue" {
             if let filterCategoryVC =  segue.destination as? FilterProductCategoryViewController {
                 filterCategoryVC.documentId = documentId
+            }
+        }
+        
+        if segue.identifier == "sortSegue" {
+            if let sortFilterVC =  segue.destination as? SortFilterViewController {
+                sortFilterVC.documentId = documentId
             }
         }
         

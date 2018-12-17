@@ -70,7 +70,7 @@ extension FilterDetailProductCategoryViewController: UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "filterDetailCell", for: indexPath)
         cell.textLabel?.text = filterDetailArr[indexPath.row]
-        
+        cell.textLabel!.font = UIFont(name:"Futura-Medium", size:22)
         return cell
         
     }
@@ -80,20 +80,16 @@ extension FilterDetailProductCategoryViewController: UITableViewDelegate, UITabl
         
         selectedColor = filterDetailArr[indexPath.row]
         
-        tableView.deselectRow(at: indexPath, animated: true)
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .checkmark
+        }
         
-        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
-            if cell.accessoryType == .checkmark {
-                cell.accessoryType = .none
-            } else {
-                cell.accessoryType = .checkmark
-            }
-        }
-        DispatchQueue.main.async {
-            self.filterDetailTableView.reloadData()
-        }
     }
     
-    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+            cell.accessoryType = .none
+        }
+    }
     
 }

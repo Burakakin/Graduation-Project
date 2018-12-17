@@ -42,6 +42,7 @@
 		A88B5DF521C5FFFD00194567 /* PriceFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B5DF421C5FFFD00194567 /* PriceFilterViewController.swift */; };
 		A88FA23E21C6F97900567BBA /* icons8-subtract-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FA23C21C6F97700567BBA /* icons8-subtract-filled-50.png */; };
 		A88FA23F21C6F97900567BBA /* icons8-plus-math-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FA23D21C6F97800567BBA /* icons8-plus-math-filled-50.png */; };
+		A88FA24121C73D2B00567BBA /* SortFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88FA24021C73D2B00567BBA /* SortFilterViewController.swift */; };
 		A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2C21A5AD6700D2720D /* sofa.jpg */; };
 		A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2D21A5AD6700D2720D /* sofa1.jpg */; };
 		A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2E21A5AD6700D2720D /* sofa2.jpg */; };
@@ -105,6 +106,7 @@
 		A88B5DF421C5FFFD00194567 /* PriceFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFilterViewController.swift; sourceTree = "<group>"; };
 		A88FA23C21C6F97700567BBA /* icons8-subtract-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-subtract-filled-50.png"; sourceTree = "<group>"; };
 		A88FA23D21C6F97800567BBA /* icons8-plus-math-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-math-filled-50.png"; sourceTree = "<group>"; };
+		A88FA24021C73D2B00567BBA /* SortFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterViewController.swift; sourceTree = "<group>"; };
 		A8C26A2C21A5AD6700D2720D /* sofa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa.jpg; sourceTree = "<group>"; };
 		A8C26A2D21A5AD6700D2720D /* sofa1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa1.jpg; sourceTree = "<group>"; };
 		A8C26A2E21A5AD6700D2720D /* sofa2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa2.jpg; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				A8C2C37C21B7375900FF20EB /* AddressSelectionViewController.swift */,
 				A806B81121BAF44600DA2EDA /* LastViewedViewController.swift */,
 				A806B81321BAF45800DA2EDA /* FavouritesViewController.swift */,
+				A88FA24021C73D2B00567BBA /* SortFilterViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				A834F89B21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift in Sources */,
 				A8E58E8621B47FD400CC4980 /* UploadNewProductViewController.swift in Sources */,
 				A82E0FC521B8561F00651CCB /* MyAddressTableViewCell.swift in Sources */,
+				A88FA24121C73D2B00567BBA /* SortFilterViewController.swift in Sources */,
 				A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */,
 				A81D765C21B31D92006BCFFF /* ShoppingCardViewController.swift in Sources */,
 				A806B81221BAF44600DA2EDA /* LastViewedViewController.swift in Sources */,
