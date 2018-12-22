@@ -13,10 +13,20 @@ class LeftSideMenuViewController: UIViewController {
     
     @IBOutlet weak var myAccountButton: UIButton!
     
+    @IBOutlet weak var socialMediaButtonFacebook: UIButton!
+    @IBOutlet weak var socailMediaButtonLinkedin: UIButton!
+    @IBOutlet weak var socailMediaButtonTwitter: UIButton!
+    @IBOutlet weak var socailMediaButtonInstagram: UIButton!
+    
     var menuItem = ["All Products","Last Viewed","My Favourite","My Products","My Cart"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        socailMediaButtonTwitter.imageView?.contentMode = .scaleAspectFit
+        socialMediaButtonFacebook.imageView?.contentMode = .scaleAspectFit
+        socailMediaButtonInstagram.imageView?.contentMode = .scaleAspectFit
+        socailMediaButtonLinkedin.imageView?.contentMode = .scaleAspectFit
         
         myAccountButton.layer.cornerRadius = 4
         myAccountButton.layer.borderWidth = 1

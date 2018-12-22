@@ -698,7 +698,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QI5-8g-aak">
-                                <rect key="frame" x="0.0" y="178" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="178" width="320" height="312"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" rowHeight="66" id="OBC-fh-daA" customClass="LeftSideCustomMenuTableViewCell" customModule="GraduationProject" customModuleProvider="target">
@@ -733,26 +733,26 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KuS-Di-oTL">
-                                <rect key="frame" x="16" y="513" width="204" height="40"/>
+                                <rect key="frame" x="16" y="505" width="224" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zx-D1-XmC">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="40"/>
-                                        <state key="normal" image="facebook.png"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="48"/>
+                                        <state key="normal" image="icons8-facebook-48.png"/>
                                         <connections>
                                             <action selector="socialMedia:" destination="SIM-sY-6g0" eventType="touchUpInside" id="fWJ-8m-9fS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8m-dT-MWE">
-                                        <rect key="frame" x="53" y="0.0" width="45" height="40"/>
-                                        <state key="normal" image="facebook.png"/>
+                                        <rect key="frame" x="58" y="0.0" width="50" height="48"/>
+                                        <state key="normal" image="icons8-linkedin-48.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JX-if-bE7">
-                                        <rect key="frame" x="106" y="0.0" width="45" height="40"/>
-                                        <state key="normal" image="facebook.png"/>
+                                        <rect key="frame" x="116" y="0.0" width="50" height="48"/>
+                                        <state key="normal" image="icons8-twitter-48.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsE-0w-KCH">
-                                        <rect key="frame" x="159" y="0.0" width="45" height="40"/>
-                                        <state key="normal" image="facebook.png"/>
+                                        <rect key="frame" x="174" y="0.0" width="50" height="48"/>
+                                        <state key="normal" image="icons8-instagram-old-48.png"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -771,7 +771,7 @@
                             <constraint firstItem="QI5-8g-aak" firstAttribute="leading" secondItem="z50-ry-Yyf" secondAttribute="leading" id="1rD-8o-rcI"/>
                             <constraint firstItem="gUb-Sg-Jjm" firstAttribute="leading" secondItem="Vyy-8R-KRh" secondAttribute="trailing" constant="53" id="2sc-aU-apI"/>
                             <constraint firstItem="QI5-8g-aak" firstAttribute="trailing" secondItem="z50-ry-Yyf" secondAttribute="trailing" id="Bea-sm-8iw"/>
-                            <constraint firstItem="z50-ry-Yyf" firstAttribute="trailing" secondItem="KuS-Di-oTL" secondAttribute="trailing" constant="100" id="Cep-hE-hwK"/>
+                            <constraint firstItem="z50-ry-Yyf" firstAttribute="trailing" secondItem="KuS-Di-oTL" secondAttribute="trailing" constant="80" id="Cep-hE-hwK"/>
                             <constraint firstItem="KuS-Di-oTL" firstAttribute="top" secondItem="QI5-8g-aak" secondAttribute="bottom" constant="15" id="EPE-Fm-hEW"/>
                             <constraint firstItem="Vyy-8R-KRh" firstAttribute="top" secondItem="z50-ry-Yyf" secondAttribute="top" constant="30" id="ETu-t0-V5N"/>
                             <constraint firstItem="QI5-8g-aak" firstAttribute="top" secondItem="XfW-gm-Sym" secondAttribute="bottom" constant="26" id="LVa-J9-8AZ"/>
@@ -788,6 +788,10 @@
                     </view>
                     <connections>
                         <outlet property="myAccountButton" destination="XfW-gm-Sym" id="SOU-wF-wI7"/>
+                        <outlet property="socailMediaButtonInstagram" destination="VsE-0w-KCH" id="DXA-64-PBs"/>
+                        <outlet property="socailMediaButtonLinkedin" destination="h8m-dT-MWE" id="FBD-Tm-Rkk"/>
+                        <outlet property="socailMediaButtonTwitter" destination="5JX-if-bE7" id="mLU-yO-TC3"/>
+                        <outlet property="socialMediaButtonFacebook" destination="8zx-D1-XmC" id="PuO-0p-ueU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYu-p0-aou" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2541,9 +2545,13 @@
         <image name="checked.png" width="26" height="26"/>
         <image name="emptyProfileImage.png" width="400" height="400"/>
         <image name="facebook.png" width="24" height="40"/>
+        <image name="icons8-facebook-48.png" width="48" height="48"/>
+        <image name="icons8-instagram-old-48.png" width="48" height="48"/>
+        <image name="icons8-linkedin-48.png" width="48" height="48"/>
         <image name="icons8-plus-math-filled-50.png" width="50" height="50"/>
         <image name="icons8-share-80.png" width="80" height="80"/>
         <image name="icons8-subtract-filled-50.png" width="50" height="50"/>
+        <image name="icons8-twitter-48.png" width="48" height="48"/>
         <image name="icons8-waste-50.png" width="50" height="50"/>
         <image name="menu.png" width="16" height="16"/>
         <image name="unchecked.png" width="26" height="26"/>
