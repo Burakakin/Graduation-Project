@@ -11,7 +11,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseStorage
 
-class AddProductViewController: UIViewController {
+class AddProductViewController: UIViewController, UITextFieldDelegate {
 
     var ref: CollectionReference!
     var refDoc: DocumentReference!
@@ -42,6 +42,19 @@ class AddProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        categoryTextField.delegate = self
+        subCategoryTextField.delegate = self
+        sellerName.delegate = self
+        sellerEmail.delegate = self
+        productNameTextField.delegate = self
+        productDescriptionTextField.delegate = self
+        productDimensionTextField.delegate = self
+        productColorTextField.delegate = self
+        productLongDescriptionTextField.delegate = self
+        productPriceTextField.delegate = self
+        
+        
+        
         productImageView.layer.cornerRadius = productImageView.frame.height / 2
         productImageView.clipsToBounds = true
         
@@ -59,6 +72,11 @@ class AddProductViewController: UIViewController {
         getCategories()
         getUserInfo()
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     func getUserInfo()  {

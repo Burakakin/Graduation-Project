@@ -43,12 +43,12 @@ class ProductsViewController: UIViewController {
         self.navigationItem.title = "All " + (documentId ?? "")
         
         
-//        let icon = UIImage(named: "sort")!
-//        sortButton.setImage(icon, for: .normal)
-//        sortButton.imageView?.contentMode = .scaleAspectFit
-//        sortButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
-//        
-//        
+        let icon = UIImage(named: "sort")!
+        sortButton.setImage(icon, for: .normal)
+        sortButton.imageView?.contentMode = .scaleAspectFit
+        sortButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
+        
+        
         let iconf = UIImage(named: "filter")!
         filterButton.setImage(iconf, for: .normal)
         filterButton.imageView?.contentMode = .scaleAspectFit

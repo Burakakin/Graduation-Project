@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class changePasswordPageViewController: UIViewController {
+class changePasswordPageViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,8 +21,15 @@ class changePasswordPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailTextField.delegate = self
+        oldPasswordTextField.delegate = self
+        newPasswordTextField.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     @IBAction func updatePasswordButton(_ sender: Any) {

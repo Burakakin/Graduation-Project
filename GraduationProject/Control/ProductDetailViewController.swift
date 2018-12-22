@@ -124,9 +124,9 @@ class ProductDetailViewController: UIViewController {
                 "lastViewed": lastViewed
             ]) { err in
                 if let err = err {
-                    print("Error updating document: \(err)")
+                    print("Error writing document: \(err)")
                 } else {
-                    print("Last Viewed updated")
+                    print("Document successfully written!")
                 }
             }
         }
@@ -231,28 +231,28 @@ class ProductDetailViewController: UIViewController {
         refDoc.getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()
-                if data![path] == nil {
-                    refDoc.setData([
-                        "pathToLiked": ["": ""],
-                        "shoppingCart": ["": ""]
-                    ]) { err in
-                        if let err = err {
-                            print("Error updating document: \(err)")
-                        } else {
-                            print("Document successfully updated")
-                        }
-                    }
-                    refDoc.updateData([
-                        "\(path).\(self.productDetailId ?? "")": pathToSave
-                    ]) { err in
-                        if let err = err {
-                            print("Error updating document: \(err)")
-                        } else {
-                            print("Document successfully updated")
-                        }
-                    }
-                }
-                else {
+//                if data![path] == nil {
+//                    refDoc.setData([
+//                        "pathToLiked": ["": ""],
+//                        "shoppingCart": ["": ""]
+//                    ]) { err in
+//                        if let err = err {
+//                            print("Error updating document: \(err)")
+//                        } else {
+//                            print("Document successfully updated")
+//                        }
+//                    }
+//                    refDoc.updateData([
+//                        "\(path).\(self.productDetailId ?? "")": pathToSave
+//                    ]) { err in
+//                        if let err = err {
+//                            print("Error updating document: \(err)")
+//                        } else {
+//                            print("Document successfully updated")
+//                        }
+//                    }
+//                }
+//                else {
                     if let pathToLikedandCart = data![path] as? Dictionary<String, String> {
                         //print(pathToLikedandCart)
                         if pathToLikedandCart.keys.contains("\(self.productDetailId ?? "")") {
@@ -292,7 +292,7 @@ class ProductDetailViewController: UIViewController {
                             }
                         }
                     }
-                }
+                //}
                 
             } else {
                 print("Document does not exist")

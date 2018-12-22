@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class AddressDetailViewController: UIViewController {
+class AddressDetailViewController: UIViewController, UITextFieldDelegate {
 
     var ref: DocumentReference!
     @IBOutlet weak var addressNameTextField: UITextField!
@@ -19,10 +19,16 @@ class AddressDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      addressNameTextField.delegate = self
+      fullAddressTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
     @IBAction func saveToDatabase(_ sender: Any) {
         guard let addressName = addressNameTextField.text, !addressName.isEmpty else { return }
         guard let fullAddress = fullAddressTextField.text, !fullAddress.isEmpty else { return }
