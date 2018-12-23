@@ -15,6 +15,7 @@
 		A8082D2321A31C79005E3377 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */; };
 		A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */; };
 		A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8096BE9217A3661006C8F25 /* ProductsViewController.swift */; };
+		A80C1DEA21D002060071EF2E /* AddProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C1DE921D002060071EF2E /* AddProductTableViewCell.swift */; };
 		A8131CC921CEEA22002C7AD7 /* icons8-facebook-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A8131CC521CEEA20002C7AD7 /* icons8-facebook-48.png */; };
 		A8131CCA21CEEA22002C7AD7 /* icons8-linkedin-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A8131CC621CEEA20002C7AD7 /* icons8-linkedin-48.png */; };
 		A8131CCB21CEEA22002C7AD7 /* icons8-twitter-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A8131CC721CEEA21002C7AD7 /* icons8-twitter-48.png */; };
@@ -86,6 +87,7 @@
 		A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		A8096BE9217A3661006C8F25 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		A80C1DE921D002060071EF2E /* AddProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductTableViewCell.swift; sourceTree = "<group>"; };
 		A8131CC521CEEA20002C7AD7 /* icons8-facebook-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-facebook-48.png"; sourceTree = "<group>"; };
 		A8131CC621CEEA20002C7AD7 /* icons8-linkedin-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-linkedin-48.png"; sourceTree = "<group>"; };
 		A8131CC721CEEA21002C7AD7 /* icons8-twitter-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-twitter-48.png"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				A82E0FC421B8561F00651CCB /* MyAddressTableViewCell.swift */,
 				A806B81521BAF81E00DA2EDA /* LastViewedTableViewCell.swift */,
 				A806B81721BAF82C00DA2EDA /* FavouritesTableViewCell.swift */,
+				A80C1DE921D002060071EF2E /* AddProductTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */,
 				A834F89B21419E3C00D8843D /* ProductCategoryPageCollectionViewCell.swift in Sources */,
 				A8E58E8621B47FD400CC4980 /* UploadNewProductViewController.swift in Sources */,
+				A80C1DEA21D002060071EF2E /* AddProductTableViewCell.swift in Sources */,
 				A82E0FC521B8561F00651CCB /* MyAddressTableViewCell.swift in Sources */,
 				A88FA24121C73D2B00567BBA /* SortFilterViewController.swift in Sources */,
 				A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */,
