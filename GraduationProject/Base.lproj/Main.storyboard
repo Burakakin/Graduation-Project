@@ -1520,12 +1520,12 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyProfileImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="JYo-Mg-0bz">
-                                <rect key="frame" x="95" y="117" width="130" height="145.5"/>
+                                <rect key="frame" x="95" y="123.5" width="130" height="130"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JYo-Mg-0bz" firstAttribute="top" secondItem="Mlf-Nu-vNX" secondAttribute="bottom" constant="3.5" id="4Xy-gm-pqe"/>
+                            <constraint firstItem="JYo-Mg-0bz" firstAttribute="top" secondItem="Mlf-Nu-vNX" secondAttribute="bottom" constant="10" id="4Xy-gm-pqe"/>
                             <constraint firstItem="yPu-LE-iry" firstAttribute="bottom" secondItem="hlw-9o-XUb" secondAttribute="bottom" constant="10" id="6ps-x9-VtE"/>
                             <constraint firstItem="yPu-LE-iry" firstAttribute="trailing" secondItem="2mM-yN-3hb" secondAttribute="trailing" constant="69" id="6uK-aw-5B0"/>
                             <constraint firstItem="bLk-7t-DY2" firstAttribute="leading" secondItem="yPu-LE-iry" secondAttribute="leading" constant="241" id="8hh-xb-qln"/>
@@ -1539,7 +1539,7 @@
                             <constraint firstItem="Mlf-Nu-vNX" firstAttribute="leading" secondItem="yPu-LE-iry" secondAttribute="leading" constant="16" id="TDB-fL-EF0"/>
                             <constraint firstItem="yPu-LE-iry" firstAttribute="bottom" secondItem="2mM-yN-3hb" secondAttribute="bottom" constant="51" id="Toj-h3-PcP"/>
                             <constraint firstItem="yPu-LE-iry" firstAttribute="trailing" secondItem="JYo-Mg-0bz" secondAttribute="trailing" constant="95" id="Y79-OD-NPf"/>
-                            <constraint firstItem="xCu-Ig-m4T" firstAttribute="top" secondItem="JYo-Mg-0bz" secondAttribute="bottom" constant="8.5" id="Yso-4D-Oe5"/>
+                            <constraint firstItem="xCu-Ig-m4T" firstAttribute="top" secondItem="JYo-Mg-0bz" secondAttribute="bottom" constant="17.5" id="Yso-4D-Oe5"/>
                             <constraint firstItem="bLk-7t-DY2" firstAttribute="leading" secondItem="Mlf-Nu-vNX" secondAttribute="trailing" constant="39.5" id="Z96-8q-pma"/>
                             <constraint firstItem="2mM-yN-3hb" firstAttribute="leading" secondItem="yPu-LE-iry" secondAttribute="leading" constant="70" id="a2Y-ev-GMk"/>
                             <constraint firstItem="Mlf-Nu-vNX" firstAttribute="centerY" secondItem="bLk-7t-DY2" secondAttribute="centerY" id="dGV-x3-eap"/>

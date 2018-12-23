@@ -58,7 +58,7 @@ class ProductsViewController: UIViewController {
         notificationButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         notificationButton.setImage(UIImage(named: "shoppingCard")?.withRenderingMode(.alwaysTemplate), for: .normal)
         notificationButton.badgeEdgeInsets = UIEdgeInsets(top: 12, left: 10, bottom: 0, right: 0)
-        notificationButton.badge = "5"
+        //notificationButton.badge = "5"
        
         notificationButton.addTarget(self, action: #selector(shoppingCard), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: notificationButton)

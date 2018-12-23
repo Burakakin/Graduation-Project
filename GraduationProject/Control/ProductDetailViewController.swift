@@ -104,6 +104,7 @@ class ProductDetailViewController: UIViewController {
     
     func setUpLastViewed() {
         let refDoc: DocumentReference!
+        let db = Firestore.firestore()
         let defaults = UserDefaults.standard
         newId = "all" + documentId!
         let pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
@@ -117,8 +118,9 @@ class ProductDetailViewController: UIViewController {
         if let user = user {
             let uid = user.uid
             
+            refDoc = db.document("User/\(uid)/userDetail/userDetailDocument")
             
-            refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
+            refDoc.setData([ "lastViewed": lastViewed ], merge: true)
             
             refDoc!.updateData([
                 "lastViewed": lastViewed
@@ -228,31 +230,17 @@ class ProductDetailViewController: UIViewController {
         refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
         let pathToSave = "Furniture/\(documentId ?? "")/\(newId ?? "")/\(productDetailId ?? "")"
         
+       
+        
         refDoc.getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()
-//                if data![path] == nil {
-//                    refDoc.setData([
-//                        "pathToLiked": ["": ""],
-//                        "shoppingCart": ["": ""]
-//                    ]) { err in
-//                        if let err = err {
-//                            print("Error updating document: \(err)")
-//                        } else {
-//                            print("Document successfully updated")
-//                        }
-//                    }
-//                    refDoc.updateData([
-//                        "\(path).\(self.productDetailId ?? "")": pathToSave
-//                    ]) { err in
-//                        if let err = err {
-//                            print("Error updating document: \(err)")
-//                        } else {
-//                            print("Document successfully updated")
-//                        }
-//                    }
-//                }
-//                else {
+                if data![path] == nil {
+                    // Update one field, creating the document if it does not exist.
+                    refDoc.setData([ "\(path)": ["\(self.productDetailId ?? "")": pathToSave] ], merge: true)
+                    
+                }
+                else {
                     if let pathToLikedandCart = data![path] as? Dictionary<String, String> {
                         //print(pathToLikedandCart)
                         if pathToLikedandCart.keys.contains("\(self.productDetailId ?? "")") {
@@ -292,7 +280,7 @@ class ProductDetailViewController: UIViewController {
                             }
                         }
                     }
-                //}
+                }
                 
             } else {
                 print("Document does not exist")

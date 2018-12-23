@@ -36,35 +36,87 @@ class AddressSelectionViewController: UIViewController, UNUserNotificationCenter
     }
     
     @IBAction func completeOrder(_ sender: Any) {
+       
+        if selectedAddress.count != 0 {
+            
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
+            
+            var orders = [String: String]()
+            
+            let refDoc: DocumentReference!
+            let user = Auth.auth().currentUser
+            guard let uid = user?.uid else { return }
+            refDoc = Firestore.firestore().document("User/\(uid)/userDetail/userDetailDocument")
+            
+            refDoc.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let data = document.data()!
+                    if let shoppingCart = data["shoppingCart"] as? Dictionary<String, String>{
+                        orders = shoppingCart
+                        refDoc.setData([ "order": orders ], merge: true)
+                        
+                        for key in shoppingCart.keys {
+                            refDoc.updateData([
+                                "shoppingCart.\(key)": FieldValue.delete(),
+                                ]) { err in
+                                    if let err = err {
+                                        print("Error updating document: \(err)")
+                                    } else {
+                                        print("Shopping Cart was deleted")
+                                    }
+                            }
+                            
+                        }
+                    }
+                    
+                } else {
+                    print("Document does not exist")
+                }
+            }
+            
+            //creating the notification content
+            let content = UNMutableNotificationContent()
+            
+            //adding title, subtitle, body and badge
+            content.title = "Hey this is Simplified iOS"
+            content.subtitle = "iOS Development is fun"
+            content.body = "We are learning about iOS Local Notification"
+            content.sound = UNNotificationSound.default
+            //content.badge = 1
+            
+            //getting the notification trigger
+            //it will be called after 5 seconds
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            
+            //getting the notification request
+            let request = UNNotificationRequest(identifier: "SimplifiedIOSNotification", content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().delegate = self
+            
+            //adding the notification to notification center
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            
+        }
+        else{
+            alert(with: "Address Selection", for: "Please, Select an Adreess", fromController: self)
+        }
         
-        
-        
-        
-        //creating the notification content
-        let content = UNMutableNotificationContent()
-        
-        //adding title, subtitle, body and badge
-        content.title = "Hey this is Simplified iOS"
-        content.subtitle = "iOS Development is fun"
-        content.body = "We are learning about iOS Local Notification"
-        content.sound = UNNotificationSound.default
-        //content.badge = 1
-        
-        //getting the notification trigger
-        //it will be called after 5 seconds
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
-        //getting the notification request
-        let request = UNNotificationRequest(identifier: "SimplifiedIOSNotification", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().delegate = self
-        
-        //adding the notification to notification center
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
         
     }
     
+    
+    func alert(with title: String,for message: String, fromController controller: UIViewController ){
+        // create the alert
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
     
     func getAddressToSelect(){
         
