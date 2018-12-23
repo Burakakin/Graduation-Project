@@ -885,12 +885,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhY-c5-S9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867.5" y="4609.8591549295779"/>
+            <point key="canvasLocation" x="2044" y="5831"/>
         </scene>
         <!--Upload New Product View Controller-->
         <scene sceneID="PU2-ua-5WG">
             <objects>
-                <viewController id="5BP-BC-4rh" customClass="UploadNewProductViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UploadNewProductViewController" id="5BP-BC-4rh" customClass="UploadNewProductViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xW9-gf-9LN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -918,10 +918,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qw7-mQ-yjp"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NtT-QW-ajN">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="Ia8-zS-1YU">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aD6-O7-hyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="5338"/>
+            <point key="canvasLocation" x="1819" y="3194"/>
         </scene>
         <!--Add Product View Controller-->
         <scene sceneID="khJ-sG-321">
@@ -1100,7 +1105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnh-bZ-uOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2873" y="5566"/>
+            <point key="canvasLocation" x="2859" y="3423"/>
         </scene>
         <!--Address Detail View Controller-->
         <scene sceneID="sX0-g2-bV8">
@@ -1164,7 +1169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5y-Gg-5Lg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2873" y="4610"/>
+            <point key="canvasLocation" x="3049" y="5831"/>
         </scene>
         <!--Change Password Page View Controller-->
         <scene sceneID="DNL-Sw-TLj">
@@ -1239,7 +1244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h42-sF-Ugp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="3894"/>
+            <point key="canvasLocation" x="2044" y="5116"/>
         </scene>
         <!--My Account-->
         <scene sceneID="QUp-Dv-3uW">
@@ -1340,12 +1345,11 @@
                         <segue destination="mlY-mO-rUW" kind="show" identifier="personalInfo" id="apS-K2-QnK"/>
                         <segue destination="QWy-s4-JlY" kind="show" identifier="changePassword" id="Ke8-Gk-gID"/>
                         <segue destination="bs2-yB-4Hj" kind="show" identifier="myAddress" id="IPp-Vk-73O"/>
-                        <segue destination="5BP-BC-4rh" kind="show" identifier="uploadProduct" id="Whd-0O-Yib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5H9-LQ-RzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="4876"/>
+            <point key="canvasLocation" x="752" y="5492"/>
         </scene>
         <!--Personal Info View Controller-->
         <scene sceneID="o61-wD-Hqv">
@@ -1448,7 +1452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13F-Sb-Kcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="3162"/>
+            <point key="canvasLocation" x="2044" y="4384"/>
         </scene>
         <!--Sign Up Page View Controller-->
         <scene sceneID="9sw-qb-eW4">
@@ -2539,6 +2543,24 @@
             </objects>
             <point key="canvasLocation" x="981" y="2325"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Awh-7S-um5">
+            <objects>
+                <navigationController storyboardIdentifier="7" automaticallyAdjustsScrollViewInsets="NO" id="w1S-CY-DXs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M3V-fC-vDA">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5BP-BC-4rh" kind="relationship" relationship="rootViewController" id="jCC-uD-FRT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VrO-xR-whc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981" y="3195"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ar.png" width="512" height="512"/>
@@ -2557,6 +2579,6 @@
         <image name="unchecked.png" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qjs-VF-gC7"/>
+        <segue reference="djh-WX-b6O"/>
     </inferredMetricsTieBreakers>
 </document>
