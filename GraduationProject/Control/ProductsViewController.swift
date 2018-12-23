@@ -292,7 +292,7 @@ extension ProductsViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.productNameLabel.text = (product["name"] as! String)
         cell.productDescriptionLabel.text = (product["description"] as! String)
-        cell.productPriceLabel.text = "TL" + String(product["price"] as! String)
+        cell.productPriceLabel.text =  String(product["price"] as! String) + " TL" 
         cell.productDimensionLabel.text = (product["dimension"] as! String)
         cell.productSellerLabel.text = "Seller: " + (product["seller"] as! String)
         

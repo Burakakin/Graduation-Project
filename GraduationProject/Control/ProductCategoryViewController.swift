@@ -90,7 +90,7 @@ extension ProductCategoryViewController: UICollectionViewDelegate, UICollectionV
         
         cell.productNameLabel.text = (product["name"] as! String)
         cell.productDescriptionLabel.text = (product["description"] as! String)
-        cell.productPriceLabel.text = "TL" + String(product["price"] as! String)
+        cell.productPriceLabel.text =  String(product["price"] as! String) + " TL" 
         cell.productDimensionLabel.text = (product["dimension"] as! String)
         
         imageDownload.getImage(withUrl: product["imageUrl"] as! String) { (image) in
