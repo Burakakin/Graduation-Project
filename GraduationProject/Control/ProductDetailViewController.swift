@@ -58,7 +58,10 @@ class ProductDetailViewController: UIViewController {
     }
     
     
-
+    @IBAction func ARKitAction(_ sender: Any) {
+      performSegue(withIdentifier: "AugmentedReality", sender: self)
+    }
+    
 
     override var prefersStatusBarHidden: Bool {
         return true

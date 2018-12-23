@@ -75,6 +75,8 @@
 		A8F5BF6C21651DDF0077B597 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BF6821651DDF0077B597 /* UIViewController+MMDrawerController.m */; };
 		A8F5BF6E216523080077B597 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8F5BF6D216523080077B597 /* GoogleService-Info.plist */; };
 		A8F6F84821727506001B36F6 /* MainPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6F84721727506001B36F6 /* MainPageCollectionViewCell.swift */; };
+		A8F8A08E21D0321400C82B1E /* AugmentedRealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F8A08D21D0321400C82B1E /* AugmentedRealityViewController.swift */; };
+		A8F8A09021D0372900C82B1E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F8A08F21D0372900C82B1E /* art.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +157,8 @@
 		A8F5BF6821651DDF0077B597 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		A8F5BF6D216523080077B597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8F6F84721727506001B36F6 /* MainPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8F8A08D21D0321400C82B1E /* AugmentedRealityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedRealityViewController.swift; sourceTree = "<group>"; };
+		A8F8A08F21D0372900C82B1E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		D06048B35AF431EA570F4210 /* Pods-GraduationProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraduationProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-GraduationProject/Pods-GraduationProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +262,7 @@
 				A8F5BF4921651C360077B597 /* Info.plist */,
 				A8F5BF6D216523080077B597 /* GoogleService-Info.plist */,
 				A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */,
+				A8F8A08F21D0372900C82B1E /* art.scnassets */,
 			);
 			path = GraduationProject;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				A806B81121BAF44600DA2EDA /* LastViewedViewController.swift */,
 				A806B81321BAF45800DA2EDA /* FavouritesViewController.swift */,
 				A88FA24021C73D2B00567BBA /* SortFilterViewController.swift */,
+				A8F8A08D21D0321400C82B1E /* AugmentedRealityViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				A83CB69921A865EC0098ED7D /* emptyProfileImage.png in Resources */,
 				A8F5BF4821651C360077B597 /* LaunchScreen.storyboard in Resources */,
 				A8131CCB21CEEA22002C7AD7 /* icons8-twitter-48.png in Resources */,
+				A8F8A09021D0372900C82B1E /* art.scnassets in Resources */,
 				A8146F2521A5BA53004F493F /* icons8-share-80.png in Resources */,
 				A8F5BF6E216523080077B597 /* GoogleService-Info.plist in Resources */,
 				A86EF2A721668CE800701DEB /* facebook.png in Resources */,
@@ -524,6 +531,7 @@
 				A806B81821BAF82C00DA2EDA /* FavouritesTableViewCell.swift in Sources */,
 				A83CB69B21A866C00098ED7D /* changePasswordPageViewController.swift in Sources */,
 				A8F5BF3B21651C350077B597 /* AppDelegate.swift in Sources */,
+				A8F8A08E21D0321400C82B1E /* AugmentedRealityViewController.swift in Sources */,
 				A81D1C20217BC58C00EB5386 /* ProductPageTableViewCell.swift in Sources */,
 				A8082D2321A31C79005E3377 /* ProductDetailViewController.swift in Sources */,
 				A88B5DF521C5FFFD00194567 /* PriceFilterViewController.swift in Sources */,

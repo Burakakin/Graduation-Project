@@ -1876,6 +1876,9 @@
                                                     <constraint firstAttribute="height" constant="100" id="jO4-q7-gdM"/>
                                                 </constraints>
                                                 <state key="normal" image="ar.png"/>
+                                                <connections>
+                                                    <action selector="ARKitAction:" destination="kla-Om-K9a" eventType="touchUpInside" id="lPv-ad-572"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Air-Zp-IZf">
                                                 <rect key="frame" x="8" y="438" width="37" height="19.5"/>
@@ -2007,7 +2010,7 @@
                         <viewLayoutGuide key="safeArea" id="4pj-Dc-3qS"/>
                     </view>
                     <navigationItem key="navigationItem" id="abf-5h-z5G">
-                        <barButtonItem key="backBarButtonItem" title="&gt;" id="fL5-5s-kkx"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="fL5-5s-kkx"/>
                     </navigationItem>
                     <size key="freeformSize" width="320" height="1200"/>
                     <connections>
@@ -2022,11 +2025,50 @@
                         <outlet property="productDetailNameLabel" destination="eUU-VL-PC2" id="taD-lF-s9t"/>
                         <outlet property="productDetailPriceLabel" destination="o4h-Fm-DjH" id="ul7-hV-7in"/>
                         <outlet property="productDetailSeller" destination="Air-Zp-IZf" id="UX9-3j-WEU"/>
+                        <segue destination="f6f-Zh-KfQ" kind="show" identifier="AugmentedReality" id="Tg6-1U-egc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmt-Wo-1w7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4511" y="-112"/>
+        </scene>
+        <!--Augmented Reality View Controller-->
+        <scene sceneID="p7J-nU-QU1">
+            <objects>
+                <viewController id="f6f-Zh-KfQ" customClass="AugmentedRealityViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wtn-gg-TOV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6y7-UN-cDO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </arscnView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plane Detected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fru-oZ-hLN">
+                                <rect key="frame" x="79.5" y="74" width="161" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.71548068523406982" green="0.090701095759868622" blue="0.10778369754552841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="y8E-oy-HCT" firstAttribute="trailing" secondItem="6y7-UN-cDO" secondAttribute="trailing" id="0lI-Ok-BEV"/>
+                            <constraint firstItem="6y7-UN-cDO" firstAttribute="leading" secondItem="y8E-oy-HCT" secondAttribute="leading" id="DnL-di-hwk"/>
+                            <constraint firstItem="y8E-oy-HCT" firstAttribute="bottom" secondItem="6y7-UN-cDO" secondAttribute="bottom" id="FbB-MA-Xil"/>
+                            <constraint firstItem="6y7-UN-cDO" firstAttribute="top" secondItem="Wtn-gg-TOV" secondAttribute="top" id="HKO-Fi-R0e"/>
+                            <constraint firstItem="fru-oZ-hLN" firstAttribute="top" secondItem="y8E-oy-HCT" secondAttribute="top" constant="10" id="Lru-Nl-J19"/>
+                            <constraint firstItem="fru-oZ-hLN" firstAttribute="centerX" secondItem="Wtn-gg-TOV" secondAttribute="centerX" id="sV7-CF-Lc4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y8E-oy-HCT"/>
+                    </view>
+                    <connections>
+                        <outlet property="planeDetected" destination="fru-oZ-hLN" id="8Vd-XQ-a0j"/>
+                        <outlet property="sceneView" destination="6y7-UN-cDO" id="D6Q-d0-Tb9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U15-xj-yhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5553.75" y="-210.21126760563379"/>
         </scene>
         <!--Shopping Card-->
         <scene sceneID="5bT-v4-LUt">
