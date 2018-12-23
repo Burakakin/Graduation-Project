@@ -257,12 +257,12 @@
 				A8F5BF4F21651C7B0077B597 /* MMDrawer */,
 				A8F5BF3A21651C350077B597 /* AppDelegate.swift */,
 				A8F5BF3E21651C350077B597 /* Main.storyboard */,
+				A8F8A08F21D0372900C82B1E /* art.scnassets */,
 				A8F5BF4421651C360077B597 /* Assets.xcassets */,
 				A8F5BF4621651C360077B597 /* LaunchScreen.storyboard */,
 				A8F5BF4921651C360077B597 /* Info.plist */,
 				A8F5BF6D216523080077B597 /* GoogleService-Info.plist */,
 				A8F5BF4121651C350077B597 /* GraduationProject.xcdatamodeld */,
-				A8F8A08F21D0372900C82B1E /* art.scnassets */,
 			);
 			path = GraduationProject;
 			sourceTree = "<group>";
