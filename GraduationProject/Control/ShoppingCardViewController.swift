@@ -31,15 +31,20 @@ class ShoppingCardViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "checkOut" {
-            
-            if let addressSelectionVC = segue.destination as? AddressSelectionViewController {
-                
-                addressSelectionVC.shoppingCartAddressSelection = shoppingCartArr
-                addressSelectionVC.priceKeeperAddressSelection = priceKeeperArr
+            if shoppingCartArr.isEmpty {
+                print("There is no item in Shopping Cart")
             }
+            else {
+                if segue.identifier == "checkOut" {
+                    if let addressSelectionVC = segue.destination as? AddressSelectionViewController {
+                        addressSelectionVC.shoppingCartAddressSelection = shoppingCartArr
+                        addressSelectionVC.priceKeeperAddressSelection = priceKeeperArr
+                    }
+                }
+            }
+            
         }
-    }
+    
 
     @IBAction func leftSideButtonTapped(_ sender: Any) {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate

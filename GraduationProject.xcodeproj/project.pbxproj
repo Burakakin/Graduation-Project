@@ -38,6 +38,7 @@
 		A83CB69B21A866C00098ED7D /* changePasswordPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */; };
 		A83FBF2921AC4DC5002E106B /* FilterProductCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83FBF2821AC4DC5002E106B /* FilterProductCategoryViewController.swift */; };
 		A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */; };
+		A85D3C6321D2CF7E00B99B82 /* left-arrow-key.png in Resources */ = {isa = PBXBuildFile; fileRef = A85D3C6221D2CF7E00B99B82 /* left-arrow-key.png */; };
 		A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */; };
 		A86EF2A721668CE800701DEB /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A86EF2A621668CE800701DEB /* facebook.png */; };
 		A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */; };
@@ -112,6 +113,7 @@
 		A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordPageViewController.swift; sourceTree = "<group>"; };
 		A83FBF2821AC4DC5002E106B /* FilterProductCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterProductCategoryViewController.swift; sourceTree = "<group>"; };
 		A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
+		A85D3C6221D2CF7E00B99B82 /* left-arrow-key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "left-arrow-key.png"; path = "../../../../../Desktop/left-arrow-key.png"; sourceTree = "<group>"; };
 		A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideCustomMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A86EF2A621668CE800701DEB /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		A86EF2A521668CB100701DEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A85D3C6221D2CF7E00B99B82 /* left-arrow-key.png */,
 				A8131CC421CEE9F3002C7AD7 /* Social Media Icons */,
 				A88FA24621C7582E00567BBA /* filter.png */,
 				A88FA24421C7566D00567BBA /* sort.png */,
@@ -407,6 +410,7 @@
 				A88FA24321C7548300567BBA /* icons8-waste-50.png in Resources */,
 				A88FA23F21C6F97900567BBA /* icons8-plus-math-filled-50.png in Resources */,
 				A8131CCC21CEEA22002C7AD7 /* icons8-instagram-old-48.png in Resources */,
+				A85D3C6321D2CF7E00B99B82 /* left-arrow-key.png in Resources */,
 				A88FA24521C7566E00567BBA /* sort.png in Resources */,
 				A88FA23E21C6F97900567BBA /* icons8-subtract-filled-50.png in Resources */,
 				A88FA24721C7582F00567BBA /* filter.png in Resources */,

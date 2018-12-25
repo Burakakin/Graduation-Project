@@ -238,10 +238,10 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="t8Q-e6-dDh">
-                                <rect key="frame" x="5" y="64" width="310" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFh-W6-yEt">
-                                        <rect key="frame" x="0.0" y="7.5" width="152.5" height="35"/>
+                                        <rect key="frame" x="0.0" y="7.5" width="157.5" height="35"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="h1k-ca-Lyw"/>
@@ -256,7 +256,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeN-Ht-Vhg">
-                                        <rect key="frame" x="157.5" y="7.5" width="152.5" height="35"/>
+                                        <rect key="frame" x="162.5" y="7.5" width="157.5" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Aym-ld-lMm"/>
                                         </constraints>
@@ -281,9 +281,9 @@
                             <constraint firstItem="t8Q-e6-dDh" firstAttribute="top" secondItem="Tw1-pJ-jul" secondAttribute="top" id="GvI-bo-5f8"/>
                             <constraint firstItem="DQ8-ch-M21" firstAttribute="top" secondItem="t8Q-e6-dDh" secondAttribute="bottom" id="c3o-8e-qTG"/>
                             <constraint firstItem="DQ8-ch-M21" firstAttribute="trailing" secondItem="Tw1-pJ-jul" secondAttribute="trailing" id="dDb-Yz-DIg"/>
-                            <constraint firstItem="Tw1-pJ-jul" firstAttribute="trailing" secondItem="t8Q-e6-dDh" secondAttribute="trailing" constant="5" id="e9v-Eo-lkU"/>
+                            <constraint firstItem="Tw1-pJ-jul" firstAttribute="trailing" secondItem="t8Q-e6-dDh" secondAttribute="trailing" id="e9v-Eo-lkU"/>
                             <constraint firstItem="DQ8-ch-M21" firstAttribute="bottom" secondItem="Tw1-pJ-jul" secondAttribute="bottom" id="ipR-mn-x9V"/>
-                            <constraint firstItem="t8Q-e6-dDh" firstAttribute="leading" secondItem="Tw1-pJ-jul" secondAttribute="leading" constant="5" id="oFF-0h-Os6"/>
+                            <constraint firstItem="t8Q-e6-dDh" firstAttribute="leading" secondItem="Tw1-pJ-jul" secondAttribute="leading" id="oFF-0h-Os6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tw1-pJ-jul"/>
                     </view>
@@ -1135,7 +1135,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="wmn-aq-YP5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Submit">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -1179,8 +1179,8 @@
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="categoryTextField" destination="ezF-W1-SOj" id="UyL-bl-sp1"/>
-                        <outlet property="productColorTextField" destination="TTf-Mb-nXD" id="jni-sl-k6h"/>
-                        <outlet property="productDescriptionTextField" destination="wmA-Gs-kdn" id="LZI-KI-Phm"/>
+                        <outlet property="productColorTextField" destination="La5-ud-SWF" id="HtN-Dl-Ump"/>
+                        <outlet property="productDescriptionTextField" destination="DtR-kz-rt6" id="BU8-Vw-wRZ"/>
                         <outlet property="productDimensionTextField" destination="wmA-Gs-kdn" id="U6Y-47-QIS"/>
                         <outlet property="productImageView" destination="OOi-kc-dNC" id="fRT-aX-smw"/>
                         <outlet property="productLongDescriptionTextField" destination="TTf-Mb-nXD" id="2Lf-sV-avs"/>
@@ -2074,7 +2074,7 @@
             </objects>
             <point key="canvasLocation" x="5553.75" y="-210.21126760563379"/>
         </scene>
-        <!--Shopping Card-->
+        <!--Shopping Cart-->
         <scene sceneID="5bT-v4-LUt">
             <objects>
                 <viewController storyboardIdentifier="ShoppingCardViewController" id="n0N-q3-jAo" customClass="ShoppingCardViewController" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -2240,7 +2240,7 @@
                                             <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="yUi-JL-tZ9" kind="show" identifier="checkOut" id="3rP-hs-7TK"/>
+                                            <segue destination="yUi-JL-tZ9" kind="show" identifier="checkOut" id="IMK-m2-Spe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2261,7 +2261,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ejK-h7-Mnq"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shopping Card" id="kdi-fs-rPV">
+                    <navigationItem key="navigationItem" title="Shopping Cart" id="kdi-fs-rPV">
                         <barButtonItem key="backBarButtonItem" title=" " id="m5j-Rz-mHh"/>
                         <barButtonItem key="leftBarButtonItem" image="menu.png" style="done" id="fVx-Tr-RNT">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -21,6 +21,10 @@ class MainPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let backImage = UIImage(named: "left-arrow-key")
+        self.navigationController?.navigationBar.backIndicatorImage = backImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+        
         let width = (view.frame.size.width) / 2
          let height = (view.frame.size.height) / 3
         let layout = mainPageCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
