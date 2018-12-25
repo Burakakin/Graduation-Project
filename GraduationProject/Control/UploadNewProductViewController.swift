@@ -46,7 +46,7 @@ class UploadNewProductViewController: UIViewController {
                 self.ref = Firestore.firestore().collection("Furniture/Desk/allDesk")
                 var query = self.ref.whereField("seller", isEqualTo: name)
                 self.getMyProduct(query: query)
-                self.ref = Firestore.firestore().collection("Furniture/Desk/allDesk")
+                self.ref = Firestore.firestore().collection("Furniture/Sofa/allSofa")
                 query = self.ref.whereField("seller", isEqualTo: name)
                 self.getMyProduct(query: query)
                 

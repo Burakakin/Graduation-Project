@@ -30,8 +30,15 @@ class ShoppingCardViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        print("Disappear: \(priceKeeperArr)")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "checkOut" {
+            
+            if let addressSelectionVC = segue.destination as? AddressSelectionViewController {
+                
+                addressSelectionVC.shoppingCartAddressSelection = shoppingCartArr
+                addressSelectionVC.priceKeeperAddressSelection = priceKeeperArr
+            }
+        }
     }
 
     @IBAction func leftSideButtonTapped(_ sender: Any) {

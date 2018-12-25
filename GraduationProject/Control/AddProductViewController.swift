@@ -192,7 +192,7 @@ class AddProductViewController: UIViewController, UITextFieldDelegate {
                 print("image url: \(urlString)")
                 
 //                let userData: [String: Any] = ["userId": userId,"nameSurname": username, "email": email, "password": password, "profileImageUrl": urlString]
-                let productData: [String: String] = ["name": productName, "description": productDescription, "dimension": productDimension, "longDescription": productLongDescription, "seller": self.sellerName.text!, "subCategory": self.selectedSubCategory!, "color": productColor, "price": productPrice, "imageUrl": urlString]
+                let productData: [String: Any] = ["name": productName, "description": productDescription, "dimension": productDimension, "longDescription": productLongDescription, "seller": self.sellerName.text!, "subCategory": self.selectedSubCategory!, "color": productColor, "price": productPrice, "imageUrl": urlString, "priceInt": Int(productPrice)!]
                 self.passDataToDatabase(productInfo: productData)
                 
             }
@@ -205,7 +205,7 @@ class AddProductViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func passDataToDatabase(productInfo: [String: String]){
+    func passDataToDatabase(productInfo: [String: Any]){
         
          refDb = Firestore.firestore().collection("Furniture/\(selectedCategory ?? "")/\(newId ?? "")")
         refDb.addDocument(data: productInfo) { err in
