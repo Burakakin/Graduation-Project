@@ -15,6 +15,7 @@ class AddressSelectionViewController: UIViewController, UNUserNotificationCenter
 
     var addressDetail = [[String]]()
     var selectedAddress = [String]()
+    var selectedIndex = [Int]()
     
     @IBOutlet weak var addressSelectionTableView: UITableView!
     override func viewDidLoad() {
@@ -37,11 +38,8 @@ class AddressSelectionViewController: UIViewController, UNUserNotificationCenter
     
     @IBAction func completeOrder(_ sender: Any) {
        
-        if selectedAddress.count != 0 {
-            
-            navigationController?.popViewController(animated: true)
-            dismiss(animated: true, completion: nil)
-            
+        if !selectedIndex.isEmpty {
+            if selectedIndex.count != 2 {
             var orders = [String: String]()
             
             let refDoc: DocumentReference!
@@ -97,6 +95,18 @@ class AddressSelectionViewController: UIViewController, UNUserNotificationCenter
             //adding the notification to notification center
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             
+            
+            
+            let centerViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
+            let centerNavController = UINavigationController(rootViewController: centerViewController)
+            let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.centerContainer!.centerViewController = centerNavController
+            
+            
+            }
+            else {
+                alert(with: "Address Selection", for: "Please, Select Only ONE Adreess", fromController: self)
+            }
         }
         else{
             alert(with: "Address Selection", for: "Please, Select an Adreess", fromController: self)
@@ -167,11 +177,30 @@ extension AddressSelectionViewController: UITableViewDelegate, UITableViewDataSo
         cell.fullAddressLabel.text = address[1]
         
         cell.checkedButtonTapped = { (selectedCell) -> Void in
+             //cell.checkedButton.isSelected = !cell.checkedButton.isSelected
             let path = tableView.indexPathForRow(at: selectedCell.center)!
-            let selectedKey = self.addressDetail[path.row]
-            //print(selectedKey)
-            self.selectedAddress = selectedKey
-            cell.checkedButton.isSelected = !cell.checkedButton.isSelected
+
+            
+            if self.selectedIndex.contains(path.row){
+                let indexCell = self.selectedIndex.firstIndex(of: path.row)
+                self.selectedIndex.remove(at: indexCell!)
+                cell.checkedButton.isSelected = false
+
+            }
+            else {
+                cell.checkedButton.isSelected = true
+                self.selectedIndex.append(path.row)
+                let selectedKey = self.addressDetail[path.row]
+                self.selectedAddress = selectedKey
+            }
+            
+           
+            
+           
+            
+            
+           
+            
         }
         
         return cell

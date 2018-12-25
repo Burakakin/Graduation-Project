@@ -75,7 +75,11 @@ class ProductsViewController: UIViewController {
     }
     
     @objc func shoppingCard() {
-        print("brk")
+        
+        let centerViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShoppingCardViewController") as! ShoppingCardViewController
+        let centerNavController = UINavigationController(rootViewController: centerViewController)
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.centerContainer!.centerViewController = centerNavController
     }
     
     func findIntersection (firstArray : [String], secondArray : [String]) -> [String]
@@ -104,7 +108,10 @@ class ProductsViewController: UIViewController {
         priceFilter2.removeAll()
         productArray.removeAll()
         
-        if minValue == nil {
+        if minValue == nil && maxValue == nil {
+            print("Hello")
+        }
+        else if minValue == nil {
             let isLessThanQuery = ref.whereField("priceInt", isLessThanOrEqualTo: maxValue!)
             
             getAllProduct(queryFirestore: isLessThanQuery)
@@ -178,7 +185,6 @@ class ProductsViewController: UIViewController {
                 }
             }
         }
-      
         
         
     }
@@ -196,8 +202,14 @@ class ProductsViewController: UIViewController {
     @IBAction func unWindSorttoProductVC (_ sender: UIStoryboardSegue){
         guard let sortFilterVC = sender.source as? SortFilterViewController else { return }
         let sortQuery =  sortFilterVC.sortQuery
-        productArray.removeAll()
-        getAllProduct(queryFirestore: sortQuery!)
+        if sortQuery == nil {
+            print("Hello")
+        }
+        else {
+            productArray.removeAll()
+            getAllProduct(queryFirestore: sortQuery!)
+        }
+        
     }
     
     
