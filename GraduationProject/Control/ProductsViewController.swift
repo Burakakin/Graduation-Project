@@ -25,6 +25,7 @@ class ProductsViewController: UIViewController {
     var priceFilterSet2 = [String]()
     
     var output = [String]()
+    var labelSubCategory = [String]()
     
     
     @IBOutlet weak var productPageCollectionView: UICollectionView!
@@ -223,8 +224,8 @@ class ProductsViewController: UIViewController {
                 if let subCategory = document.data()!["subCategory"] as? Dictionary<String, AnyObject> {
                     let home = subCategory["home" + "\(self.documentId ?? "")"] as! String
                     let office = subCategory["office" + "\(self.documentId ?? "")"] as! String
-                    
                     self.imageArray = [home, office]
+                    self.labelSubCategory = ["Home","Office"]
                     DispatchQueue.main.async {
                         self.productPageCollectionView.reloadData()
                     }
@@ -275,7 +276,7 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCollectionCell", for: indexPath) as! ProductPageCollectionViewCell
         
-        
+        cell.productPageLabel.text = labelSubCategory[indexPath.row]
         imageDownload.getImage(withUrl: imageArray[indexPath.row]) { (image) in
             cell.productPageImageView.image = image
         }

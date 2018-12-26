@@ -75,9 +75,9 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
                 if let errCode = AuthErrorCode(rawValue: error!._code){
                     switch errCode {
                     case .emailAlreadyInUse:
-                        print("In use")
+                        self.alert(with: "E-Mail", for: "E-Mail Already Taken")
                     case .weakPassword:
-                        print("Password weak")
+                        self.alert(with: "Password", for: "Password is Weak")
                     default:
                         print("Hello")
                     }
@@ -159,7 +159,7 @@ extension SignUpPageViewController: UIImagePickerControllerDelegate, UINavigatio
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedProfileImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            profilePictureImageView.contentMode = .scaleAspectFit
+            profilePictureImageView.contentMode = .scaleAspectFill
             profilePictureImageView.image = pickedProfileImage
         }
         dismiss(animated: true, completion: nil)

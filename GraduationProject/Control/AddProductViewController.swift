@@ -295,7 +295,7 @@ extension AddProductViewController: UIImagePickerControllerDelegate, UINavigatio
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedProfileImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            productImageView.contentMode = .scaleAspectFit
+            productImageView.contentMode = .scaleAspectFill
             productImageView.image = pickedProfileImage
         }
         dismiss(animated: true, completion: nil)

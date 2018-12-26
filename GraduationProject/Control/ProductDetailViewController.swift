@@ -123,8 +123,6 @@ class ProductDetailViewController: UIViewController {
             
             refDoc = db.document("User/\(uid)/userDetail/userDetailDocument")
             
-            refDoc.setData([ "lastViewed": lastViewed ], merge: true)
-            
             refDoc!.updateData([
                 "lastViewed": lastViewed
             ]) { err in
@@ -241,6 +239,12 @@ class ProductDetailViewController: UIViewController {
                 if data![path] == nil {
                     // Update one field, creating the document if it does not exist.
                     refDoc.setData([ "\(path)": ["\(self.productDetailId ?? "")": pathToSave] ], merge: true)
+                    if path == "shoppingCart" {
+                        self.addToCartButton.isSelected = true
+                    }
+                    else {
+                        self.addToFavouritesButton.isSelected = true
+                    }
                     
                 }
                 else {

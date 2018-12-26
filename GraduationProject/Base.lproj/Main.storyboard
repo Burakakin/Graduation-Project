@@ -120,16 +120,26 @@
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZTg-l8-8zY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="150"/>
                                                             </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esp-JZ-mw7">
+                                                                <rect key="frame" x="30" y="5" width="80" height="23.5"/>
+                                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="18"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                     </view>
                                                     <constraints>
                                                         <constraint firstItem="ZTg-l8-8zY" firstAttribute="leading" secondItem="hJc-Qm-DBs" secondAttribute="leading" id="6qh-pr-Sye"/>
                                                         <constraint firstAttribute="trailing" secondItem="ZTg-l8-8zY" secondAttribute="trailing" id="IA0-xS-KTO"/>
                                                         <constraint firstAttribute="bottom" secondItem="ZTg-l8-8zY" secondAttribute="bottom" id="M3Y-hN-X5p"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Esp-JZ-mw7" secondAttribute="trailing" constant="30" id="OJN-23-QVc"/>
                                                         <constraint firstItem="ZTg-l8-8zY" firstAttribute="top" secondItem="hJc-Qm-DBs" secondAttribute="top" id="Vtu-HS-kRA"/>
+                                                        <constraint firstItem="Esp-JZ-mw7" firstAttribute="leading" secondItem="hJc-Qm-DBs" secondAttribute="leading" constant="30" id="es8-AI-rOL"/>
+                                                        <constraint firstItem="Esp-JZ-mw7" firstAttribute="top" secondItem="hJc-Qm-DBs" secondAttribute="top" constant="5" id="nam-us-3Zc"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="productPageImageView" destination="ZTg-l8-8zY" id="dE5-Hd-HgZ"/>
+                                                        <outlet property="productPageLabel" destination="Esp-JZ-mw7" id="Nte-4v-gjb"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
@@ -1613,6 +1623,10 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyProfileImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="JYo-Mg-0bz">
                                 <rect key="frame" x="95" y="123.5" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="ZOI-rq-h1Q"/>
+                                    <constraint firstAttribute="width" constant="130" id="fLW-DE-4Fy"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2388,20 +2402,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8V-9g-MWk">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty Table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHf-2e-PPz">
-                                        <rect key="frame" x="40" y="40" width="127" height="424"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favorite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHf-2e-PPz">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="qHf-2e-PPz" firstAttribute="leading" secondItem="v8V-9g-MWk" secondAttribute="leading" constant="40" id="OZa-ke-YeC"/>
-                                    <constraint firstAttribute="bottom" secondItem="qHf-2e-PPz" secondAttribute="bottom" constant="40" id="U3K-0Q-qTZ"/>
-                                    <constraint firstItem="qHf-2e-PPz" firstAttribute="top" secondItem="v8V-9g-MWk" secondAttribute="top" constant="40" id="kl5-nC-AKP"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qHf-2e-PPz" secondAttribute="trailing" constant="20" symbolic="YES" id="rzc-N3-O2b"/>
+                                    <constraint firstItem="qHf-2e-PPz" firstAttribute="centerX" secondItem="v8V-9g-MWk" secondAttribute="centerX" id="4Cc-mm-Kps"/>
+                                    <constraint firstItem="qHf-2e-PPz" firstAttribute="centerY" secondItem="v8V-9g-MWk" secondAttribute="centerY" id="Drx-En-Nou"/>
+                                    <constraint firstItem="qHf-2e-PPz" firstAttribute="leading" secondItem="v8V-9g-MWk" secondAttribute="leading" id="OZa-ke-YeC"/>
+                                    <constraint firstAttribute="bottom" secondItem="qHf-2e-PPz" secondAttribute="bottom" id="U3K-0Q-qTZ"/>
+                                    <constraint firstItem="qHf-2e-PPz" firstAttribute="top" secondItem="v8V-9g-MWk" secondAttribute="top" id="kl5-nC-AKP"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qHf-2e-PPz" secondAttribute="trailing" id="rzc-N3-O2b"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fHs-3Y-12G">
@@ -2709,6 +2725,6 @@
         <image name="unchecked.png" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qjs-VF-gC7"/>
+        <segue reference="djh-WX-b6O"/>
     </inferredMetricsTieBreakers>
 </document>
