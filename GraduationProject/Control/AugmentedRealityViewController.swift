@@ -24,7 +24,8 @@ class AugmentedRealityViewController: UIViewController {
     //Not Really Necessary But Can Use If You Like
     var isRotating = false
     
-    
+    var documentId: String?
+    var documentDetailId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -184,7 +185,21 @@ class AugmentedRealityViewController: UIViewController {
     
     func addFurniture(hitTestResult: ARHitTestResult) {
         
-        let furnitureName = "chair"
+        var furnitureName = ""
+        
+        if documentId == "Desk" {
+            if documentDetailId == "qJrPHPMm5PALHF112Ljb" {
+                furnitureName = "woodDesk"
+            }
+            else if documentDetailId == "7lydIfiJcZoxamYFrree" {
+                furnitureName = "table"
+            }
+        }
+        
+        
+        
+        
+        
         let node: SCNNode!
         guard let scene = SCNScene(named: "art.scnassets/\(furnitureName).scn") else { return }
         if let desk = scene.rootNode.childNode(withName: furnitureName, recursively: false) {

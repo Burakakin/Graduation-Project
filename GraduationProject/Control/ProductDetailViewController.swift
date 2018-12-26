@@ -104,6 +104,18 @@ class ProductDetailViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "AugmentedReality" {
+            if let augmentedRealityVC =  segue.destination as? AugmentedRealityViewController {
+                augmentedRealityVC.documentId = documentId
+                augmentedRealityVC.documentDetailId = productDetailId
+            }
+            
+          
+        }
+        
+    }
     
     func setUpLastViewed() {
         let refDoc: DocumentReference!
