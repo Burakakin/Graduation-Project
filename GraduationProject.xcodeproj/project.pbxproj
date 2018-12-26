@@ -17,7 +17,6 @@
 		A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8096BE9217A3661006C8F25 /* ProductsViewController.swift */; };
 		A80AF14721D3349900E27885 /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14121D3349600E27885 /* wood.jpg */; };
 		A80AF14821D3349900E27885 /* LightWoodVeneer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14221D3349600E27885 /* LightWoodVeneer.jpg */; };
-		A80AF15021D3362100E27885 /* Armchair 01.dae in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14D21D3361F00E27885 /* Armchair 01.dae */; };
 		A80AF15121D3362100E27885 /* NeilFabricPlain008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14E21D3362000E27885 /* NeilFabricPlain008.jpg */; };
 		A80AF15221D3362100E27885 /* Neil Woo03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14F21D3362100E27885 /* Neil Woo03.jpg */; };
 		A80C1DEA21D002060071EF2E /* AddProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C1DE921D002060071EF2E /* AddProductTableViewCell.swift */; };
@@ -98,7 +97,6 @@
 		A8096BE9217A3661006C8F25 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		A80AF14121D3349600E27885 /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
 		A80AF14221D3349600E27885 /* LightWoodVeneer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LightWoodVeneer.jpg; sourceTree = "<group>"; };
-		A80AF14D21D3361F00E27885 /* Armchair 01.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = "Armchair 01.dae"; sourceTree = "<group>"; };
 		A80AF14E21D3362000E27885 /* NeilFabricPlain008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NeilFabricPlain008.jpg; sourceTree = "<group>"; };
 		A80AF14F21D3362100E27885 /* Neil Woo03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Neil Woo03.jpg"; sourceTree = "<group>"; };
 		A80C1DE921D002060071EF2E /* AddProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -273,7 +271,6 @@
 				A8F5BF3A21651C350077B597 /* AppDelegate.swift */,
 				A8F5BF3E21651C350077B597 /* Main.storyboard */,
 				A80AF14221D3349600E27885 /* LightWoodVeneer.jpg */,
-				A80AF14D21D3361F00E27885 /* Armchair 01.dae */,
 				A80AF14F21D3362100E27885 /* Neil Woo03.jpg */,
 				A80AF14E21D3362000E27885 /* NeilFabricPlain008.jpg */,
 				A80AF14121D3349600E27885 /* wood.jpg */,
@@ -451,7 +448,6 @@
 				A8131CC921CEEA22002C7AD7 /* icons8-facebook-48.png in Resources */,
 				A8F5BF4021651C350077B597 /* Main.storyboard in Resources */,
 				A8C2C38221B73D3300FF20EB /* checked.png in Resources */,
-				A80AF15021D3362100E27885 /* Armchair 01.dae in Resources */,
 				A80AF14821D3349900E27885 /* LightWoodVeneer.jpg in Resources */,
 				A8131CCA21CEEA22002C7AD7 /* icons8-linkedin-48.png in Resources */,
 				A82B81CC21B3135200EB5354 /* shoppingCard.png in Resources */,
