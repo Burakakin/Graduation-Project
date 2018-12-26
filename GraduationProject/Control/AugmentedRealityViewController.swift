@@ -195,6 +195,14 @@ class AugmentedRealityViewController: UIViewController {
                 furnitureName = "table"
             }
         }
+        else if documentId == "Chair" {
+            
+        }
+        else if documentId == "Sofa" {
+            if documentDetailId == "OCZmw8dEmUa24HIK7FYH" {
+                furnitureName = "leatherSofa"
+            }
+        }
         
         
         

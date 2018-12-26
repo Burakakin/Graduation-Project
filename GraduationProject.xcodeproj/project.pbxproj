@@ -15,6 +15,11 @@
 		A8082D2321A31C79005E3377 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */; };
 		A8092C3E21A72B5800A0EC14 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */; };
 		A8096BEA217A3661006C8F25 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8096BE9217A3661006C8F25 /* ProductsViewController.swift */; };
+		A80AF14721D3349900E27885 /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14121D3349600E27885 /* wood.jpg */; };
+		A80AF14821D3349900E27885 /* LightWoodVeneer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14221D3349600E27885 /* LightWoodVeneer.jpg */; };
+		A80AF15021D3362100E27885 /* Armchair 01.dae in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14D21D3361F00E27885 /* Armchair 01.dae */; };
+		A80AF15121D3362100E27885 /* NeilFabricPlain008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14E21D3362000E27885 /* NeilFabricPlain008.jpg */; };
+		A80AF15221D3362100E27885 /* Neil Woo03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80AF14F21D3362100E27885 /* Neil Woo03.jpg */; };
 		A80C1DEA21D002060071EF2E /* AddProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80C1DE921D002060071EF2E /* AddProductTableViewCell.swift */; };
 		A8131CC921CEEA22002C7AD7 /* icons8-facebook-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A8131CC521CEEA20002C7AD7 /* icons8-facebook-48.png */; };
 		A8131CCA21CEEA22002C7AD7 /* icons8-linkedin-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A8131CC621CEEA20002C7AD7 /* icons8-linkedin-48.png */; };
@@ -46,6 +51,7 @@
 		A883956421727DB400B591B5 /* Desk.png in Resources */ = {isa = PBXBuildFile; fileRef = A883956321727DB400B591B5 /* Desk.png */; };
 		A888B7F221767DB800814EBC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A888B7F121767DB800814EBC /* LocalAuthentication.framework */; };
 		A88B5DF521C5FFFD00194567 /* PriceFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88B5DF421C5FFFD00194567 /* PriceFilterViewController.swift */; };
+		A88F0D3A21D32D63008A27F1 /* Grunge02_SPEC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A88F0D3921D32D63008A27F1 /* Grunge02_SPEC.jpg */; };
 		A88FA23E21C6F97900567BBA /* icons8-subtract-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FA23C21C6F97700567BBA /* icons8-subtract-filled-50.png */; };
 		A88FA23F21C6F97900567BBA /* icons8-plus-math-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FA23D21C6F97800567BBA /* icons8-plus-math-filled-50.png */; };
 		A88FA24121C73D2B00567BBA /* SortFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88FA24021C73D2B00567BBA /* SortFilterViewController.swift */; };
@@ -90,6 +96,11 @@
 		A8082D2221A31C79005E3377 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A8092C3D21A72B5800A0EC14 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		A8096BE9217A3661006C8F25 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		A80AF14121D3349600E27885 /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
+		A80AF14221D3349600E27885 /* LightWoodVeneer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LightWoodVeneer.jpg; sourceTree = "<group>"; };
+		A80AF14D21D3361F00E27885 /* Armchair 01.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = "Armchair 01.dae"; sourceTree = "<group>"; };
+		A80AF14E21D3362000E27885 /* NeilFabricPlain008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NeilFabricPlain008.jpg; sourceTree = "<group>"; };
+		A80AF14F21D3362100E27885 /* Neil Woo03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Neil Woo03.jpg"; sourceTree = "<group>"; };
 		A80C1DE921D002060071EF2E /* AddProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductTableViewCell.swift; sourceTree = "<group>"; };
 		A8131CC521CEEA20002C7AD7 /* icons8-facebook-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-facebook-48.png"; sourceTree = "<group>"; };
 		A8131CC621CEEA20002C7AD7 /* icons8-linkedin-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-linkedin-48.png"; sourceTree = "<group>"; };
@@ -121,6 +132,7 @@
 		A883956321727DB400B591B5 /* Desk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Desk.png; sourceTree = "<group>"; };
 		A888B7F121767DB800814EBC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		A88B5DF421C5FFFD00194567 /* PriceFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFilterViewController.swift; sourceTree = "<group>"; };
+		A88F0D3921D32D63008A27F1 /* Grunge02_SPEC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Grunge02_SPEC.jpg; sourceTree = "<group>"; };
 		A88FA23C21C6F97700567BBA /* icons8-subtract-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-subtract-filled-50.png"; sourceTree = "<group>"; };
 		A88FA23D21C6F97800567BBA /* icons8-plus-math-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-math-filled-50.png"; sourceTree = "<group>"; };
 		A88FA24021C73D2B00567BBA /* SortFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +272,12 @@
 				A8F5BF4F21651C7B0077B597 /* MMDrawer */,
 				A8F5BF3A21651C350077B597 /* AppDelegate.swift */,
 				A8F5BF3E21651C350077B597 /* Main.storyboard */,
+				A80AF14221D3349600E27885 /* LightWoodVeneer.jpg */,
+				A80AF14D21D3361F00E27885 /* Armchair 01.dae */,
+				A80AF14F21D3362100E27885 /* Neil Woo03.jpg */,
+				A80AF14E21D3362000E27885 /* NeilFabricPlain008.jpg */,
+				A80AF14121D3349600E27885 /* wood.jpg */,
+				A88F0D3921D32D63008A27F1 /* Grunge02_SPEC.jpg */,
 				A8F8A08F21D0372900C82B1E /* art.scnassets */,
 				A8F5BF4421651C360077B597 /* Assets.xcassets */,
 				A8F5BF4621651C360077B597 /* LaunchScreen.storyboard */,
@@ -405,12 +423,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80AF15121D3362100E27885 /* NeilFabricPlain008.jpg in Resources */,
 				A8301C8A21BB4E3A00B5AA8E /* menu.png in Resources */,
 				A883956421727DB400B591B5 /* Desk.png in Resources */,
 				A88FA24321C7548300567BBA /* icons8-waste-50.png in Resources */,
 				A88FA23F21C6F97900567BBA /* icons8-plus-math-filled-50.png in Resources */,
+				A88F0D3A21D32D63008A27F1 /* Grunge02_SPEC.jpg in Resources */,
+				A80AF14721D3349900E27885 /* wood.jpg in Resources */,
 				A8131CCC21CEEA22002C7AD7 /* icons8-instagram-old-48.png in Resources */,
 				A85D3C6321D2CF7E00B99B82 /* left-arrow-key.png in Resources */,
+				A80AF15221D3362100E27885 /* Neil Woo03.jpg in Resources */,
 				A88FA24521C7566E00567BBA /* sort.png in Resources */,
 				A88FA23E21C6F97900567BBA /* icons8-subtract-filled-50.png in Resources */,
 				A88FA24721C7582F00567BBA /* filter.png in Resources */,
@@ -429,6 +451,8 @@
 				A8131CC921CEEA22002C7AD7 /* icons8-facebook-48.png in Resources */,
 				A8F5BF4021651C350077B597 /* Main.storyboard in Resources */,
 				A8C2C38221B73D3300FF20EB /* checked.png in Resources */,
+				A80AF15021D3362100E27885 /* Armchair 01.dae in Resources */,
+				A80AF14821D3349900E27885 /* LightWoodVeneer.jpg in Resources */,
 				A8131CCA21CEEA22002C7AD7 /* icons8-linkedin-48.png in Resources */,
 				A82B81CC21B3135200EB5354 /* shoppingCard.png in Resources */,
 				A8766FE521A5EB3000C6889F /* ar.png in Resources */,
