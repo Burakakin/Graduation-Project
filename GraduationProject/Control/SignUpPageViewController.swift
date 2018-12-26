@@ -19,7 +19,7 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profilePictureImageView: UIImageView!
-    
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
      var ref: CollectionReference? = nil
     
     
@@ -84,10 +84,15 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             else {
+                self.activityIndicator.center = self.view.center
+                self.activityIndicator.style = .gray
+                self.view.addSubview(self.activityIndicator)
+                self.activityIndicator.startAnimating()
+                
                 guard let user = authResult?.user else { return }
                 let userId = user.uid
                 //print("User was created")
-                self.alert(with: "Info", for: "User was created")
+                //self.alert(with: "Info", for: "User was created")
                 
                 
                 let uploadMetadata = StorageMetadata()
@@ -120,8 +125,8 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
                         print("Error in email verification")
                     }
                     else{
-                       // print("Email was send")
-                        self.alert(with: "Info", for: "Email was send")
+                        print("Email was send")
+                        //self.alert(with: "Info", for: "Email was send")
                     }
                 })
                 
@@ -139,6 +144,7 @@ class SignUpPageViewController: UIViewController, UITextFieldDelegate {
             } else {
                 //print("Document added")
                 self.alert(with: "Info", for: "User's info saved to db")
+                self.activityIndicator.stopAnimating()
             }
         }
     }
