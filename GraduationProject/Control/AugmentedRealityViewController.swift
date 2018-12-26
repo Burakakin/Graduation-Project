@@ -196,7 +196,12 @@ class AugmentedRealityViewController: UIViewController {
             }
         }
         else if documentId == "Chair" {
-            
+            if documentDetailId == "x1XfEYoO86Uh4swOtH4z" {
+                furnitureName = "chair"
+            }
+            else if documentDetailId == "MKJwmUFJUUZKmcJlva3g" {
+                furnitureName = "armChair"
+            }
         }
         else if documentId == "Sofa" {
             if documentDetailId == "OCZmw8dEmUa24HIK7FYH" {
