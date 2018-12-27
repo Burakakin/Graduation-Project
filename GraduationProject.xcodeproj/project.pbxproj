@@ -42,7 +42,6 @@
 		A83CB69B21A866C00098ED7D /* changePasswordPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */; };
 		A83FBF2921AC4DC5002E106B /* FilterProductCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83FBF2821AC4DC5002E106B /* FilterProductCategoryViewController.swift */; };
 		A84175F8216E5A9C00D57BC9 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */; };
-		A85D3C6321D2CF7E00B99B82 /* left-arrow-key.png in Resources */ = {isa = PBXBuildFile; fileRef = A85D3C6221D2CF7E00B99B82 /* left-arrow-key.png */; };
 		A86EF2A42166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */; };
 		A86EF2A721668CE800701DEB /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A86EF2A621668CE800701DEB /* facebook.png */; };
 		A86EF2A92166978E00701DEB /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */; };
@@ -57,6 +56,7 @@
 		A88FA24321C7548300567BBA /* icons8-waste-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FA24221C7548100567BBA /* icons8-waste-50.png */; };
 		A88FA24521C7566E00567BBA /* sort.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FA24421C7566D00567BBA /* sort.png */; };
 		A88FA24721C7582F00567BBA /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = A88FA24621C7582E00567BBA /* filter.png */; };
+		A890709421D5723C0099310F /* left-arrow-key.png in Resources */ = {isa = PBXBuildFile; fileRef = A890709321D5723C0099310F /* left-arrow-key.png */; };
 		A8C26A2F21A5AD6700D2720D /* sofa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2C21A5AD6700D2720D /* sofa.jpg */; };
 		A8C26A3021A5AD6700D2720D /* sofa1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2D21A5AD6700D2720D /* sofa1.jpg */; };
 		A8C26A3121A5AD6700D2720D /* sofa2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8C26A2E21A5AD6700D2720D /* sofa2.jpg */; };
@@ -122,7 +122,6 @@
 		A83CB69A21A866C00098ED7D /* changePasswordPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordPageViewController.swift; sourceTree = "<group>"; };
 		A83FBF2821AC4DC5002E106B /* FilterProductCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterProductCategoryViewController.swift; sourceTree = "<group>"; };
 		A84175F7216E5A9C00D57BC9 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
-		A85D3C6221D2CF7E00B99B82 /* left-arrow-key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "left-arrow-key.png"; path = "../../../../../Desktop/left-arrow-key.png"; sourceTree = "<group>"; };
 		A86EF2A32166779F00701DEB /* LeftSideCustomMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideCustomMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A86EF2A621668CE800701DEB /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		A86EF2A82166978E00701DEB /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		A88FA24221C7548100567BBA /* icons8-waste-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-waste-50.png"; sourceTree = "<group>"; };
 		A88FA24421C7566D00567BBA /* sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sort.png; sourceTree = "<group>"; };
 		A88FA24621C7582E00567BBA /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		A890709321D5723C0099310F /* left-arrow-key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow-key.png"; sourceTree = "<group>"; };
 		A8C26A2C21A5AD6700D2720D /* sofa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa.jpg; sourceTree = "<group>"; };
 		A8C26A2D21A5AD6700D2720D /* sofa1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa1.jpg; sourceTree = "<group>"; };
 		A8C26A2E21A5AD6700D2720D /* sofa2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sofa2.jpg; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 		A86EF2A521668CB100701DEB /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A85D3C6221D2CF7E00B99B82 /* left-arrow-key.png */,
+				A890709321D5723C0099310F /* left-arrow-key.png */,
 				A8131CC421CEE9F3002C7AD7 /* Social Media Icons */,
 				A88FA24621C7582E00567BBA /* filter.png */,
 				A88FA24421C7566D00567BBA /* sort.png */,
@@ -428,7 +428,6 @@
 				A88F0D3A21D32D63008A27F1 /* Grunge02_SPEC.jpg in Resources */,
 				A80AF14721D3349900E27885 /* wood.jpg in Resources */,
 				A8131CCC21CEEA22002C7AD7 /* icons8-instagram-old-48.png in Resources */,
-				A85D3C6321D2CF7E00B99B82 /* left-arrow-key.png in Resources */,
 				A80AF15221D3362100E27885 /* Neil Woo03.jpg in Resources */,
 				A88FA24521C7566E00567BBA /* sort.png in Resources */,
 				A88FA23E21C6F97900567BBA /* icons8-subtract-filled-50.png in Resources */,
@@ -451,6 +450,7 @@
 				A80AF14821D3349900E27885 /* LightWoodVeneer.jpg in Resources */,
 				A8131CCA21CEEA22002C7AD7 /* icons8-linkedin-48.png in Resources */,
 				A82B81CC21B3135200EB5354 /* shoppingCard.png in Resources */,
+				A890709421D5723C0099310F /* left-arrow-key.png in Resources */,
 				A8766FE521A5EB3000C6889F /* ar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
