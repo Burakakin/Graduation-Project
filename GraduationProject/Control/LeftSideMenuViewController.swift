@@ -84,7 +84,7 @@ extension LeftSideMenuViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        // print(indexPath.row)
-        
+        //commit
         
         switch indexPath.row {
         case 0:
